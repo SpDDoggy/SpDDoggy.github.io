@@ -10,10 +10,37 @@
   <link rel="preconnect" href="https://basemaps.cartocdn.com">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIINfQ3ynHTeDVSZhKjMZQzMZp8p3QfX8hA=" crossorigin="">
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
   <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header">
+    <div class="shell header-layout">
+      <a class="brand" href="#main" aria-label="DvSpatial 首页">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="brand-copy">
+          <strong>DvSpatial</strong>
+          <small>INDEPENDENT GIS SOFTWARE</small>
+        </span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="主导航">
+        <a href="#tool-wheel"><i aria-hidden="true">◇</i> Products</a>
+        <a href="https://github.com/SpDDoggy/DemStudio" target="_blank" rel="noreferrer"><i aria-hidden="true">▱</i> DEM Studio</a>
+        <a href="https://github.com/SpDDoggy" target="_blank" rel="noreferrer"><i aria-hidden="true">GH</i> GitHub</a>
+      </nav>
+
+      <button class="header-cta" type="button" data-cycle="next">
+        <span class="grid-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        浏览产品
+      </button>
+
+      <button class="menu-toggle" type="button" aria-label="打开导航" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
   <main class="landing" id="main">
     <div class="map-layer" aria-hidden="true">
@@ -79,6 +106,6 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script src="script.js?v=5"></script>
+  <script src="script.js?v=6"></script>
 </body>
 </html>

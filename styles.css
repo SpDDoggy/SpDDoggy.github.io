@@ -7,6 +7,7 @@
   --muted: #8b9bb1;
   --line: #bfd0e8;
   --white: #ffffff;
+  --header-height: 66px;
   --wheel-size: min(39vw, 72dvh, 530px);
   --shell: min(1280px, calc(100% - 48px));
   color-scheme: light;
@@ -69,11 +70,172 @@ button {
   transform: translateY(0);
 }
 
+.site-header {
+  position: relative;
+  z-index: 30;
+  height: var(--header-height);
+  background: rgb(255 255 255 / 94%);
+  border-bottom: 1px solid rgb(205 216 231 / 82%);
+  box-shadow: 0 5px 20px rgb(37 61 96 / 5%);
+  backdrop-filter: blur(16px);
+}
+
+.header-layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  height: 100%;
+  gap: 28px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  width: max-content;
+}
+
+.brand-mark {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  overflow: hidden;
+  color: var(--white);
+  background: var(--blue);
+  border-radius: 9px;
+  box-shadow: 0 7px 18px rgb(23 104 242 / 22%);
+}
+
+.brand-mark::before,
+.brand-mark::after,
+.brand-mark i {
+  position: absolute;
+  display: block;
+  content: "";
+  border: 1px solid rgb(255 255 255 / 92%);
+  border-radius: 999px;
+}
+
+.brand-mark::before {
+  width: 19px;
+  height: 19px;
+}
+
+.brand-mark::after {
+  width: 7px;
+  height: 19px;
+}
+
+.brand-mark i:first-child {
+  width: 19px;
+  height: 7px;
+}
+
+.brand-mark i:nth-child(2) {
+  width: 19px;
+  height: 0;
+}
+
+.brand-copy {
+  display: grid;
+  gap: 3px;
+}
+
+.brand-copy strong {
+  color: #1a2840;
+  font: 700 17px/1 Consolas, "Cascadia Mono", monospace;
+  letter-spacing: -.03em;
+}
+
+.brand-copy small {
+  color: #91a0b6;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .11em;
+}
+
+.site-nav {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  gap: clamp(22px, 3vw, 40px);
+}
+
+.site-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  color: #334159;
+  font-size: 12px;
+  font-weight: 650;
+  transition: color 160ms ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: var(--blue);
+}
+
+.site-nav i {
+  display: inline-grid;
+  place-items: center;
+  min-width: 15px;
+  color: #4f6686;
+  font: 700 9px/1 Consolas, monospace;
+  font-style: normal;
+}
+
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 36px;
+  padding: 0 16px;
+  color: var(--white);
+  background: var(--blue);
+  border: 1px solid var(--blue);
+  border-radius: 6px;
+  box-shadow: 0 7px 16px rgb(23 104 242 / 16%);
+  font-size: 12px;
+  font-weight: 700;
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.header-cta:hover,
+.header-cta:focus-visible {
+  background: var(--blue-dark);
+  transform: translateY(-1px);
+}
+
+.menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  padding: 10px;
+  background: var(--white);
+  border: 1px solid #c8d4e4;
+  border-radius: 8px;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 2px;
+  margin: 4px 0;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
 .landing {
   position: relative;
   display: grid;
   align-items: center;
-  height: 100dvh;
+  height: calc(100dvh - var(--header-height));
   overflow: hidden;
   isolation: isolate;
 }
@@ -115,7 +277,7 @@ button {
   grid-template-columns: minmax(300px, .84fr) minmax(420px, 1.16fr);
   align-items: center;
   gap: clamp(42px, 6vw, 100px);
-  height: 100dvh;
+  height: calc(100dvh - var(--header-height));
   padding-block: 34px;
 }
 
@@ -587,6 +749,14 @@ h1 em {
     font-size: clamp(45px, 6.7vw, 60px);
   }
 
+  .header-layout {
+    gap: 16px;
+  }
+
+  .site-nav {
+    gap: 18px;
+  }
+
   .tool-navigator {
     width: calc(var(--wheel-size) + 70px);
     height: calc(var(--wheel-size) + 66px);
@@ -599,7 +769,8 @@ h1 em {
 
 @media (max-width: 680px) {
   :root {
-    --wheel-size: min(88vw, 430px);
+    --header-height: 62px;
+    --wheel-size: min(78vw, 380px);
     --shell: min(100% - 28px, 560px);
   }
 
@@ -611,16 +782,64 @@ h1 em {
 
   .landing {
     height: auto;
-    min-height: 100dvh;
+    min-height: calc(100dvh - var(--header-height));
     overflow: hidden;
   }
 
   .hero-layout {
     grid-template-columns: 1fr;
-    gap: 46px;
+    gap: 30px;
     height: auto;
     min-height: auto;
-    padding-block: 54px 34px;
+    padding-block: 36px 24px;
+  }
+
+  .header-layout {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .header-cta {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+    grid-column: 3;
+    justify-self: end;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: calc(100% + 9px);
+    right: 0;
+    display: grid;
+    width: min(300px, calc(100vw - 28px));
+    gap: 0;
+    padding: 9px;
+    background: rgb(255 255 255 / 98%);
+    border: 1px solid #cbd7e6;
+    border-radius: 10px;
+    box-shadow: 0 18px 44px rgb(34 57 91 / 16%);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-7px);
+    transition: opacity 160ms ease, transform 160ms ease;
+  }
+
+  .site-nav.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .site-nav a {
+    padding-inline: 10px;
+    border-radius: 7px;
+  }
+
+  .site-nav a:hover,
+  .site-nav a:focus-visible {
+    background: var(--blue-soft);
   }
 
   .hero-copy {
@@ -672,8 +891,8 @@ h1 em {
 
 @media (max-width: 430px) {
   .hero-layout {
-    gap: 36px;
-    padding-top: 42px;
+    gap: 24px;
+    padding-top: 28px;
   }
 
   .eyebrow {
@@ -705,7 +924,7 @@ h1 em {
 
 @media (max-height: 520px) and (min-width: 681px) {
   :root {
-    --wheel-size: min(40vw, 80dvh, 360px);
+    --wheel-size: min(38vw, 62dvh, 300px);
   }
 
   .hero-layout {
