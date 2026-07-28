@@ -2,7 +2,7 @@
   position: relative;
   justify-self: center;
   width: calc(var(--wheel-size) + 92px);
-  height: calc(var(--wheel-size) + 74px);
+  height: calc(var(--wheel-size) + 46px);
 }
 
 .wheel {
@@ -215,7 +215,7 @@
 }
 
 .compass-south {
-  bottom: 42px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -224,42 +224,6 @@
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-}
-
-.navigator-controls {
-  position: absolute;
-  right: 4px;
-  bottom: 0;
-  left: 4px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.navigator-controls button {
-  display: grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  padding: 0;
-  color: #476184;
-  background: rgb(255 255 255 / 68%);
-  border: 1px solid rgb(188 205 227 / 74%);
-  border-radius: 7px;
-  box-shadow: 0 5px 14px rgb(38 68 109 / 8%);
-  font-size: 24px;
-  line-height: 1;
-  backdrop-filter: blur(8px);
-  transition:
-    color var(--motion-fast) ease,
-    border-color var(--motion-fast) ease,
-    transform var(--motion-fast) ease;
-}
-
-.navigator-controls button:hover,
-.navigator-controls button:focus-visible {
-  color: var(--blue);
-  border-color: #8eb5f4;
-  transform: translateY(-1px);
 }
 
 html[data-theme="dark"] .wheel {
@@ -315,16 +279,10 @@ html[data-theme="dark"] .compass-label {
   color: #8ea4c1;
 }
 
-html[data-theme="dark"] .navigator-controls button {
-  color: #abc0dd;
-  background: rgb(18 29 44 / 84%);
-  border-color: rgb(75 96 126 / 82%);
-}
-
 @media (max-width: 900px) {
   .tool-navigator {
     width: calc(var(--wheel-size) + 70px);
-    height: calc(var(--wheel-size) + 66px);
+    height: calc(var(--wheel-size) + 44px);
   }
 
   .wheel {
@@ -336,7 +294,7 @@ html[data-theme="dark"] .navigator-controls button {
   .tool-navigator {
     width: 100%;
     max-width: calc(var(--wheel-size) + 70px);
-    height: calc(var(--wheel-size) + 70px);
+    height: calc(var(--wheel-size) + 46px);
     margin-inline: auto;
   }
 
@@ -362,7 +320,7 @@ html[data-theme="dark"] .navigator-controls button {
 
 @media (max-height: 520px) and (min-width: 681px) {
   .tool-navigator {
-    height: calc(var(--wheel-size) + 54px);
+    height: calc(var(--wheel-size) + 34px);
   }
 
   .wheel {
@@ -370,15 +328,6 @@ html[data-theme="dark"] .navigator-controls button {
   }
 
   .compass-south {
-    bottom: 32px;
-  }
-
-  .navigator-controls button {
-    width: 29px;
-    height: 29px;
-  }
-
-  .navigator-controls {
-    bottom: 8px;
+    bottom: 0;
   }
 }

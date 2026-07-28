@@ -66,9 +66,9 @@ export const initializeToolWheel = (products) => {
       path.classList.toggle("is-active", pathIndex === selectedIndex);
     });
 
+    const language = document.documentElement.lang.startsWith("zh") ? "zh" : "en";
     if (activeName) activeName.textContent = activeProduct.name;
     if (activeDescription) {
-      const language = document.documentElement.lang.startsWith("zh") ? "zh" : "en";
       activeDescription.textContent = activeProduct.description[language];
     }
   };

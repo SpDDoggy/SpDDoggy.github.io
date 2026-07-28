@@ -53,29 +53,10 @@
   max-width: 590px;
 }
 
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  margin: 0 0 18px;
-  padding: 6px 11px;
-  color: #105bd7;
-  background: rgb(229 240 255 / 88%);
-  border: 1px solid #b9d2ff;
-  border-radius: 999px;
-  font: 700 10px/1 Consolas, "Cascadia Mono", monospace;
-  letter-spacing: .06em;
-}
-
-.eyebrow span {
-  font-size: 13px;
-  line-height: 0;
-}
-
 h1 {
   margin: 0;
   color: var(--ink);
-  font-size: clamp(58px, 5.2vw, 82px);
+  font-size: clamp(56px, 4.5vw, 72px);
   line-height: .98;
   letter-spacing: -.068em;
 }
@@ -96,8 +77,8 @@ h1 em {
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 26px;
+  gap: 10px;
+  margin-top: 30px;
 }
 
 .button {
@@ -105,56 +86,66 @@ h1 em {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  min-height: 46px;
-  padding: 0 20px;
-  border: 1px solid transparent;
-  border-radius: 7px;
+  min-height: 50px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 12px;
   font-size: 13px;
   font-weight: 700;
-  box-shadow: 0 8px 20px rgb(31 64 112 / 10%);
+  box-shadow: 0 10px 24px rgb(31 64 112 / 12%);
   transition:
     transform var(--motion-fast) ease,
     background var(--motion-fast) ease,
-    border-color var(--motion-fast) ease;
+    box-shadow var(--motion-fast) ease;
 }
 
 .button:hover,
 .button:focus-visible {
   transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgb(31 64 112 / 17%);
 }
 
 .button-primary {
-  color: var(--white);
-  background: var(--blue);
-  border-color: var(--blue);
+  justify-content: space-between;
+  min-width: 220px;
+  padding-right: 9px;
+  color: #f8fbff;
+  background: #12213a;
 }
 
 .button-primary:hover,
 .button-primary:focus-visible {
-  background: var(--blue-dark);
+  background: #1a2d4b;
+}
+
+.button-arrow {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin-left: 10px;
+  color: var(--white);
+  background: var(--blue);
+  border-radius: 8px;
+  font-size: 18px;
+  line-height: 1;
 }
 
 .button-secondary {
   color: #35465e;
-  background: rgb(255 255 255 / 88%);
-  border-color: #c5d2e3;
+  background: rgb(240 244 249 / 94%);
 }
 
 .button-secondary:hover,
 .button-secondary:focus-visible {
-  background: var(--white);
-  border-color: #98b0ce;
+  background: #e2ebf6;
 }
 
-.github-dot {
-  display: grid;
-  place-items: center;
-  width: 19px;
-  height: 19px;
-  color: var(--white);
-  background: #45566e;
-  border-radius: 50%;
-  font: 700 7px/1 Consolas, monospace;
+.button-github-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
 }
 
 .crosshair {
@@ -227,22 +218,24 @@ html[data-theme="dark"] .map-wash {
     linear-gradient(180deg, rgb(14 22 34 / 88%) 0%, rgb(14 22 34 / 54%) 44%, rgb(14 22 34 / 92%) 100%);
 }
 
-html[data-theme="dark"] .eyebrow {
-  color: #8bb8ff;
-  background: rgb(23 54 99 / 78%);
-  border-color: #355b91;
-}
-
 html[data-theme="dark"] .button-secondary {
   color: #dce6f3;
   background: rgb(22 32 46 / 88%);
-  border-color: #40516a;
 }
 
 html[data-theme="dark"] .button-secondary:hover,
 html[data-theme="dark"] .button-secondary:focus-visible {
   background: #1c2a3d;
-  border-color: #5f789a;
+}
+
+html[data-theme="dark"] .button-primary {
+  color: #eef4fb;
+  background: #1b2a40;
+}
+
+html[data-theme="dark"] .button-primary:hover,
+html[data-theme="dark"] .button-primary:focus-visible {
+  background: #243750;
 }
 
 html[data-theme="dark"] .map-credit {
@@ -308,12 +301,8 @@ html[data-theme="dark"] .map-credit {
     padding-top: 28px;
   }
 
-  .eyebrow {
-    font-size: 9px;
-  }
-
   h1 {
-    font-size: clamp(48px, 13.8vw, 60px);
+    font-size: clamp(46px, 12.2vw, 54px);
   }
 
   .hero-intro br {
@@ -322,12 +311,20 @@ html[data-theme="dark"] .map-credit {
 
   .hero-actions {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) auto;
   }
 
   .button {
     min-width: 0;
     padding-inline: 13px;
+  }
+
+  .button-primary {
+    padding-right: 8px;
+  }
+
+  .button-arrow {
+    margin-left: 6px;
   }
 }
 
@@ -339,10 +336,6 @@ html[data-theme="dark"] .map-credit {
 
   h1 {
     font-size: clamp(42px, 6.1vw, 64px);
-  }
-
-  .eyebrow {
-    margin-bottom: 12px;
   }
 
   .hero-intro {
@@ -357,6 +350,11 @@ html[data-theme="dark"] .map-credit {
 
   .button {
     min-height: 38px;
+  }
+
+  .button-arrow {
+    width: 28px;
+    height: 28px;
   }
 
   .map-credit {

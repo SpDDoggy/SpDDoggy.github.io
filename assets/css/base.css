@@ -56,19 +56,6 @@ button {
   transform: translateY(0);
 }
 
-.grid-icon {
-  display: grid;
-  grid-template-columns: repeat(2, 4px);
-  gap: 2px;
-}
-
-.grid-icon i {
-  width: 4px;
-  height: 4px;
-  background: currentColor;
-  border-radius: 1px;
-}
-
 :focus-visible {
   outline: 3px solid rgb(23 104 242 / 34%);
   outline-offset: 3px;
