@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DvSpatial：面向真实地理空间工作流的独立桌面工具集合。">
+  <meta name="theme-color" content="#f8fafc">
+  <title>DvSpatial · 独立 GIS 工具</title>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://basemaps.cartocdn.com">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIINfQ3ynHTeDVSZhKjMZQzMZp8p3QfX8hA=" crossorigin="">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header" data-header>
+    <div class="shell nav-shell">
+      <a class="brand" href="#top" aria-label="DvSpatial 首页">
+        <span class="brand-mark" aria-hidden="true">
+          <i></i><i></i><i></i>
+        </span>
+        <span class="brand-name">Dv<span>Spatial</span></span>
+        <small>LAB</small>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="打开导航" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="主导航">
+        <a href="#products">产品矩阵</a>
+        <a href="#featured">GDB Previewer</a>
+        <a href="#principles">工作原则</a>
+        <a href="#about">关于</a>
+      </nav>
+
+      <a class="header-action" href="https://github.com/SpDDoggy" target="_blank" rel="noreferrer">
+        GitHub
+        <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="map-layer" aria-hidden="true">
+        <div id="hero-map"></div>
+        <div class="map-wash"></div>
+      </div>
+
+      <div class="shell hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span>INDEPENDENT SPATIAL TOOLS</p>
+          <h1 id="hero-title">探索空间数据的<br><em>更多可能。</em></h1>
+          <p class="hero-intro">DvSpatial 是一个独立 GIS 工具工作室。从地理数据库预览、ArcGIS Pro 工作流到三维地形呈现，让复杂能力进入清晰、可靠的桌面工具。</p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#products">浏览产品矩阵 <span aria-hidden="true">↓</span></a>
+            <a class="button button-secondary" href="#featured">查看 GDB Previewer</a>
+          </div>
+
+          <dl class="hero-meta">
+            <div><dt>工具</dt><dd>03</dd></div>
+            <div><dt>方向</dt><dd>Data · Workflow · Terrain</dd></div>
+            <div><dt>形态</dt><dd>Desktop</dd></div>
+          </dl>
+        </div>
+
+        <div class="hero-product">
+          <div class="product-label">
+            <span>FEATURED / 01</span>
+            <strong>GDB Previewer</strong>
+          </div>
+          <button class="product-window" type="button" data-preview="assets/products/gdb-previewer-app.png" aria-label="放大查看 GDB Previewer 界面">
+            <span class="window-bar">
+              <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span>GDB Previewer</span>
+              <b>V4</b>
+            </span>
+            <img src="assets/products/gdb-previewer-app.png" alt="GDB Previewer 主工作区，显示地理数据库图层树、地图和要素属性">
+          </button>
+          <div class="format-row" aria-label="支持的数据格式">
+            <span>FILE GDB</span><span>SHP</span><span>MDB</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured section" id="featured" aria-labelledby="featured-title">
+      <div class="shell">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="section-kicker">FEATURED TOOL · 01</p>
+            <h2 id="featured-title">先看清数据，<br>再决定下一步。</h2>
+          </div>
+          <div class="heading-copy">
+            <p>GDB Previewer 是 Windows 下的地理数据库预览与轻量编辑工具，直接打开 File Geodatabase、Shapefile 和 Personal Geodatabase。</p>
+            <div class="verified-tags"><span>Windows</span><span>V4</span><span>Desktop</span></div>
+          </div>
+        </div>
+
+        <div class="feature-panel">
+          <button class="feature-image" type="button" data-preview="assets/products/gdb-previewer-app.png" aria-label="放大查看 GDB Previewer 主界面">
+            <img src="assets/products/gdb-previewer-app.png" alt="GDB Previewer 多图层空间预览界面">
+            <span>查看真实界面 <b aria-hidden="true">↗</b></span>
+          </button>
+          <ol class="feature-list">
+            <li><b>01</b><span>直接打开 `.gdb`、`.shp` 与 `.mdb`</span></li>
+            <li><b>02</b><span>联动查看图层、空间图形与属性</span></li>
+            <li><b>03</b><span>轻量编辑、导出并刷新预览</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="products section" id="products" aria-labelledby="products-title">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="section-kicker">PRODUCT CONSTELLATION · 03</p>
+          <h2 id="products-title">从数据源，<br>走向完整空间场景。</h2>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="card-top"><span>01 / DATA</span><b>Windows</b></div>
+            <div class="card-media media-gdb">
+              <img src="assets/products/gdb-previewer-app.png" alt="">
+            </div>
+            <div class="card-copy">
+              <h3>GDB Previewer</h3>
+              <p>查看与轻量编辑地理数据库。</p>
+              <a href="#featured">查看介绍 <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="card-top"><span>02 / WORKFLOW</span><b>ArcGIS Pro</b></div>
+            <div class="workflow-graphic" aria-hidden="true">
+              <span class="flow-node flow-a">GOAL</span>
+              <span class="flow-node flow-b">PLAN</span>
+              <span class="flow-node flow-c">ACT</span>
+              <span class="flow-node flow-d">VERIFY</span>
+              <i class="flow-line line-a"></i>
+              <i class="flow-line line-b"></i>
+              <i class="flow-line line-c"></i>
+              <div class="flow-orbit"></div>
+            </div>
+            <div class="card-copy">
+              <h3>DvStudio</h3>
+              <p>ArcGIS Pro 内的专业工具与 GIS 工作流智能体。</p>
+              <span class="card-note">ArcGIS Pro Add-in</span>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="card-top"><span>03 / TERRAIN</span><b>Local-first</b></div>
+            <button class="card-media media-dem" type="button" data-preview="assets/products/dem-studio-app.png" aria-label="放大查看 DEM Studio 界面">
+              <img src="assets/products/dem-studio-app.png" alt="DEM Studio 三维地形工作区">
+              <span>查看真实界面 <b aria-hidden="true">↗</b></span>
+            </button>
+            <div class="card-copy">
+              <h3>DEM Studio</h3>
+              <p>本地优先的桌面地形可视化与 DEM 渲染工具。</p>
+              <a href="https://github.com/SpDDoggy/DemStudio" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="principles section" id="principles" aria-labelledby="principles-title">
+      <div class="shell principle-layout">
+        <div>
+          <p class="section-kicker">WORKING PRINCIPLES</p>
+          <h2 id="principles-title">工具不是演示，<br>结果必须落地。</h2>
+        </div>
+        <ol>
+          <li><b>01</b><div><h3>从真实工作流出发</h3><p>先处理真正发生的数据、操作和交付问题。</p></div></li>
+          <li><b>02</b><div><h3>保留专业语义</h3><p>界面可以更轻，GIS 的结构、约束和含义不能丢。</p></div></li>
+          <li><b>03</b><div><h3>让结果能够检查</h3><p>操作完成以后，仍然能够读取、验证和继续工作。</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="about section" id="about" aria-labelledby="about-title">
+      <div class="shell about-panel">
+        <p class="section-kicker">DVSPATIAL LAB</p>
+        <h2 id="about-title">持续做小而完整的<br>地理空间工具。</h2>
+        <a class="button button-dark" href="https://github.com/SpDDoggy" target="_blank" rel="noreferrer">访问 GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-layout">
+      <div class="brand footer-brand">
+        <span class="brand-name">Dv<span>Spatial</span></span><small>LAB</small>
+      </div>
+      <p>DATA · WORKFLOW · TERRAIN</p>
+      <p>© 2026 DvSpatial</p>
+    </div>
+  </footer>
+
+  <dialog class="preview-dialog" data-dialog>
+    <button class="dialog-close" type="button" data-dialog-close aria-label="关闭预览">×</button>
+    <img alt="产品界面大图预览" data-dialog-image>
+  </dialog>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="script.js"></script>
+</body>
+</html>
