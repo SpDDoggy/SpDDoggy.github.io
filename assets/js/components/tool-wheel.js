@@ -73,16 +73,34 @@ export const initializeToolWheel = (products) => {
     if (activeDescription) {
       activeDescription.textContent = activeProduct.description[language];
     }
-    if (activeLink && activeProduct.pageUrl) {
-      activeLink.setAttribute("href", activeProduct.pageUrl);
-      activeLink.setAttribute(
-        "aria-label",
-        language === "zh"
-          ? `访问 ${activeProduct.name} 专题页`
-          : `Visit the ${activeProduct.name} product page`
-      );
+    if (activeLink) {
+      const hasProductPage = Boolean(activeProduct.pageUrl);
+      activeLink.classList.toggle("is-disabled", !hasProductPage);
+      activeLink.setAttribute("aria-disabled", String(!hasProductPage));
+
+      if (hasProductPage) {
+        activeLink.setAttribute("href", activeProduct.pageUrl);
+        activeLink.setAttribute(
+          "aria-label",
+          language === "zh"
+            ? `访问 ${activeProduct.name} 专题页`
+            : `Visit the ${activeProduct.name} product page`
+        );
+      } else {
+        activeLink.removeAttribute("href");
+        activeLink.setAttribute(
+          "aria-label",
+          language === "zh"
+            ? `${activeProduct.name} 专题页准备中`
+            : `${activeProduct.name} product page is coming soon`
+        );
+      }
     }
-    if (visitLabel) visitLabel.textContent = language === "zh" ? "专题页" : "Product page";
+    if (visitLabel) {
+      visitLabel.textContent = activeProduct.pageUrl
+        ? (language === "zh" ? "专题页" : "Product page")
+        : (language === "zh" ? "准备中" : "Coming soon");
+    }
   };
 
   const segmentAngle = 360 / products.length;

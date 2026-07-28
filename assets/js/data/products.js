@@ -7,7 +7,7 @@ export const products = Object.freeze([
       en: "ArcGIS Pro toolkit"
     }),
     icon: "layers",
-    pageUrl: "products/dvstudio/",
+    pageUrl: null,
     downloadUrl: null
   },
   {

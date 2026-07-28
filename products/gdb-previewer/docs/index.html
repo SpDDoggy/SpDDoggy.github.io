@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GDB Previewer 使用文档：安装、打开数据、空间预览、编辑与导出。">
+  <meta name="theme-color" content="#f8fbff">
+  <title>使用文档 · GDB Previewer</title>
+  <script src="../../../assets/js/components/theme-boot.js?v=20260728-5"></script>
+  <link rel="icon" href="../../../assets/images/brand/favicon.svg?v=20260728-5" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../assets/css/site.css?v=20260728-5">
+  <link rel="stylesheet" href="../../../assets/css/pages/gdb-previewer.css?v=20260728-5">
+</head>
+<body class="gdb-product-page">
+  <header class="product-site-header">
+    <div class="shell product-header-layout">
+      <a class="brand" href="../../../" aria-label="DvSpatial 首页"><strong><span>Dv</span>Spatial</strong></a>
+      <nav class="product-nav" aria-label="GDB Previewer 导航">
+        <a href="../">概览</a>
+        <a class="is-active" href="./" aria-current="page">使用文档</a>
+        <a href="../changelog/">更新日志</a>
+      </nav>
+      <a class="product-home-link" href="../../../">返回首页</a>
+    </div>
+  </header>
+
+  <main class="document-main">
+    <section class="document-hero">
+      <div class="shell">
+        <p class="gdb-kicker"><span></span> DOCUMENTATION</p>
+        <h1>使用文档</h1>
+        <p>从安装到导出，快速完成一次完整的数据查看流程。</p>
+      </div>
+    </section>
+
+    <div class="shell document-layout">
+      <aside class="document-rail" aria-label="文档目录">
+        <span>本页目录</span>
+        <a href="#install">01 安装</a>
+        <a href="#open-data">02 打开数据</a>
+        <a href="#preview">03 空间预览</a>
+        <a href="#edit-export">04 编辑与导出</a>
+      </aside>
+
+      <article class="document-content">
+        <section id="install">
+          <span class="doc-index">01</span>
+          <h2>安装</h2>
+          <p>GDB Previewer V4 面向 64 位 Windows。运行安装程序后，应用默认安装到系统程序目录，并可建立受支持格式的文件关联。</p>
+          <div class="doc-callout"><strong>建议</strong><span>首次安装使用管理员权限运行；升级前先关闭正在运行的 GDB Previewer。</span></div>
+          <ol>
+            <li>运行 GDB Previewer 安装程序。</li>
+            <li>按向导完成安装，默认位置为 <code>%ProgramFiles%\GDBPreviewer</code>。</li>
+            <li>从开始菜单启动，或直接打开已关联的数据文件。</li>
+          </ol>
+        </section>
+
+        <section id="open-data">
+          <span class="doc-index">02</span>
+          <h2>打开数据</h2>
+          <p>在欢迎页选择数据源，或把受支持的文件拖入窗口。文件地理数据库应选择以 <code>.gdb</code> 结尾的文件夹。</p>
+          <div class="format-table">
+            <div><b>FileGDB</b><code>.gdb</code><span>图层、属性、空间预览与编辑</span></div>
+            <div><b>Shapefile</b><code>.shp</code><span>几何与属性联合查看</span></div>
+            <div><b>Personal GDB</b><code>.mdb</code><span>无需 Access、ACE 或 ODBC，当前只读</span></div>
+          </div>
+        </section>
+
+        <section id="preview">
+          <span class="doc-index">03</span>
+          <h2>空间预览</h2>
+          <p>勾选图层后进入地图视图。地图与属性表保持联动，可从图形定位记录，也可从记录定位要素。</p>
+          <ul>
+            <li>滚轮缩放，拖动平移，并可一键缩放至图层范围。</li>
+            <li>单击地图要素查看属性；表格支持搜索与排序。</li>
+            <li>样式库根据渲染依据匹配可用样式，避免不兼容套用。</li>
+          </ul>
+        </section>
+
+        <section id="edit-export">
+          <span class="doc-index">04</span>
+          <h2>编辑与导出</h2>
+          <p>可编辑数据会在保存前保留待提交状态。字段输入按类型校验；退出或切换数据时，会提示处理尚未保存的更改。</p>
+          <div class="doc-split">
+            <div><strong>编辑</strong><span>修改属性值、撤销待提交更改并显式保存。MDB 数据保持只读。</span></div>
+            <div><strong>导出</strong><span>导出 CSV、SHP 或新的 GDB；根节点可将完整数据另存为 GDB。</span></div>
+          </div>
+          <a class="doc-next-link" href="../changelog/">下一步：查看更新日志 <span>→</span></a>
+        </section>
+      </article>
+    </div>
+  </main>
+</body>
+</html>

@@ -162,6 +162,31 @@
   transform: translate(-50%, -50%) scale(1.025);
 }
 
+.wheel-center.is-disabled {
+  cursor: default;
+}
+
+.wheel-center.is-disabled:hover,
+.wheel-center.is-disabled:focus-visible {
+  color: #27415f;
+  border-color: #8ea9cf;
+  box-shadow:
+    0 0 0 7px rgb(255 255 255 / 66%),
+    0 0 0 8px rgb(147 171 207 / 45%),
+    inset 0 0 20px rgb(67 115 185 / 5%);
+  transform: translate(-50%, -50%);
+}
+
+.wheel-center.is-disabled .visit-action {
+  color: #71839c;
+  background: #eef2f7;
+  border-color: #cad5e3;
+}
+
+.wheel-center.is-disabled .visit-action svg {
+  display: none;
+}
+
 body.is-product-leaving .wheel-center {
   color: var(--blue);
   border-color: var(--blue);
@@ -311,6 +336,22 @@ html[data-theme="dark"] .wheel-center:focus-visible {
     0 0 0 9px rgb(65 126 226 / 32%),
     0 14px 34px rgb(0 0 0 / 34%),
     inset 0 0 22px rgb(89 128 185 / 10%);
+}
+
+html[data-theme="dark"] .wheel-center.is-disabled:hover,
+html[data-theme="dark"] .wheel-center.is-disabled:focus-visible {
+  color: #dce7f5;
+  border-color: #587093;
+  box-shadow:
+    0 0 0 7px rgb(14 22 34 / 72%),
+    0 0 0 8px rgb(72 94 126 / 70%),
+    inset 0 0 20px rgb(89 128 185 / 8%);
+}
+
+html[data-theme="dark"] .wheel-center.is-disabled .visit-action {
+  color: #91a2ba;
+  background: #1b2a40;
+  border-color: #3d506d;
 }
 
 html[data-theme="dark"] body.is-product-leaving .wheel-center {

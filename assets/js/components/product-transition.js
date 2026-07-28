@@ -28,6 +28,7 @@ export const initializeProductTransition = () => {
       || !isPlainPrimaryClick(event)
       || productLink.target === "_blank"
       || productLink.hasAttribute("download")
+      || productLink.getAttribute("aria-disabled") === "true"
       || prefersReducedMotion
       || document.body.classList.contains("is-product-leaving")
     ) {
