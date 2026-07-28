@@ -1,0 +1,95 @@
+.download-page {
+  height: auto;
+  min-height: 100%;
+  overflow-y: auto;
+}
+
+.download-back {
+  padding: 9px 14px;
+  color: #35465e;
+  background: rgb(240 244 249 / 94%);
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.download-main {
+  min-height: calc(100dvh - var(--header-height));
+  padding: clamp(70px, 11vh, 120px) 0;
+  background:
+    radial-gradient(circle at 72% 22%, rgb(23 104 242 / 10%), transparent 34%),
+    #f8fbff;
+}
+
+.download-layout {
+  max-width: 900px;
+}
+
+.download-layout > header p {
+  margin: 0 0 16px;
+  color: var(--blue);
+  font: 700 11px/1 Consolas, "Cascadia Mono", monospace;
+  letter-spacing: .12em;
+}
+
+.download-layout h1 {
+  font-size: clamp(54px, 8vw, 92px);
+}
+
+.download-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 54px;
+}
+
+.download-list article {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 26px;
+  background: rgb(255 255 255 / 78%);
+  border: 1px solid #d6e0ed;
+  border-radius: 14px;
+  box-shadow: 0 14px 32px rgb(31 64 112 / 7%);
+}
+
+.download-list h2,
+.download-list p {
+  margin: 0;
+}
+
+.download-list h2 {
+  color: var(--ink);
+  font-size: 19px;
+}
+
+.download-list p {
+  margin-top: 6px;
+  color: var(--text);
+  font-size: 13px;
+}
+
+.download-list article > span {
+  flex: 0 0 auto;
+  padding: 7px 10px;
+  color: #617590;
+  background: #eef3f8;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+@media (max-width: 680px) {
+  .download-main {
+    padding-block: 58px;
+  }
+
+  .download-list {
+    margin-top: 38px;
+  }
+
+  .download-list article {
+    padding: 20px;
+  }
+}
