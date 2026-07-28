@@ -1,0 +1,69 @@
+.product-page {
+  height: auto;
+  min-height: 100%;
+  overflow-y: auto;
+}
+
+.product-back {
+  padding: 9px 14px;
+  color: #35465e;
+  background: rgb(240 244 249);
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.product-main {
+  min-height: calc(100dvh - var(--header-height));
+  padding: clamp(76px, 13vh, 132px) 0;
+  background:
+    radial-gradient(circle at 70% 28%, rgb(23 104 242 / 12%), transparent 32%),
+    linear-gradient(135deg, #fbfdff, #f2f7fd);
+}
+
+.product-layout {
+  max-width: 920px;
+}
+
+.product-kicker {
+  margin: 0 0 18px;
+  color: var(--blue);
+  font: 700 11px/1 Consolas, "Cascadia Mono", monospace;
+  letter-spacing: .12em;
+}
+
+.product-layout h1 {
+  font-size: clamp(54px, 8vw, 92px);
+}
+
+.product-lead {
+  max-width: 680px;
+  margin: 28px 0 0;
+  color: var(--text);
+  font-size: clamp(17px, 2vw, 22px);
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+.product-actions {
+  margin-top: 38px;
+}
+
+.product-actions a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 18px;
+  color: #f8fbff;
+  background: #12213a;
+  border-radius: 11px;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 10px 24px rgb(31 64 112 / 12%);
+}
+
+@media (max-width: 680px) {
+  .product-main {
+    padding-block: 64px;
+  }
+}

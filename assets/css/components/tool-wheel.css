@@ -143,6 +143,23 @@
     inset 0 0 20px rgb(67 115 185 / 5%);
   transform: translate(-50%, -50%);
   backdrop-filter: blur(8px);
+  transition:
+    color var(--motion-fast) ease,
+    border-color var(--motion-fast) ease,
+    box-shadow var(--motion-fast) ease,
+    transform var(--motion-fast) ease;
+}
+
+.wheel-center:hover,
+.wheel-center:focus-visible {
+  color: #0d55d1;
+  border-color: var(--blue);
+  box-shadow:
+    0 0 0 7px rgb(255 255 255 / 72%),
+    0 0 0 9px rgb(23 104 242 / 24%),
+    0 14px 34px rgb(23 104 242 / 18%),
+    inset 0 0 22px rgb(67 115 185 / 7%);
+  transform: translate(-50%, -50%) scale(1.025);
 }
 
 .wheel-center h2 {
@@ -159,33 +176,34 @@
   text-align: center;
 }
 
-.active-badge {
+.visit-action {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  padding: 3px 6px;
-  color: #00aeb9;
-  background: #ebfdff;
-  border: 1px solid #8ee2e8;
-  border-radius: 4px;
-  font: 600 clamp(7px, .7vw, 9px)/1 Consolas, monospace;
+  gap: 5px;
+  padding: 5px 8px;
+  color: #0d55d1;
+  background: #e8f1ff;
+  border: 1px solid #a8c8fb;
+  border-radius: 999px;
+  font: 700 clamp(7px, .7vw, 9px)/1 Consolas, "Cascadia Mono", monospace;
+  transition: color var(--motion-fast) ease, background var(--motion-fast) ease;
 }
 
-.active-badge i {
-  width: 4px;
-  height: 4px;
-  background: #13c9d4;
-  border-radius: 50%;
+.visit-action svg {
+  width: clamp(11px, 1vw, 14px);
+  height: clamp(11px, 1vw, 14px);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.wheel-center button {
-  margin-top: 6px;
-  padding: 0;
-  color: #244a7d;
-  background: transparent;
-  border: 0;
-  font-size: clamp(15px, 1.6vw, 22px);
-  line-height: 1;
+.wheel-center:hover .visit-action,
+.wheel-center:focus-visible .visit-action {
+  color: var(--white);
+  background: var(--blue);
+  border-color: var(--blue);
 }
 
 .compass-label {
@@ -272,6 +290,17 @@ html[data-theme="dark"] .wheel-center {
     0 0 0 7px rgb(14 22 34 / 72%),
     0 0 0 8px rgb(72 94 126 / 70%),
     inset 0 0 20px rgb(89 128 185 / 8%);
+}
+
+html[data-theme="dark"] .wheel-center:hover,
+html[data-theme="dark"] .wheel-center:focus-visible {
+  color: #8db7ff;
+  border-color: #6a9df2;
+  box-shadow:
+    0 0 0 7px rgb(14 22 34 / 72%),
+    0 0 0 9px rgb(65 126 226 / 32%),
+    0 14px 34px rgb(0 0 0 / 34%),
+    inset 0 0 22px rgb(89 128 185 / 10%);
 }
 
 html[data-theme="dark"] .wheel-center p,

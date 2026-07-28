@@ -6,8 +6,8 @@
   <meta name="description" content="David 的 GIS 软件、ArcGIS Pro 工具与空间智能实践入口。">
   <meta name="theme-color" content="#f8fbff">
   <title>DvSpatial · GIS 工具入口</title>
-  <link rel="icon" href="assets/images/brand/favicon.svg?v=20260728-2" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/css/site.css?v=20260728-2">
+  <link rel="icon" href="assets/images/brand/favicon.svg?v=20260728-3" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/site.css?v=20260728-3">
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="skipLink">跳到主要内容</a>
@@ -46,7 +46,7 @@
 
   <main class="landing" id="main">
     <div class="map-layer" aria-hidden="true">
-      <img id="hero-map" src="assets/images/spatial/shanghai-light-unlabeled-2560x1440.jpg?v=20260728-2"
+      <img id="hero-map" src="assets/images/spatial/shanghai-light-unlabeled-2560x1440.jpg?v=20260728-3"
            width="2560" height="1440" alt="" fetchpriority="high" decoding="async">
       <div class="map-wash"></div>
     </div>
@@ -62,7 +62,13 @@
         <div class="hero-actions">
           <a class="button button-primary" href="downloads/">
             <span data-i18n="downloadSpace">下载空间</span>
-            <span class="button-arrow" aria-hidden="true">↓</span>
+            <span class="button-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 3v11"></path>
+                <path d="m8 10 4 4 4-4"></path>
+                <path d="M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"></path>
+              </svg>
+            </span>
           </a>
         </div>
       </section>
@@ -80,12 +86,18 @@
           </svg>
           <div class="segment-controls" data-segment-controls></div>
 
-          <div class="wheel-center" aria-live="polite">
+          <a class="wheel-center" href="products/dvstudio/" data-active-link
+             aria-label="访问 DvStudio 专题页" aria-live="polite">
             <h2 data-active-name>DvStudio</h2>
             <p data-active-description>ArcGIS Pro Add-in</p>
-            <span class="active-badge"><i></i><span data-i18n="active">Active</span></span>
-            <button type="button" data-cycle="next" aria-label="下一个产品" data-i18n-aria="nextProductAction">→</button>
-          </div>
+            <span class="visit-action">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 16 16 8"></path>
+                <path d="M10 8h6v6"></path>
+              </svg>
+              <span data-visit-label>专题页</span>
+            </span>
+          </a>
         </div>
       </section>
     </div>
@@ -96,6 +108,6 @@
     </p>
   </main>
 
-  <script type="module" src="assets/js/pages/home.js?v=20260728-2"></script>
+  <script type="module" src="assets/js/pages/home.js?v=20260728-3"></script>
 </body>
 </html>

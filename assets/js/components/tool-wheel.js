@@ -45,6 +45,8 @@ export const initializeToolWheel = (products) => {
   const segmentControls = document.querySelector("[data-segment-controls]");
   const activeName = document.querySelector("[data-active-name]");
   const activeDescription = document.querySelector("[data-active-description]");
+  const activeLink = document.querySelector("[data-active-link]");
+  const visitLabel = document.querySelector("[data-visit-label]");
 
   if (!wheel || !pathGroup || !segmentControls || products.length < 2) return;
 
@@ -71,6 +73,16 @@ export const initializeToolWheel = (products) => {
     if (activeDescription) {
       activeDescription.textContent = activeProduct.description[language];
     }
+    if (activeLink && activeProduct.pageUrl) {
+      activeLink.setAttribute("href", activeProduct.pageUrl);
+      activeLink.setAttribute(
+        "aria-label",
+        language === "zh"
+          ? `访问 ${activeProduct.name} 专题页`
+          : `Visit the ${activeProduct.name} product page`
+      );
+    }
+    if (visitLabel) visitLabel.textContent = language === "zh" ? "专题页" : "Product page";
   };
 
   const segmentAngle = 360 / products.length;

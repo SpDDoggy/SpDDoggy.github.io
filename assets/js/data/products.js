@@ -7,7 +7,7 @@ export const products = Object.freeze([
       en: "ArcGIS Pro toolkit"
     }),
     icon: "layers",
-    pageUrl: null,
+    pageUrl: "products/dvstudio/",
     downloadUrl: null
   },
   {
@@ -18,7 +18,7 @@ export const products = Object.freeze([
       en: "Inspect GDB · SHP · MDB"
     }),
     icon: "database",
-    pageUrl: null,
+    pageUrl: "products/gdb-previewer/",
     downloadUrl: null
   }
 ]);
