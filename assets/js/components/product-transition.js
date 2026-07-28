@@ -12,15 +12,15 @@ const clearTransitionState = () => {
 };
 
 export const initializeProductTransition = () => {
-  const productLink = document.querySelector("[data-active-link]");
+  const productLinks = [...document.querySelectorAll("[data-product-link]")];
 
-  if (!productLink) {
+  if (!productLinks.length) {
     return;
   }
 
   window.addEventListener("pageshow", clearTransitionState);
 
-  productLink.addEventListener("click", (event) => {
+  productLinks.forEach((productLink) => productLink.addEventListener("click", (event) => {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (
@@ -71,5 +71,5 @@ export const initializeProductTransition = () => {
     window.setTimeout(() => {
       window.location.assign(destination);
     }, 480);
-  });
+  }));
 };

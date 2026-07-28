@@ -1,10 +1,19 @@
-const sectionLinks = [...document.querySelectorAll(".release-toc a[href^='#']")];
-const observedSections = sectionLinks
-  .map((link) => document.querySelector(link.getAttribute("href")))
-  .filter(Boolean);
+const versionControls = [...document.querySelectorAll("[data-version-target]")];
+const releasePanels = [...document.querySelectorAll("[data-release-panel]")];
+const tocTitle = document.querySelector("[data-release-toc-title]");
+const tocLinks = document.querySelector("[data-release-toc-links]");
+let sectionObserver = null;
+
+const versionLabels = Object.freeze({
+  v4: "V4.0.0",
+  v3: "V3.0.0",
+  v2: "V2.0.0",
+  v1: "V1"
+});
 
 const setCurrentSection = (sectionId) => {
-  sectionLinks.forEach((link) => {
+  if (!tocLinks) return;
+  [...tocLinks.querySelectorAll("a")].forEach((link) => {
     const isCurrent = link.getAttribute("href") === `#${sectionId}`;
     link.classList.toggle("is-current", isCurrent);
     if (isCurrent) {
@@ -15,29 +24,64 @@ const setCurrentSection = (sectionId) => {
   });
 };
 
-if (observedSections.length) {
-  const initialSection = window.location.hash.slice(1);
-  setCurrentSection(
-    observedSections.some((section) => section.id === initialSection)
-      ? initialSection
-      : observedSections[0].id
-  );
+const rebuildToc = (panel, versionKey) => {
+  if (!tocLinks || !tocTitle) return;
 
-  const sectionObserver = new IntersectionObserver(
+  const sections = [...panel.querySelectorAll("[data-toc-label]")];
+  tocTitle.textContent = `在 ${versionLabels[versionKey]} 中`;
+  tocLinks.replaceChildren();
+
+  sections.forEach((section) => {
+    const link = document.createElement("a");
+    link.href = `#${section.id}`;
+    link.textContent = section.dataset.tocLabel;
+    tocLinks.append(link);
+  });
+
+  sectionObserver?.disconnect();
+  if (!sections.length) return;
+
+  setCurrentSection(sections[0].id);
+  sectionObserver = new IntersectionObserver(
     (entries) => {
       const visibleEntry = entries
         .filter((entry) => entry.isIntersecting)
         .sort((left, right) => left.boundingClientRect.top - right.boundingClientRect.top)[0];
-
-      if (visibleEntry) {
-        setCurrentSection(visibleEntry.target.id);
-      }
+      if (visibleEntry) setCurrentSection(visibleEntry.target.id);
     },
-    {
-      rootMargin: "-18% 0px -68% 0px",
-      threshold: 0
-    }
+    { rootMargin: "-18% 0px -68% 0px", threshold: 0 }
   );
+  sections.forEach((section) => sectionObserver.observe(section));
+};
 
-  observedSections.forEach((section) => sectionObserver.observe(section));
-}
+const selectVersion = (versionKey, updateUrl = true) => {
+  const activePanel = releasePanels.find((panel) => panel.dataset.releasePanel === versionKey);
+  if (!activePanel) return;
+
+  versionControls.forEach((control) => {
+    const isActive = control.dataset.versionTarget === versionKey;
+    control.classList.toggle("version-active", isActive);
+    control.setAttribute("aria-pressed", String(isActive));
+    const marker = control.querySelector("span");
+    if (marker) marker.textContent = isActive ? "⌄" : "›";
+  });
+
+  releasePanels.forEach((panel) => {
+    panel.hidden = panel !== activePanel;
+  });
+  rebuildToc(activePanel, versionKey);
+
+  if (updateUrl) {
+    const nextUrl = new URL(window.location.href);
+    nextUrl.searchParams.set("version", versionKey);
+    nextUrl.hash = "";
+    window.history.replaceState(null, "", nextUrl);
+  }
+};
+
+versionControls.forEach((control) => {
+  control.addEventListener("click", () => selectVersion(control.dataset.versionTarget));
+});
+
+const requestedVersion = new URL(window.location.href).searchParams.get("version");
+selectVersion(versionLabels[requestedVersion] ? requestedVersion : "v4", false);

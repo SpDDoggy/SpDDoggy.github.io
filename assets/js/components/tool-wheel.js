@@ -44,9 +44,6 @@ export const initializeToolWheel = (products) => {
   const pathGroup = document.querySelector("[data-segment-paths]");
   const segmentControls = document.querySelector("[data-segment-controls]");
   const activeName = document.querySelector("[data-active-name]");
-  const activeDescription = document.querySelector("[data-active-description]");
-  const activeLink = document.querySelector("[data-active-link]");
-  const visitLabel = document.querySelector("[data-visit-label]");
 
   if (!wheel || !pathGroup || !segmentControls || products.length < 2) return;
 
@@ -62,45 +59,19 @@ export const initializeToolWheel = (products) => {
     selectors.forEach((selector, selectorIndex) => {
       const isActive = selectorIndex === selectedIndex;
       selector.classList.toggle("is-active", isActive);
-      selector.setAttribute("aria-pressed", String(isActive));
+      if (selector instanceof HTMLButtonElement) {
+        selector.setAttribute("aria-pressed", String(isActive));
+      } else if (isActive) {
+        selector.setAttribute("aria-current", "true");
+      } else {
+        selector.removeAttribute("aria-current");
+      }
     });
     segmentPaths.forEach((path, pathIndex) => {
       path.classList.toggle("is-active", pathIndex === selectedIndex);
     });
 
-    const language = document.documentElement.lang.startsWith("zh") ? "zh" : "en";
     if (activeName) activeName.textContent = activeProduct.name;
-    if (activeDescription) {
-      activeDescription.textContent = activeProduct.description[language];
-    }
-    if (activeLink) {
-      const hasProductPage = Boolean(activeProduct.pageUrl);
-      activeLink.classList.toggle("is-disabled", !hasProductPage);
-      activeLink.setAttribute("aria-disabled", String(!hasProductPage));
-
-      if (hasProductPage) {
-        activeLink.setAttribute("href", activeProduct.pageUrl);
-        activeLink.setAttribute(
-          "aria-label",
-          language === "zh"
-            ? `访问 ${activeProduct.name} 专题页`
-            : `Visit the ${activeProduct.name} product page`
-        );
-      } else {
-        activeLink.removeAttribute("href");
-        activeLink.setAttribute(
-          "aria-label",
-          language === "zh"
-            ? `${activeProduct.name} 专题页准备中`
-            : `${activeProduct.name} product page is coming soon`
-        );
-      }
-    }
-    if (visitLabel) {
-      visitLabel.textContent = activeProduct.pageUrl
-        ? (language === "zh" ? "专题页" : "Product page")
-        : (language === "zh" ? "准备中" : "Coming soon");
-    }
   };
 
   const segmentAngle = 360 / products.length;
@@ -123,20 +94,28 @@ export const initializeToolWheel = (products) => {
     path.setAttribute("d", ringSegmentPath(startAngle, endAngle));
     pathGroup.append(path);
 
-    const button = document.createElement("button");
-    button.className = "tool-sector";
-    button.type = "button";
-    button.dataset.tool = String(index);
-    button.setAttribute("aria-label", product.name);
-    button.setAttribute("aria-pressed", "false");
-    button.style.left = `${labelPoint.x}%`;
-    button.style.top = `${labelPoint.y}%`;
-    button.innerHTML = iconMarkup[product.icon] ?? `<span class="tool-monogram" aria-hidden="true"></span>`;
+    const control = document.createElement(product.pageUrl ? "a" : "button");
+    control.className = "tool-sector";
+    control.dataset.tool = String(index);
+    control.setAttribute("aria-label", product.name);
+    control.style.left = `${labelPoint.x}%`;
+    control.style.top = `${labelPoint.y}%`;
+    control.innerHTML = iconMarkup[product.icon] ?? `<span class="tool-monogram" aria-hidden="true"></span>`;
+
+    if (control instanceof HTMLAnchorElement) {
+      control.href = product.pageUrl;
+      control.dataset.productLink = "";
+    } else {
+      control.type = "button";
+      control.setAttribute("aria-pressed", "false");
+    }
 
     const label = document.createElement("span");
     label.textContent = product.name;
-    button.append(label);
-    segmentControls.append(button);
+    control.append(label);
+    control.addEventListener("pointerenter", () => selectProduct(index));
+    control.addEventListener("focus", () => selectProduct(index));
+    segmentControls.append(control);
   });
 
   selectors = [...segmentControls.querySelectorAll("[data-tool]")];
@@ -156,10 +135,6 @@ export const initializeToolWheel = (products) => {
 
     const direction = cycleButton.getAttribute("data-cycle");
     selectProduct(selectedIndex + (direction === "previous" ? -1 : 1));
-  });
-
-  document.addEventListener("dvspatial:languagechange", () => {
-    selectProduct(selectedIndex);
   });
 
   selectProduct(0);

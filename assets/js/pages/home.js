@@ -1,7 +1,7 @@
-import { products } from "../data/products.js?v=20260728-5";
-import { initializeDisplayPreferences } from "../components/display-preferences.js?v=20260728-5";
-import { initializeProductTransition } from "../components/product-transition.js?v=20260728-5";
-import { initializeToolWheel } from "../components/tool-wheel.js?v=20260728-5";
+import { products } from "../data/products.js?v=20260729-1";
+import { initializeDisplayPreferences } from "../components/display-preferences.js?v=20260729-1";
+import { initializeProductTransition } from "../components/product-transition.js?v=20260729-1";
+import { initializeToolWheel } from "../components/tool-wheel.js?v=20260729-1";
 
 initializeDisplayPreferences();
 initializeToolWheel(products);
