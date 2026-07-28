@@ -10,22 +10,6 @@ const iconMarkup = {
       <ellipse cx="16" cy="7" rx="9" ry="4"></ellipse>
       <path d="M7 7v7c0 2.2 4 4 9 4s9-1.8 9-4V7"></path>
       <path d="M7 14v7c0 2.2 4 4 9 4s9-1.8 9-4v-7"></path>
-    </svg>`,
-  agent: `
-    <svg viewBox="0 0 32 32" aria-hidden="true">
-      <rect x="7" y="10" width="18" height="14" rx="4"></rect>
-      <path d="M16 5v5M12 23v4M20 23v4"></path>
-      <circle cx="12" cy="16" r="1"></circle>
-      <circle cx="20" cy="16" r="1"></circle>
-    </svg>`,
-  terrain: `
-    <svg viewBox="0 0 32 32" aria-hidden="true">
-      <path d="m4 24 8-13 4 6 3-4 9 11H4Z"></path>
-      <path d="m9 20 3-3 3 3 3-2 5 6"></path>
-    </svg>`,
-  tools: `
-    <svg viewBox="0 0 32 32" aria-hidden="true">
-      <path d="M21 5a8 8 0 0 0-9 10L5 22l5 5 7-7a8 8 0 0 0 10-9l-5 5-5-1-1-5 5-5Z"></path>
     </svg>`
 };
 
@@ -61,8 +45,6 @@ export const initializeToolWheel = (products) => {
   const segmentControls = document.querySelector("[data-segment-controls]");
   const activeName = document.querySelector("[data-active-name]");
   const activeDescription = document.querySelector("[data-active-description]");
-  const currentIndex = document.querySelector("[data-current-index]");
-  const totalCount = document.querySelector("[data-total-count]");
 
   if (!wheel || !pathGroup || !segmentControls || products.length < 2) return;
 
@@ -85,15 +67,16 @@ export const initializeToolWheel = (products) => {
     });
 
     if (activeName) activeName.textContent = activeProduct.name;
-    if (activeDescription) activeDescription.textContent = activeProduct.description;
-    if (currentIndex) currentIndex.textContent = String(selectedIndex + 1).padStart(2, "0");
-    window.scrollTo(0, 0);
+    if (activeDescription) {
+      const language = document.documentElement.lang.startsWith("zh") ? "zh" : "en";
+      activeDescription.textContent = activeProduct.description[language];
+    }
   };
 
   const segmentAngle = 360 / products.length;
   const gapAngle = Math.min(1.8, 7 / products.length);
-  const labelRadius = products.length <= 5 ? 36 : 37;
-  const labelWidth = products.length <= 4 ? 31 : products.length <= 5 ? 26 : products.length <= 6 ? 23 : 19;
+  const labelRadius = products.length === 2 ? 34 : products.length <= 5 ? 36 : 37;
+  const labelWidth = products.length === 2 ? 44 : products.length <= 4 ? 31 : products.length <= 5 ? 26 : products.length <= 6 ? 23 : 19;
 
   wheel.style.setProperty("--segment-count", String(products.length));
   wheel.style.setProperty("--tool-label-width", `${labelWidth}%`);
@@ -128,7 +111,6 @@ export const initializeToolWheel = (products) => {
 
   selectors = [...segmentControls.querySelectorAll("[data-tool]")];
   segmentPaths = [...pathGroup.querySelectorAll(".segment-path")];
-  if (totalCount) totalCount.textContent = `/ ${String(products.length).padStart(2, "0")}`;
 
   document.addEventListener("click", (event) => {
     if (!(event.target instanceof Element)) return;
@@ -146,6 +128,9 @@ export const initializeToolWheel = (products) => {
     selectProduct(selectedIndex + (direction === "previous" ? -1 : 1));
   });
 
+  document.addEventListener("dvspatial:languagechange", () => {
+    selectProduct(selectedIndex);
+  });
+
   selectProduct(0);
 };
-

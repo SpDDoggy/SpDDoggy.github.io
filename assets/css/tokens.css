@@ -15,6 +15,15 @@
   color-scheme: light;
 }
 
+html[data-theme="dark"] {
+  --ink: #edf2f8;
+  --text: #aab8ca;
+  --muted: #748399;
+  --line: #354760;
+  --blue-soft: #172d50;
+  color-scheme: dark;
+}
+
 @media (max-width: 900px) {
   :root {
     --wheel-size: min(42vw, 76dvh, 430px);
@@ -35,4 +44,3 @@
     --wheel-size: min(38vw, 62dvh, 300px);
   }
 }
-

@@ -1,50 +1,52 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="David 的 GIS 软件、ArcGIS Pro 工具与空间智能实践入口。">
   <meta name="theme-color" content="#f8fbff">
   <title>DvSpatial · GIS 工具入口</title>
-  <link rel="preconnect" href="https://unpkg.com">
-  <link rel="preconnect" href="https://basemaps.cartocdn.com">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIINfQ3ynHTeDVSZhKjMZQzMZp8p3QfX8hA=" crossorigin="">
   <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">跳到主要内容</a>
+  <a class="skip-link" href="#main" data-i18n="skipLink">跳到主要内容</a>
 
   <header class="site-header">
     <div class="shell header-layout">
       <a class="brand" href="./" aria-label="DvSpatial 首页">
-        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
-        <span class="brand-copy">
-          <strong>DvSpatial</strong>
-          <small>INDEPENDENT GIS SOFTWARE</small>
-        </span>
+        <strong><span>Dv</span>Spatial</strong>
       </a>
 
-      <nav class="site-nav" id="site-nav" aria-label="主导航">
-        <a href="#tool-wheel"><i aria-hidden="true">◇</i> Products</a>
-        <a href="https://github.com/SpDDoggy/DemStudio" target="_blank" rel="noreferrer"><i aria-hidden="true">▱</i> DEM Studio</a>
-        <a href="https://github.com/SpDDoggy" target="_blank" rel="noreferrer"><i aria-hidden="true">GH</i> GitHub</a>
-      </nav>
-
-      <button class="header-cta" type="button" data-cycle="next">
-        <span class="grid-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-        浏览产品
-      </button>
-
-      <button class="menu-toggle" type="button" aria-label="打开导航" aria-expanded="false" aria-controls="site-nav">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="header-controls" aria-label="站点工具" data-i18n-aria="siteTools">
+        <button class="utility-control language-control" type="button" data-language-toggle aria-label="Switch to English">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="8"></circle>
+            <path d="M4 12h16M12 4c2.2 2.2 3.3 4.9 3.3 8S14.2 17.8 12 20M12 4C9.8 6.2 8.7 8.9 8.7 12S9.8 17.8 12 20"></path>
+          </svg>
+          <span data-language-label>CN</span>
+        </button>
+        <button class="utility-control" type="button" data-theme-toggle aria-label="切换深色模式" aria-pressed="false">
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M19 15.2A8.1 8.1 0 0 1 8.8 5 8.1 8.1 0 1 0 19 15.2Z"></path>
+          </svg>
+          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+        </button>
+        <a class="utility-control" href="https://github.com/SpDDoggy" target="_blank" rel="noreferrer" aria-label="GitHub">
+          <svg class="github-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2.7a9.4 9.4 0 0 0-3 18.3c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 0 1.6 1 1.6 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.7-1.4-2.3-.3-4.7-1.1-4.7-5a3.9 3.9 0 0 1 1-2.7 3.6 3.6 0 0 1 .1-2.7s.8-.3 2.8 1a9.5 9.5 0 0 1 5 0c2-1.3 2.8-1 2.8-1a3.6 3.6 0 0 1 .1 2.7 3.9 3.9 0 0 1 1 2.7c0 3.9-2.4 4.7-4.7 5 .4.3.7 1 .7 1.9v2.7c0 .3.2.6.7.5A9.4 9.4 0 0 0 12 2.7Z"></path>
+          </svg>
+        </a>
+      </div>
     </div>
   </header>
 
   <main class="landing" id="main">
     <div class="map-layer" aria-hidden="true">
-      <div id="hero-map"></div>
+      <img id="hero-map" src="assets/images/spatial/shanghai-light-2560x1440.jpg"
+           width="2560" height="1440" alt="" fetchpriority="high" decoding="async">
       <div class="map-wash"></div>
     </div>
 
@@ -53,14 +55,14 @@
 
     <div class="shell hero-layout">
       <section class="hero-copy" aria-labelledby="hero-title">
-        <p class="eyebrow"><span aria-hidden="true">✧</span> DAVID'S GEOSPATIAL TOOLSET</p>
-        <h1 id="hero-title">Tools for<br><em>spatial work.</em></h1>
-        <p class="hero-intro">由 David 独立设计和维护的 GIS 软件、<br>ArcGIS Pro 工具与空间智能实践。</p>
+        <p class="eyebrow"><span aria-hidden="true">✧</span><span data-i18n="eyebrow">DAVID 的空间工具集</span></p>
+        <h1 id="hero-title"><span data-i18n="titleLead">专为空间</span><br><em data-i18n="titleAccent">工作而生。</em></h1>
+        <p class="hero-intro" data-i18n="intro">由 David 独立设计和维护的 GIS 软件、ArcGIS Pro 工具与空间智能实践。</p>
 
         <div class="hero-actions">
           <button class="button button-primary" type="button" data-cycle="next">
             <span class="grid-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-            浏览全部产品
+            <span data-i18n="nextProduct">切换产品</span>
           </button>
           <a class="button button-secondary" href="https://github.com/SpDDoggy" target="_blank" rel="noreferrer">
             <span class="github-dot" aria-hidden="true">GH</span>
@@ -69,7 +71,7 @@
         </div>
       </section>
 
-      <section class="tool-navigator" aria-label="产品导航">
+      <section class="tool-navigator" aria-label="产品导航" data-i18n-aria="productNavigation">
         <div class="compass-label compass-north" aria-hidden="true"><b>0°</b><span>N</span></div>
         <div class="compass-label compass-east" aria-hidden="true"><b>90°</b><span>E</span></div>
         <div class="compass-label compass-south" aria-hidden="true"><b>180°</b><span>S</span></div>
@@ -85,15 +87,14 @@
           <div class="wheel-center" aria-live="polite">
             <h2 data-active-name>DvStudio</h2>
             <p data-active-description>ArcGIS Pro Add-in</p>
-            <span class="active-badge"><i></i> Active</span>
-            <button type="button" data-cycle="next" aria-label="下一个产品">→</button>
+            <span class="active-badge"><i></i><span data-i18n="active">Active</span></span>
+            <button type="button" data-cycle="next" aria-label="下一个产品" data-i18n-aria="nextProductAction">→</button>
           </div>
         </div>
 
         <div class="navigator-controls">
-          <button type="button" data-cycle="previous" aria-label="上一个产品">‹</button>
-          <p><strong data-current-index>01</strong><span data-total-count>/ 00</span></p>
-          <button type="button" data-cycle="next" aria-label="下一个产品">›</button>
+          <button type="button" data-cycle="previous" aria-label="上一个产品" data-i18n-aria="previousProductAction">‹</button>
+          <button type="button" data-cycle="next" aria-label="下一个产品" data-i18n-aria="nextProductAction">›</button>
         </div>
       </section>
     </div>
@@ -104,9 +105,6 @@
     </p>
   </main>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script type="module" src="assets/js/pages/home.js"></script>
 </body>
 </html>
-

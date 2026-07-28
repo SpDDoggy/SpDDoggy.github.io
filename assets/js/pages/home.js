@@ -1,9 +1,6 @@
 import { products } from "../data/products.js";
-import { initializeMobileNav } from "../components/mobile-nav.js";
-import { initializeSpatialMap } from "../components/spatial-map.js";
+import { initializeDisplayPreferences } from "../components/display-preferences.js";
 import { initializeToolWheel } from "../components/tool-wheel.js";
 
+initializeDisplayPreferences();
 initializeToolWheel(products);
-initializeSpatialMap();
-initializeMobileNav();
-

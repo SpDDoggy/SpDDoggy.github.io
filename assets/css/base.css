@@ -17,6 +17,7 @@ body {
   background: #f8fbff;
   font-family: "Segoe UI", "Microsoft YaHei UI", "PingFang SC", sans-serif;
   -webkit-font-smoothing: antialiased;
+  transition: color var(--motion-medium) ease, background var(--motion-medium) ease;
 }
 
 button,
@@ -73,6 +74,10 @@ button {
   outline-offset: 3px;
 }
 
+html[data-theme="dark"] body {
+  background: #0e1622;
+}
+
 @media (max-width: 680px) {
   body {
     height: auto;
@@ -88,4 +93,3 @@ button {
     transition-duration: .01ms !important;
   }
 }
-

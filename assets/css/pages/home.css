@@ -20,21 +20,21 @@
 }
 
 #hero-map {
-  filter: grayscale(.38) saturate(.44) contrast(.84);
-  opacity: .3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(.16) saturate(.68) contrast(.96);
+  opacity: .52;
 }
 
 .map-wash {
   z-index: 500;
   background:
-    radial-gradient(circle at 31% 47%, rgb(255 255 255 / 24%), transparent 31%),
-    linear-gradient(90deg, rgb(251 253 255 / 55%), rgb(248 251 255 / 15%) 54%, rgb(250 252 255 / 48%)),
-    linear-gradient(180deg, rgb(255 255 255 / 26%), rgb(248 251 255 / 8%) 55%, rgb(255 255 255 / 44%));
+    radial-gradient(circle at 31% 47%, rgb(255 255 255 / 12%), transparent 34%),
+    linear-gradient(90deg, rgb(251 253 255 / 30%), rgb(248 251 255 / 5%) 54%, rgb(250 252 255 / 24%)),
+    linear-gradient(180deg, rgb(255 255 255 / 12%), rgb(248 251 255 / 2%) 58%, rgb(255 255 255 / 20%));
   pointer-events: none;
-}
-
-.leaflet-container {
-  background: #edf3f8 !important;
 }
 
 .hero-layout {
@@ -211,6 +211,44 @@ h1 em {
   color: var(--blue);
 }
 
+html[data-theme="dark"] .map-layer {
+  background: #101a27;
+}
+
+html[data-theme="dark"] #hero-map {
+  filter: grayscale(.92) saturate(.42) contrast(.78) brightness(.62);
+  opacity: .2;
+}
+
+html[data-theme="dark"] .map-wash {
+  background:
+    radial-gradient(circle at 31% 47%, rgb(14 22 34 / 22%), transparent 34%),
+    linear-gradient(90deg, rgb(14 22 34 / 94%) 0%, rgb(14 22 34 / 76%) 48%, rgb(14 22 34 / 68%) 100%),
+    linear-gradient(180deg, rgb(14 22 34 / 88%) 0%, rgb(14 22 34 / 54%) 44%, rgb(14 22 34 / 92%) 100%);
+}
+
+html[data-theme="dark"] .eyebrow {
+  color: #8bb8ff;
+  background: rgb(23 54 99 / 78%);
+  border-color: #355b91;
+}
+
+html[data-theme="dark"] .button-secondary {
+  color: #dce6f3;
+  background: rgb(22 32 46 / 88%);
+  border-color: #40516a;
+}
+
+html[data-theme="dark"] .button-secondary:hover,
+html[data-theme="dark"] .button-secondary:focus-visible {
+  background: #1c2a3d;
+  border-color: #5f789a;
+}
+
+html[data-theme="dark"] .map-credit {
+  color: #718198;
+}
+
 @media (max-width: 900px) {
   .hero-layout {
     grid-template-columns: minmax(270px, .82fr) minmax(350px, 1.18fr);
@@ -320,5 +358,10 @@ h1 em {
   .button {
     min-height: 38px;
   }
-}
 
+  .map-credit {
+    top: 4px;
+    bottom: auto;
+    left: 6px;
+  }
+}
