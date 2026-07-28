@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN" data-theme="light">
+<html class="gdb-page-root" lang="zh-CN" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +9,7 @@
   <script src="../../assets/js/components/theme-boot.js?v=20260728-5"></script>
   <link rel="icon" href="../../assets/images/brand/favicon.svg?v=20260728-5" type="image/svg+xml">
   <link rel="stylesheet" href="../../assets/css/site.css?v=20260728-5">
-  <link rel="stylesheet" href="../../assets/css/pages/gdb-previewer.css?v=20260728-5">
+  <link rel="stylesheet" href="../../assets/css/pages/gdb-previewer.css?v=20260728-6">
 </head>
 <body class="gdb-product-page">
   <header class="product-site-header">
@@ -57,6 +57,41 @@
       </div>
     </section>
 
+    <section class="format-section" aria-labelledby="format-title">
+      <div class="shell">
+        <div class="section-heading section-heading-split">
+          <div>
+            <p>OPEN DIRECTLY</p>
+            <h2 id="format-title">三种数据，一套入口。</h2>
+          </div>
+          <p class="section-intro">从文件、文件夹、最近项目或拖放进入同一套查看流程。</p>
+        </div>
+        <div class="format-showcase">
+          <article>
+            <span class="format-extension">.gdb</span>
+            <div>
+              <h3>File Geodatabase</h3>
+              <p>直接打开数据库文件夹，浏览图层、属性、空间预览并进行支持范围内的编辑。</p>
+            </div>
+          </article>
+          <article>
+            <span class="format-extension">.shp</span>
+            <div>
+              <h3>Esri Shapefile</h3>
+              <p>联合查看几何与属性，并可将结果输出为新的 Shapefile 或文件地理数据库。</p>
+            </div>
+          </article>
+          <article>
+            <span class="format-extension">.mdb</span>
+            <div>
+              <h3>Personal Geodatabase</h3>
+              <p>使用内置 Jet4 读取器打开，无需额外安装 Access、ACE 或 ODBC 组件。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="capability-section" aria-labelledby="capability-title">
       <div class="shell">
         <div class="section-heading">
@@ -67,18 +102,84 @@
           <article>
             <span class="capability-index">01</span>
             <h3>直接预览</h3>
-            <p>打开 GDB 文件夹、SHP 或 MDB，立即浏览图层、地图与属性表。</p>
+            <p>勾选图层后立即进入地图，图形、属性表和选中状态保持联动。</p>
           </article>
           <article>
             <span class="capability-index">02</span>
             <h3>轻量编辑</h3>
-            <p>搜索、排序并修改字段值，保存前保留清晰的待提交状态。</p>
+            <p>按字段类型校验输入，保存前保留待提交状态，并支持撤销写回。</p>
           </article>
           <article>
             <span class="capability-index">03</span>
             <h3>完整导出</h3>
-            <p>将表格或空间数据导出为 CSV、SHP，或写入新的文件地理数据库。</p>
+            <p>导出属性表 CSV、单个要素 SHP，或将数据源另存为新的 GDB。</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="workflow-section" aria-labelledby="workflow-title">
+      <div class="shell workflow-layout">
+        <div class="workflow-sticky">
+          <p class="gdb-kicker"><span></span> ONE FLOW</p>
+          <h2 id="workflow-title">把空间数据工作，收进四步。</h2>
+          <p>不改变数据结构，也不把浏览、编辑与导出混在同一个动作里。</p>
+        </div>
+        <ol class="workflow-list">
+          <li>
+            <span>01</span>
+            <div><h3>打开数据源</h3><p>选择 GDB 文件夹、SHP 或 MDB，也可以通过文件关联和拖放直接进入。</p></div>
+          </li>
+          <li>
+            <span>02</span>
+            <div><h3>检查目录与属性</h3><p>从树状目录定位图层，在属性表中搜索、排序并查看字段内容。</p></div>
+          </li>
+          <li>
+            <span>03</span>
+            <div><h3>预览与编辑</h3><p>在地图中缩放、平移、点选要素；可编辑数据在保存前明确展示待提交状态。</p></div>
+          </li>
+          <li>
+            <span>04</span>
+            <div><h3>导出所需结果</h3><p>根据当前目标输出 CSV、SHP 或新建 GDB，保留清晰的结果边界。</p></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="feature-focus" aria-labelledby="feature-focus-title">
+      <div class="shell feature-focus-grid">
+        <div class="feature-focus-copy">
+          <p class="gdb-kicker"><span></span> NEW IN V4</p>
+          <h2 id="feature-focus-title">预览是预览，<br>布局是布局。</h2>
+          <p>空间预览与布局图纸分成独立页面。浏览工具留在地图，纸张、标题、图例、比例尺和指北针进入专用布局工作区。</p>
+          <ul>
+            <li>A4 / A3 与横向 / 纵向版面</li>
+            <li>地图框、标题、图例、比例尺与指北针</li>
+            <li>整页 PNG 导出与布局状态自动保存</li>
+          </ul>
+          <a href="changelog/#layout">查看本次更新 <span>→</span></a>
+        </div>
+        <figure class="feature-focus-preview">
+          <img src="../../assets/images/products/gdb-previewer-app.png?v=20260728-5" alt="GDB Previewer 空间预览界面">
+          <figcaption><b>SPACE PREVIEW</b><span>数据浏览与地图检查</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="guardrail-section" aria-labelledby="guardrail-title">
+      <div class="shell">
+        <div class="section-heading section-heading-split">
+          <div>
+            <p>SAFE BY DESIGN</p>
+            <h2 id="guardrail-title">轻量，不等于省略边界。</h2>
+          </div>
+          <p class="section-intro">关键动作保持显式，让你知道正在查看、修改还是生成新结果。</p>
+        </div>
+        <div class="guardrail-grid">
+          <article><span>字段校验</span><p>编辑值按字段类型验证，问题在写回之前出现。</p></article>
+          <article><span>显式保存</span><p>未保存更改保持可见，关闭或切换数据时明确确认。</p></article>
+          <article><span>事务恢复</span><p>汇集过程区分写入、核验与提交，避免进度完成但结果尚未落盘。</p></article>
+          <article><span>只读边界</span><p>Personal GDB 当前保持只读，查看能力不会伪装成可编辑能力。</p></article>
         </div>
       </div>
     </section>
@@ -112,6 +213,19 @@
             </span>
             <b aria-hidden="true">↗</b>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-cta" aria-labelledby="product-cta-title">
+      <div class="shell product-cta-inner">
+        <div>
+          <p>GDB PREVIEWER · V4</p>
+          <h2 id="product-cta-title">准备好查看下一份数据。</h2>
+        </div>
+        <div>
+          <a href="docs/">阅读使用文档</a>
+          <a href="../../downloads/">进入下载空间</a>
         </div>
       </div>
     </section>
