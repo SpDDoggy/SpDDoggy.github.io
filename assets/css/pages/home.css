@@ -7,6 +7,67 @@
   isolation: isolate;
 }
 
+.site-header,
+.landing {
+  transition:
+    opacity 300ms cubic-bezier(.22, 1, .36, 1),
+    filter 300ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.product-transition-portal {
+  position: fixed;
+  z-index: 1200;
+  top: var(--portal-y);
+  left: var(--portal-x);
+  width: var(--portal-size);
+  height: var(--portal-size);
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 44% 38%, #fff 0 20%, #f3f7ff 46%, #dce9ff 76%, #b9d2ff 100%);
+  border: 1px solid rgb(23 104 242 / 38%);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 8px rgb(255 255 255 / 45%),
+    0 18px 54px rgb(23 104 242 / 20%);
+  opacity: .35;
+  transform: translate(-50%, -50%) scale(.88);
+  transform-origin: center;
+  transition:
+    transform 460ms cubic-bezier(.76, 0, .24, 1),
+    opacity 160ms ease;
+  will-change: transform;
+}
+
+.product-transition-portal::before,
+.product-transition-portal::after {
+  position: absolute;
+  inset: 13%;
+  content: "";
+  border: 1px solid rgb(23 104 242 / 24%);
+  border-radius: inherit;
+}
+
+.product-transition-portal::after {
+  inset: 29%;
+  background: rgb(255 255 255 / 35%);
+  border-color: rgb(23 104 242 / 16%);
+}
+
+.product-transition-portal.is-active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(var(--portal-scale));
+}
+
+body.is-product-leaving {
+  pointer-events: none;
+}
+
+body.is-product-leaving .site-header,
+body.is-product-leaving .landing {
+  filter: blur(3px);
+  opacity: .16;
+}
+
 .map-layer,
 #hero-map,
 .map-wash {
@@ -223,6 +284,15 @@ html[data-theme="dark"] .map-credit {
   color: #718198;
 }
 
+html[data-theme="dark"] .product-transition-portal {
+  background:
+    radial-gradient(circle at 44% 38%, #182a45 0 20%, #14243b 48%, #10213b 76%, #1768f2 100%);
+  border-color: rgb(106 157 242 / 56%);
+  box-shadow:
+    0 0 0 8px rgb(14 22 34 / 48%),
+    0 18px 54px rgb(0 0 0 / 34%);
+}
+
 @media (max-width: 900px) {
   .hero-layout {
     grid-template-columns: minmax(270px, .82fr) minmax(350px, 1.18fr);
@@ -341,5 +411,11 @@ html[data-theme="dark"] .map-credit {
     top: 4px;
     bottom: auto;
     left: 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-transition-portal {
+    display: none;
   }
 }

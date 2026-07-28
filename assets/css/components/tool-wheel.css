@@ -162,6 +162,16 @@
   transform: translate(-50%, -50%) scale(1.025);
 }
 
+body.is-product-leaving .wheel-center {
+  color: var(--blue);
+  border-color: var(--blue);
+  box-shadow:
+    0 0 0 10px rgb(255 255 255 / 78%),
+    0 0 0 12px rgb(23 104 242 / 28%),
+    0 20px 48px rgb(23 104 242 / 24%);
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
 .wheel-center h2 {
   margin: 0;
   font: 700 clamp(12px, 1.4vw, 18px)/1.2 Consolas, "Cascadia Mono", monospace;
@@ -301,6 +311,15 @@ html[data-theme="dark"] .wheel-center:focus-visible {
     0 0 0 9px rgb(65 126 226 / 32%),
     0 14px 34px rgb(0 0 0 / 34%),
     inset 0 0 22px rgb(89 128 185 / 10%);
+}
+
+html[data-theme="dark"] body.is-product-leaving .wheel-center {
+  color: #8db7ff;
+  border-color: #6a9df2;
+  box-shadow:
+    0 0 0 10px rgb(14 22 34 / 76%),
+    0 0 0 12px rgb(65 126 226 / 36%),
+    0 20px 48px rgb(0 0 0 / 38%);
 }
 
 html[data-theme="dark"] .wheel-center p,
