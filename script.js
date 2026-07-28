@@ -1,11 +1,22 @@
 (() => {
-  const menuButton = document.querySelector(".menu-toggle");
-  const navigation = document.querySelector("#site-nav");
+  const toolCatalog = [
+    { name: "DvStudio", description: "ArcGIS Pro Add-in" },
+    { name: "GDB Previewer", description: "GDB · SHP · MDB" },
+    { name: "GeoAgent", description: "GIS workflow agent" },
+    { name: "DvTools", description: "ArcGIS Pro tools" }
+  ];
+
+  const wheel = document.querySelector(".wheel");
+  const selectors = [...document.querySelectorAll("[data-tool]")];
+  const activeName = document.querySelector("[data-active-name]");
+  const activeDescription = document.querySelector("[data-active-description]");
+  const currentIndex = document.querySelector("[data-current-index]");
+  let selectedIndex = 0;
 
   if (window.L) {
     const map = L.map("hero-map", {
       center: [31.2304, 121.4737],
-      zoom: 10,
+      zoom: 11,
       zoomControl: false,
       attributionControl: false,
       dragging: false,
@@ -23,17 +34,38 @@
     }).addTo(map);
   }
 
-  menuButton?.addEventListener("click", () => {
-    const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-    menuButton.setAttribute("aria-expanded", String(!isOpen));
-    menuButton.setAttribute("aria-label", isOpen ? "打开导航" : "关闭导航");
-    navigation?.classList.toggle("is-open", !isOpen);
-  });
+  const selectTool = (index) => {
+    selectedIndex = (index + toolCatalog.length) % toolCatalog.length;
+    const activeTool = toolCatalog[selectedIndex];
 
-  navigation?.addEventListener("click", (event) => {
-    if (!(event.target instanceof Element) || !event.target.closest("a")) return;
-    navigation.classList.remove("is-open");
-    menuButton?.setAttribute("aria-expanded", "false");
-    menuButton?.setAttribute("aria-label", "打开导航");
+    wheel?.style.setProperty("--active-index", String(selectedIndex));
+    wheel?.setAttribute("data-active", String(selectedIndex));
+
+    selectors.forEach((selector, selectorIndex) => {
+      const isActive = selectorIndex === selectedIndex;
+      selector.classList.toggle("is-active", isActive);
+      selector.setAttribute("aria-pressed", String(isActive));
+    });
+
+    if (activeName) activeName.textContent = activeTool.name;
+    if (activeDescription) activeDescription.textContent = activeTool.description;
+    if (currentIndex) currentIndex.textContent = String(selectedIndex + 1).padStart(2, "0");
+    window.scrollTo(0, 0);
+  };
+
+  document.addEventListener("click", (event) => {
+    if (!(event.target instanceof Element)) return;
+
+    const selector = event.target.closest("[data-tool]");
+    if (selector) {
+      selectTool(Number(selector.getAttribute("data-tool")));
+      return;
+    }
+
+    const button = event.target.closest("[data-cycle]");
+    if (button) {
+      const direction = button.getAttribute("data-cycle");
+      selectTool(selectedIndex + (direction === "previous" ? -1 : 1));
+    }
   });
 })();
