@@ -1,10 +1,6 @@
 (() => {
   const menuButton = document.querySelector(".menu-toggle");
   const navigation = document.querySelector("#site-nav");
-  const dialog = document.querySelector("[data-dialog]");
-  const dialogImage = document.querySelector("[data-dialog-image]");
-  const dialogClose = document.querySelector("[data-dialog-close]");
-  const previewButtons = document.querySelectorAll("[data-preview]");
 
   if (window.L) {
     const map = L.map("hero-map", {
@@ -35,24 +31,9 @@
   });
 
   navigation?.addEventListener("click", (event) => {
-    if (!(event.target instanceof HTMLAnchorElement)) return;
+    if (!(event.target instanceof Element) || !event.target.closest("a")) return;
     navigation.classList.remove("is-open");
     menuButton?.setAttribute("aria-expanded", "false");
     menuButton?.setAttribute("aria-label", "打开导航");
-  });
-
-  previewButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const source = button.getAttribute("data-preview");
-      if (!source || !dialog || !dialogImage) return;
-      dialogImage.src = source;
-      dialog.showModal();
-    });
-  });
-
-  dialogClose?.addEventListener("click", () => dialog?.close());
-
-  dialog?.addEventListener("click", (event) => {
-    if (event.target === dialog) dialog.close();
   });
 })();
