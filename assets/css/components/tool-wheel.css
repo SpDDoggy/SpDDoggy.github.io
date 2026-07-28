@@ -1,0 +1,342 @@
+.tool-navigator {
+  position: relative;
+  justify-self: center;
+  width: calc(var(--wheel-size) + 92px);
+  height: calc(var(--wheel-size) + 74px);
+}
+
+.wheel {
+  position: absolute;
+  top: 22px;
+  left: 46px;
+  width: var(--wheel-size);
+  height: var(--wheel-size);
+  border-radius: 50%;
+  filter: drop-shadow(0 18px 34px rgb(46 78 124 / 10%));
+}
+
+.tick-ring {
+  position: absolute;
+  z-index: -1;
+  inset: -15px;
+  background: repeating-conic-gradient(from -1deg, #8ba7d2 0 .6deg, transparent .6deg 4deg);
+  border-radius: 50%;
+  opacity: .72;
+  -webkit-mask: radial-gradient(transparent 0 87%, #000 87.4% 89%, transparent 89.4%);
+  mask: radial-gradient(transparent 0 87%, #000 87.4% 89%, transparent 89.4%);
+}
+
+.segment-layer {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+  width: 100%;
+  height: 100%;
+  background: rgb(248 251 255 / 76%);
+  border: 1px solid #8ba9d5;
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 35px rgb(91 133 195 / 7%),
+    0 0 0 7px rgb(255 255 255 / 40%);
+  backdrop-filter: blur(4px);
+}
+
+.segment-path {
+  fill: rgb(248 251 255 / 28%);
+  stroke: #9cb4d5;
+  stroke-width: .28;
+  vector-effect: non-scaling-stroke;
+  transition:
+    fill var(--motion-medium) ease,
+    stroke var(--motion-medium) ease,
+    filter var(--motion-medium) ease;
+}
+
+.segment-path.is-active {
+  fill: rgb(141 185 255 / 34%);
+  stroke: var(--blue);
+  stroke-width: .46;
+  filter: drop-shadow(0 4px 7px rgb(29 104 242 / 12%));
+}
+
+.segment-controls {
+  position: absolute;
+  inset: 0;
+}
+
+.tool-sector {
+  position: absolute;
+  z-index: 4;
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  width: var(--tool-label-width, 27%);
+  padding: 7px;
+  color: #243c61;
+  background: transparent;
+  border: 0;
+  border-radius: 12px;
+  font-size: clamp(10px, 1vw, 13px);
+  transform: translate(-50%, -50%);
+  transition: color 180ms ease, scale 180ms ease;
+}
+
+.tool-sector:hover,
+.tool-sector:focus-visible {
+  color: var(--blue);
+  scale: 1.04;
+}
+
+.tool-sector.is-active {
+  color: #0d55d1;
+}
+
+.tool-sector svg {
+  width: clamp(27px, 3vw, 42px);
+  height: clamp(27px, 3vw, 42px);
+  overflow: visible;
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 1.3;
+}
+
+.tool-sector svg path,
+.tool-sector svg rect,
+.tool-sector svg ellipse,
+.tool-sector svg circle,
+.tool-sector svg line,
+.tool-sector svg polyline {
+  vector-effect: non-scaling-stroke;
+}
+
+.tool-sector .tool-monogram {
+  display: grid;
+  place-items: center;
+  width: clamp(27px, 3vw, 42px);
+  height: clamp(27px, 3vw, 42px);
+  color: currentColor;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font: 700 clamp(8px, .8vw, 11px)/1 Consolas, monospace;
+}
+
+.wheel-center {
+  position: absolute;
+  z-index: 6;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  width: 32%;
+  aspect-ratio: 1;
+  padding: 8px;
+  color: #27415f;
+  background: rgb(252 254 255 / 93%);
+  border: 1px solid #8ea9cf;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 7px rgb(255 255 255 / 66%),
+    0 0 0 8px rgb(147 171 207 / 45%),
+    inset 0 0 20px rgb(67 115 185 / 5%);
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(8px);
+}
+
+.wheel-center h2 {
+  margin: 0;
+  font: 700 clamp(12px, 1.4vw, 18px)/1.2 Consolas, "Cascadia Mono", monospace;
+}
+
+.wheel-center p {
+  min-height: 2.6em;
+  margin: 5px 0 3px;
+  color: #6780a5;
+  font-size: clamp(8px, .8vw, 11px);
+  line-height: 1.3;
+  text-align: center;
+}
+
+.active-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 6px;
+  color: #00aeb9;
+  background: #ebfdff;
+  border: 1px solid #8ee2e8;
+  border-radius: 4px;
+  font: 600 clamp(7px, .7vw, 9px)/1 Consolas, monospace;
+}
+
+.active-badge i {
+  width: 4px;
+  height: 4px;
+  background: #13c9d4;
+  border-radius: 50%;
+}
+
+.wheel-center button {
+  margin-top: 6px;
+  padding: 0;
+  color: #244a7d;
+  background: transparent;
+  border: 0;
+  font-size: clamp(15px, 1.6vw, 22px);
+  line-height: 1;
+}
+
+.compass-label {
+  position: absolute;
+  z-index: 5;
+  display: grid;
+  color: #5f7799;
+  font: 600 8px/1.1 Consolas, monospace;
+  text-align: center;
+}
+
+.compass-label b,
+.compass-label span {
+  font: inherit;
+}
+
+.compass-north {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.compass-east {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.compass-south {
+  bottom: 42px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.compass-west {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.navigator-controls {
+  position: absolute;
+  right: 4px;
+  bottom: 0;
+  left: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navigator-controls button {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  color: #476184;
+  background: rgb(255 255 255 / 68%);
+  border: 1px solid rgb(188 205 227 / 74%);
+  border-radius: 7px;
+  box-shadow: 0 5px 14px rgb(38 68 109 / 8%);
+  font-size: 24px;
+  line-height: 1;
+  backdrop-filter: blur(8px);
+  transition:
+    color var(--motion-fast) ease,
+    border-color var(--motion-fast) ease,
+    transform var(--motion-fast) ease;
+}
+
+.navigator-controls button:hover,
+.navigator-controls button:focus-visible {
+  color: var(--blue);
+  border-color: #8eb5f4;
+  transform: translateY(-1px);
+}
+
+.navigator-controls p {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  margin: 0;
+  font: 600 12px/1 Consolas, monospace;
+}
+
+.navigator-controls strong {
+  color: var(--blue);
+  font-size: 15px;
+}
+
+.navigator-controls span {
+  color: #778aa6;
+}
+
+@media (max-width: 900px) {
+  .tool-navigator {
+    width: calc(var(--wheel-size) + 70px);
+    height: calc(var(--wheel-size) + 66px);
+  }
+
+  .wheel {
+    left: 35px;
+  }
+}
+
+@media (max-width: 680px) {
+  .tool-navigator {
+    width: 100%;
+    max-width: calc(var(--wheel-size) + 70px);
+    height: calc(var(--wheel-size) + 70px);
+    margin-inline: auto;
+  }
+
+  .wheel {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .compass-east {
+    right: 0;
+  }
+
+  .compass-west {
+    left: 0;
+  }
+}
+
+@media (max-width: 430px) {
+  .tool-sector {
+    font-size: 10px;
+  }
+}
+
+@media (max-height: 520px) and (min-width: 681px) {
+  .tool-navigator {
+    height: calc(var(--wheel-size) + 54px);
+  }
+
+  .wheel {
+    top: 14px;
+  }
+
+  .compass-south {
+    bottom: 32px;
+  }
+
+  .navigator-controls button {
+    width: 29px;
+    height: 29px;
+  }
+
+  .navigator-controls {
+    bottom: 8px;
+  }
+}
+
