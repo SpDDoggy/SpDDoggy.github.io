@@ -147,19 +147,15 @@
 
 .download-workbench {
   min-height: min(570px, calc(100dvh - var(--header-height) - 224px));
-  overflow: hidden;
-  background: rgb(255 255 255 / 76%);
-  border: 1px solid rgb(174 196 226 / 82%);
-  border-radius: 16px;
-  box-shadow:
-    0 30px 72px rgb(37 70 116 / 14%),
-    inset 0 1px 0 rgb(255 255 255 / 90%);
-  backdrop-filter: blur(20px);
+  overflow: visible;
+  background: transparent;
+  border-block: 1px solid rgb(159 187 223 / 52%);
 }
 
 .product-panel {
   display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
+  grid-template-columns: 188px minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 56px);
   min-height: inherit;
 }
 
@@ -175,22 +171,21 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
-  padding: 30px 22px 24px;
-  color: var(--white);
-  background:
-    linear-gradient(180deg, rgb(13 29 53 / 98%), rgb(16 37 68 / 96%)),
-    var(--ink);
+  padding: 34px 30px 28px 0;
+  color: var(--ink);
+  background: transparent;
+  border-right: 1px solid rgb(159 187 223 / 52%);
 }
 
 .version-rail header span {
-  color: #86adf4;
+  color: var(--blue);
   font: 700 10px/1 Consolas, "Cascadia Mono", monospace;
   letter-spacing: .14em;
 }
 
 .version-rail h2 {
   margin: 10px 0 0;
-  color: var(--white);
+  color: var(--ink);
   font-size: 32px;
   letter-spacing: -.06em;
 }
@@ -206,13 +201,13 @@
   display: grid;
   grid-template-columns: 30px minmax(0, 1fr) auto;
   align-items: center;
-  min-height: 52px;
-  padding: 0 12px;
-  color: #9fb0c8;
+  min-height: 54px;
+  padding: 0;
+  color: #6d7f96;
   text-align: left;
   background: transparent;
   border: 0;
-  border-radius: 8px;
+  border-radius: 0;
   cursor: pointer;
   transition:
     color 160ms ease,
@@ -222,19 +217,20 @@
 
 .version-option::after {
   position: absolute;
-  width: 3px;
-  height: 0;
-  right: -22px;
+  width: 0;
+  height: 2px;
+  right: 0;
+  bottom: 0;
   background: rgb(198 90 54);
-  border-radius: 3px 0 0 3px;
+  border-radius: 2px;
   content: "";
-  transition: height 200ms cubic-bezier(.22, 1, .36, 1);
+  transition: width 200ms cubic-bezier(.22, 1, .36, 1);
 }
 
 .version-option:hover,
 .version-option:focus-visible {
-  color: var(--white);
-  background: rgb(255 255 255 / 7%);
+  color: var(--ink);
+  background: transparent;
   outline: none;
 }
 
@@ -243,27 +239,28 @@
 }
 
 .version-option.is-active {
-  color: var(--white);
-  background: rgb(255 255 255 / 11%);
+  color: var(--ink);
+  background: transparent;
 }
 
 .version-option.is-active::after {
-  height: 28px;
+  width: 46px;
+  height: 2px;
 }
 
 .version-option span {
-  color: #6f88aa;
+  color: #91a2b8;
   font: 700 10px/1 Consolas, "Cascadia Mono", monospace;
 }
 
 .version-option b {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .version-option small {
   padding: 4px 6px;
-  color: #9ac0ff;
-  background: rgb(23 104 242 / 18%);
+  color: var(--blue);
+  background: rgb(23 104 242 / 9%);
   border-radius: 5px;
   font-size: 9px;
   font-weight: 700;
@@ -272,16 +269,16 @@
 .version-empty {
   margin-top: 34px;
   padding: 18px 12px;
-  color: #8fa2bb;
-  border: 1px dashed #38516f;
-  border-radius: 8px;
+  color: #7f91a8;
+  border-top: 1px solid rgb(159 187 223 / 52%);
+  border-radius: 0;
   font-size: 11px;
   font-weight: 700;
 }
 
 .version-meter {
   display: grid;
-  grid-template-columns: 28px 1fr;
+  grid-template-columns: 36px 1fr;
   gap: 5px;
   margin-top: auto;
 }
@@ -297,16 +294,14 @@
 }
 
 .version-meter i {
-  background: #38516f;
+  background: #c8d7e9;
 }
 
 .release-stage {
   position: relative;
   min-width: 0;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 82% 22%, rgb(255 255 255 / 82%), transparent 25%),
-    linear-gradient(135deg, #edf5ff 0%, #dbeaff 100%);
+  overflow: visible;
+  background: transparent;
 }
 
 .release-view {
@@ -316,8 +311,8 @@
   align-content: center;
   align-items: end;
   min-height: 100%;
-  padding: clamp(46px, 6vw, 76px);
-  overflow: hidden;
+  padding: clamp(46px, 6vw, 72px) clamp(10px, 2vw, 26px) clamp(46px, 6vw, 72px) 0;
+  overflow: visible;
 }
 
 .release-view[hidden] {
@@ -332,9 +327,9 @@
   position: absolute;
   width: 168px;
   height: 168px;
-  right: 64px;
-  top: 54px;
-  border: 1px solid rgb(23 104 242 / 22%);
+  right: 44px;
+  top: 58px;
+  border: 1px solid rgb(23 104 242 / 15%);
   border-radius: 50%;
   box-shadow:
     0 0 0 22px rgb(23 104 242 / 4%),
@@ -344,9 +339,9 @@
 
 .release-watermark {
   position: absolute;
-  right: -18px;
-  top: -54px;
-  color: rgb(23 104 242 / 8%);
+  right: -4px;
+  top: -42px;
+  color: rgb(23 104 242 / 6%);
   font: 800 clamp(190px, 24vw, 330px)/1 "Arial Black", sans-serif;
   letter-spacing: -.12em;
   user-select: none;
@@ -481,15 +476,31 @@ html[data-theme="dark"] .product-tab.is-active {
 }
 
 html[data-theme="dark"] .download-workbench {
-  background: rgb(18 29 43 / 88%);
-  border-color: #2c405b;
-  box-shadow: 0 30px 72px rgb(0 0 0 / 26%);
+  background: transparent;
+  border-color: #30445e;
 }
 
 html[data-theme="dark"] .release-stage {
-  background:
-    radial-gradient(circle at 82% 22%, rgb(62 99 150 / 28%), transparent 25%),
-    linear-gradient(135deg, #192b43, #17365c);
+  background: transparent;
+}
+
+html[data-theme="dark"] .version-rail {
+  border-color: #30445e;
+}
+
+html[data-theme="dark"] .version-rail h2,
+html[data-theme="dark"] .version-option.is-active,
+html[data-theme="dark"] .version-option:hover,
+html[data-theme="dark"] .version-option:focus-visible {
+  color: #eef4fc;
+}
+
+html[data-theme="dark"] .version-option {
+  color: #93a6bd;
+}
+
+html[data-theme="dark"] .version-meter i {
+  background: #30445e;
 }
 
 html[data-theme="dark"] .release-view > h2 {
@@ -560,10 +571,13 @@ html[data-theme="dark"] .preparing-status {
 
   .product-panel {
     grid-template-columns: 1fr;
+    gap: 0;
   }
 
   .version-rail {
-    padding: 20px;
+    padding: 20px 0;
+    border-right: 0;
+    border-bottom: 1px solid rgb(159 187 223 / 52%);
   }
 
   .version-rail header {
@@ -588,7 +602,7 @@ html[data-theme="dark"] .preparing-status {
     width: 0;
     height: 3px;
     right: auto;
-    left: 12px;
+    left: 0;
     bottom: -2px;
     transition: width 200ms cubic-bezier(.22, 1, .36, 1);
   }
@@ -609,13 +623,13 @@ html[data-theme="dark"] .preparing-status {
   .release-view {
     grid-template-columns: 1fr;
     min-height: 420px;
-    padding: 42px 28px;
+    padding: 42px 0;
   }
 
   .release-view::after {
     width: 124px;
     height: 124px;
-    right: 28px;
+    right: 8px;
     top: 50px;
   }
 
@@ -640,7 +654,7 @@ html[data-theme="dark"] .preparing-status {
 
   .release-view {
     min-height: 390px;
-    padding: 36px 22px;
+    padding: 36px 0;
   }
 
   .release-meta .release-formats {
