@@ -192,7 +192,7 @@
 
 .version-list {
   display: grid;
-  gap: 8px;
+  gap: 2px;
   margin-top: 34px;
 }
 
@@ -201,7 +201,7 @@
   display: grid;
   grid-template-columns: 30px minmax(0, 1fr) auto;
   align-items: center;
-  min-height: 54px;
+  min-height: 40px;
   padding: 0;
   color: #6d7f96;
   text-align: left;
@@ -254,7 +254,7 @@
 }
 
 .version-option b {
-  font-size: 13px;
+  font-size: 11px;
 }
 
 .version-option small {
@@ -264,6 +264,24 @@
   border-radius: 5px;
   font-size: 9px;
   font-weight: 700;
+}
+
+.version-option.is-featured {
+  grid-template-columns: 38px minmax(0, 1fr) auto;
+  min-height: 78px;
+  margin-bottom: 12px;
+  border-top: 1px solid rgb(159 187 223 / 52%);
+  border-bottom: 1px solid rgb(159 187 223 / 52%);
+}
+
+.version-option.is-featured span {
+  color: var(--blue);
+  font-size: 12px;
+}
+
+.version-option.is-featured b {
+  font-size: 18px;
+  letter-spacing: -.03em;
 }
 
 .version-empty {
@@ -610,6 +628,16 @@ html[data-theme="dark"] .preparing-status {
   .version-option.is-active::after {
     width: 30px;
     height: 3px;
+  }
+
+  .version-option.is-featured {
+    min-height: 64px;
+    margin: 0;
+    border-block: 0;
+  }
+
+  .version-option.is-featured b {
+    font-size: 15px;
   }
 
   .version-meter {
