@@ -7,6 +7,7 @@
   --muted: #8b9bb1;
   --line: #bfd0e8;
   --white: #ffffff;
+  --font-display: "Smiley Sans", "Microsoft YaHei UI", "PingFang SC", sans-serif;
   --header-height: 66px;
   --wheel-size: min(39vw, 72dvh, 530px);
   --shell: min(1280px, calc(100% - 48px));

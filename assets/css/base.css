@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Smiley Sans";
+  src: url("../fonts/SmileySans-Oblique-v2.0.1.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -33,6 +41,21 @@ a {
 
 button {
   cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display) !important;
+  font-style: normal;
+  font-weight: 400 !important;
+  font-synthesis: none;
+}
+
+h1 em,
+h2 em,
+h3 em {
+  font-style: inherit;
 }
 
 .shell {
