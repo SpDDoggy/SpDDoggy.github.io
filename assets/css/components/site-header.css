@@ -54,6 +54,17 @@
   gap: 9px;
 }
 
+[data-site-tools] {
+  min-width: 168px;
+  min-height: 44px;
+}
+
+.standard-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
 .utility-control {
   display: inline-flex;
   align-items: center;
@@ -163,5 +174,12 @@ html[data-theme="dark"] .sun-icon {
 
   .language-control {
     width: 60px;
+  }
+}
+
+@media (max-width: 520px) {
+  .standard-header-actions .download-back,
+  .standard-header-actions .product-back {
+    display: none;
   }
 }

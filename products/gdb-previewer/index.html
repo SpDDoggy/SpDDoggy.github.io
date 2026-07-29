@@ -1,26 +1,31 @@
 <!doctype html>
-<html class="gdb-page-root" lang="zh-CN" data-theme="light">
+<html class="gdb-page-root" lang="zh-CN" data-theme="light" data-page="gdb-overview"
+      data-title-en="GDB Previewer · DvSpatial"
+      data-description-en="GDB Previewer: preview, edit, and export GDB, SHP, and MDB spatial data directly on Windows.">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="GDB Previewer：在 Windows 上直接预览、编辑并导出 GDB、SHP 与 MDB 空间数据。">
   <meta name="theme-color" content="#f8fbff">
   <title>GDB Previewer · DvSpatial</title>
-  <script src="../../assets/js/components/theme-boot.js?v=20260728-5"></script>
+  <script src="../../assets/js/components/theme-boot.js?v=20260729-3"></script>
   <link rel="icon" href="../../assets/images/brand/favicon.svg?v=20260728-5" type="image/svg+xml">
-  <link rel="stylesheet" href="../../assets/css/site.css?v=20260728-5">
-  <link rel="stylesheet" href="../../assets/css/pages/gdb-previewer.css?v=20260729-1">
+  <link rel="stylesheet" href="../../assets/css/site.css?v=20260729-3">
+  <link rel="stylesheet" href="../../assets/css/pages/gdb-previewer.css?v=20260729-3">
 </head>
 <body class="gdb-product-page">
   <header class="product-site-header">
     <div class="shell product-header-layout">
-      <a class="brand" href="../../" aria-label="DvSpatial 首页"><strong><span>Dv</span>Spatial</strong></a>
-      <nav class="product-nav" aria-label="GDB Previewer 导航">
-        <a class="is-active" href="./" aria-current="page">概览</a>
-        <a href="docs/">使用文档</a>
-        <a href="changelog/">更新日志</a>
+      <a class="brand" href="../../" aria-label="DvSpatial 首页" data-aria-en="DvSpatial home"><strong><span>Dv</span>Spatial</strong></a>
+      <nav class="product-nav" aria-label="GDB Previewer 导航" data-aria-en="GDB Previewer navigation">
+        <a class="is-active" href="./" aria-current="page" data-copy-en="Overview">概览</a>
+        <a href="docs/" data-copy-en="Documentation">使用文档</a>
+        <a href="changelog/" data-copy-en="Release notes">更新日志</a>
       </nav>
-      <a class="product-home-link" href="../../">返回首页</a>
+      <div class="product-header-actions">
+        <a class="product-home-link" href="../../" data-copy-en="Back home">返回首页</a>
+        <div data-site-tools></div>
+      </div>
     </div>
   </header>
 
@@ -29,16 +34,16 @@
       <div class="shell gdb-hero-grid">
         <div class="gdb-hero-copy">
           <p class="gdb-kicker"><span></span> GDB PREVIEWER · V4</p>
-          <h1>打开地理数据，<em>马上看见。</em></h1>
-          <p class="gdb-lead">无需启动庞大的桌面 GIS，也能直接查看、检查与整理常用空间数据。</p>
+          <h1><span data-copy-en="Open geospatial data.">打开地理数据，</span><em data-copy-en="See it now.">马上看见。</em></h1>
+          <p class="gdb-lead" data-copy-en="View, inspect, and organize everyday spatial data without launching a heavyweight desktop GIS.">无需启动庞大的桌面 GIS，也能直接查看、检查与整理常用空间数据。</p>
           <div class="gdb-actions">
             <a class="gdb-primary-action" href="../../downloads/">
-              免费下载
+              <span data-copy-en="Free download">免费下载</span>
               <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4"></path></svg>
             </a>
-            <a class="gdb-secondary-action" href="changelog/">查看 V4 更新</a>
+            <a class="gdb-secondary-action" href="changelog/" data-copy-en="What's new in V4">查看 V4 更新</a>
           </div>
-          <ul class="format-list" aria-label="支持格式与系统">
+          <ul class="format-list" aria-label="支持格式与系统" data-aria-en="Supported formats and system">
             <li>.gdb</li>
             <li>.shp</li>
             <li>.mdb</li>
@@ -51,8 +56,10 @@
             <span></span><span></span><span></span>
             <b>GDB Previewer</b>
           </div>
-          <img src="../../assets/images/products/gdb-previewer-app.png?v=20260728-5" alt="GDB Previewer V4 软件界面，包含图层列表、地图预览与属性表">
-          <figcaption><span>V4</span> 真实软件界面</figcaption>
+          <img src="../../assets/images/products/gdb-previewer-app.png?v=20260728-5"
+               alt="GDB Previewer V4 软件界面，包含图层列表、地图预览与属性表"
+               data-alt-en="GDB Previewer V4 interface with a layer list, map preview, and attribute table">
+          <figcaption><span>V4</span> <b data-copy-en="Real application interface">真实软件界面</b></figcaption>
         </figure>
       </div>
     </section>
@@ -62,12 +69,12 @@
         <div class="section-heading section-heading-split">
           <div>
             <p>ONE LIGHTWEIGHT FLOW</p>
-            <h2 id="core-title">打开、检查、处理。</h2>
+            <h2 id="core-title" data-copy-en="Open. Inspect. Work.">打开、检查、处理。</h2>
           </div>
-          <p class="section-intro">GDB、SHP 与 MDB 进入同一套查看流程，常用动作集中在一个轻量桌面工具中。</p>
+          <p class="section-intro" data-copy-en="Bring GDB, SHP, and MDB into one viewing workflow, with essential actions in a lightweight desktop tool.">GDB、SHP 与 MDB 进入同一套查看流程，常用动作集中在一个轻量桌面工具中。</p>
         </div>
 
-        <div class="core-format-row" aria-label="支持格式">
+        <div class="core-format-row" aria-label="支持格式" data-aria-en="Supported formats">
           <article><strong>.gdb</strong><span>File Geodatabase</span></article>
           <article><strong>.shp</strong><span>Esri Shapefile</span></article>
           <article><strong>.mdb</strong><span>Personal Geodatabase</span></article>
@@ -76,26 +83,26 @@
         <div class="core-capability-grid">
           <article>
             <span>01</span>
-            <h3>直接预览</h3>
-            <p>图层、属性表与地图选中状态保持联动。</p>
+            <h3 data-copy-en="Direct preview">直接预览</h3>
+            <p data-copy-en="Keep layers, attribute tables, and map selections synchronized.">图层、属性表与地图选中状态保持联动。</p>
           </article>
           <article>
             <span>02</span>
-            <h3>轻量编辑</h3>
-            <p>按字段类型校验输入，保存前保留待提交状态。</p>
+            <h3 data-copy-en="Lightweight editing">轻量编辑</h3>
+            <p data-copy-en="Validate input by field type and retain pending changes until you save.">按字段类型校验输入，保存前保留待提交状态。</p>
           </article>
           <article>
             <span>03</span>
-            <h3>按需导出</h3>
-            <p>输出 CSV、单要素 SHP，或将数据源另存为新 GDB。</p>
+            <h3 data-copy-en="Export as needed">按需导出</h3>
+            <p data-copy-en="Export CSV or a single-feature SHP, or save the data source as a new GDB.">输出 CSV、单要素 SHP，或将数据源另存为新 GDB。</p>
           </article>
         </div>
 
-        <ol class="core-workflow" aria-label="使用流程">
-          <li><span>01</span><strong>打开数据源</strong></li>
-          <li><span>02</span><strong>检查目录与属性</strong></li>
-          <li><span>03</span><strong>预览与编辑</strong></li>
-          <li><span>04</span><strong>导出所需结果</strong></li>
+        <ol class="core-workflow" aria-label="使用流程" data-aria-en="Workflow">
+          <li><span>01</span><strong data-copy-en="Open a data source">打开数据源</strong></li>
+          <li><span>02</span><strong data-copy-en="Inspect contents and attributes">检查目录与属性</strong></li>
+          <li><span>03</span><strong data-copy-en="Preview and edit">预览与编辑</strong></li>
+          <li><span>04</span><strong data-copy-en="Export the results you need">导出所需结果</strong></li>
         </ol>
       </div>
     </section>
@@ -104,7 +111,7 @@
       <div class="shell">
         <div class="section-heading">
           <p>EXPLORE</p>
-          <h2 id="resource-title">继续了解 GDB Previewer。</h2>
+          <h2 id="resource-title" data-copy-en="Explore GDB Previewer further.">继续了解 GDB Previewer。</h2>
         </div>
         <div class="resource-grid">
           <a class="resource-card resource-card-docs" href="docs/">
@@ -113,8 +120,8 @@
             </span>
             <span>
               <small>DOCUMENTATION</small>
-              <strong>使用文档</strong>
-              <p>安装、打开数据、空间预览、编辑与导出。</p>
+              <strong data-copy-en="Documentation">使用文档</strong>
+              <p data-copy-en="Installation, opening data, spatial preview, editing, and export.">安装、打开数据、空间预览、编辑与导出。</p>
             </span>
             <b aria-hidden="true">↗</b>
           </a>
@@ -124,15 +131,15 @@
             </span>
             <span>
               <small>RELEASE NOTES</small>
-              <strong>更新日志</strong>
-              <p>按版本查看功能演进、修复记录与发布变化。</p>
+              <strong data-copy-en="Release notes">更新日志</strong>
+              <p data-copy-en="Browse features, fixes, and release changes by version.">按版本查看功能演进、修复记录与发布变化。</p>
             </span>
             <b aria-hidden="true">↗</b>
           </a>
         </div>
         <div class="resource-actions">
-          <a href="docs/">阅读使用文档</a>
-          <a href="../../downloads/">进入下载空间</a>
+          <a href="docs/" data-copy-en="Read the documentation">阅读使用文档</a>
+          <a href="../../downloads/" data-copy-en="Go to downloads">进入下载空间</a>
         </div>
       </div>
     </section>
@@ -141,5 +148,6 @@
   <footer class="product-footer">
     <div class="shell"><strong>GDB Previewer</strong><span>Built for spatial data work.</span></div>
   </footer>
+  <script type="module" src="../../assets/js/pages/site.js?v=20260729-3"></script>
 </body>
 </html>

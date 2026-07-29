@@ -1,22 +1,28 @@
 <!doctype html>
-<html lang="zh-CN" data-theme="light">
+<html lang="zh-CN" data-theme="light" data-page="downloads"
+      data-title-en="Downloads · DvSpatial"
+      data-description-en="Download DvSpatial tools.">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="DvSpatial 工具下载空间。">
   <meta name="theme-color" content="#f8fbff">
   <title>下载空间 · DvSpatial</title>
+  <script src="../assets/js/components/theme-boot.js?v=20260729-3"></script>
   <link rel="icon" href="../assets/images/brand/favicon.svg?v=20260728-5" type="image/svg+xml">
-  <link rel="stylesheet" href="../assets/css/site.css?v=20260728-5">
-  <link rel="stylesheet" href="../assets/css/pages/downloads.css?v=20260728-5">
+  <link rel="stylesheet" href="../assets/css/site.css?v=20260729-3">
+  <link rel="stylesheet" href="../assets/css/pages/downloads.css?v=20260729-3">
 </head>
 <body class="download-page">
   <header class="site-header">
     <div class="shell header-layout">
-      <a class="brand" href="../" aria-label="DvSpatial 首页">
+      <a class="brand" href="../" aria-label="DvSpatial 首页" data-aria-en="DvSpatial home">
         <strong><span>Dv</span>Spatial</strong>
       </a>
-      <a class="download-back" href="../">返回首页</a>
+      <div class="standard-header-actions">
+        <a class="download-back" href="../" data-copy-en="Back home">返回首页</a>
+        <div data-site-tools></div>
+      </div>
     </div>
   </header>
 
@@ -24,26 +30,27 @@
     <div class="shell download-layout">
       <header>
         <p>DVSPATIAL</p>
-        <h1>下载</h1>
+        <h1 data-copy-en="Downloads">下载</h1>
       </header>
 
       <div class="download-list">
         <article>
           <div>
             <h2>DvStudio</h2>
-            <p>ArcGIS Pro 工具套件</p>
+            <p data-copy-en="ArcGIS Pro toolkit">ArcGIS Pro 工具套件</p>
           </div>
-          <span>尚未发布</span>
+          <span data-copy-en="Coming soon">尚未发布</span>
         </article>
         <article>
           <div>
             <h2>GDB Previewer</h2>
-            <p>查看 GDB · SHP · MDB</p>
+            <p data-copy-en="Inspect GDB · SHP · MDB">查看 GDB · SHP · MDB</p>
           </div>
-          <span>尚未发布</span>
+          <span data-copy-en="Coming soon">尚未发布</span>
         </article>
       </div>
     </div>
   </main>
+  <script type="module" src="../assets/js/pages/site.js?v=20260729-3"></script>
 </body>
 </html>

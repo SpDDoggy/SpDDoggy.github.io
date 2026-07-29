@@ -80,6 +80,28 @@
   font-weight: 700;
 }
 
+html[data-theme="dark"] .download-main {
+  background:
+    radial-gradient(circle at 72% 22%, rgb(56 119 221 / 16%), transparent 34%),
+    #0e1622;
+}
+
+html[data-theme="dark"] .download-back {
+  color: #dce7f5;
+  background: #1b2a40;
+}
+
+html[data-theme="dark"] .download-list article {
+  background: rgb(23 35 52 / 82%);
+  border-color: #2d4059;
+  box-shadow: 0 14px 32px rgb(0 0 0 / 16%);
+}
+
+html[data-theme="dark"] .download-list article > span {
+  color: #a9bad0;
+  background: #1f3046;
+}
+
 @media (max-width: 680px) {
   .download-main {
     padding-block: 58px;

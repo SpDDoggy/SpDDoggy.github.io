@@ -1,26 +1,31 @@
 <!doctype html>
-<html class="gdb-page-root" lang="zh-CN" data-theme="light">
+<html class="gdb-page-root" lang="zh-CN" data-theme="light" data-page="gdb-changelog"
+      data-title-en="Release notes · GDB Previewer"
+      data-description-en="GDB Previewer release notes and version history.">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="GDB Previewer 历史版本更新日志。">
   <meta name="theme-color" content="#f8fbff">
   <title>更新日志 · GDB Previewer</title>
-  <script src="../../../assets/js/components/theme-boot.js?v=20260728-5"></script>
+  <script src="../../../assets/js/components/theme-boot.js?v=20260729-3"></script>
   <link rel="icon" href="../../../assets/images/brand/favicon.svg?v=20260728-5" type="image/svg+xml">
-  <link rel="stylesheet" href="../../../assets/css/site.css?v=20260728-5">
-  <link rel="stylesheet" href="../../../assets/css/pages/gdb-previewer.css?v=20260729-1">
+  <link rel="stylesheet" href="../../../assets/css/site.css?v=20260729-3">
+  <link rel="stylesheet" href="../../../assets/css/pages/gdb-previewer.css?v=20260729-3">
 </head>
 <body class="gdb-product-page">
   <header class="product-site-header">
     <div class="shell product-header-layout">
-      <a class="brand" href="../../../" aria-label="DvSpatial 首页"><strong><span>Dv</span>Spatial</strong></a>
-      <nav class="product-nav" aria-label="GDB Previewer 导航">
-        <a href="../">概览</a>
-        <a href="../docs/">使用文档</a>
-        <a class="is-active" href="./" aria-current="page">更新日志</a>
+      <a class="brand" href="../../../" aria-label="DvSpatial 首页" data-aria-en="DvSpatial home"><strong><span>Dv</span>Spatial</strong></a>
+      <nav class="product-nav" aria-label="GDB Previewer 导航" data-aria-en="GDB Previewer navigation">
+        <a href="../" data-copy-en="Overview">概览</a>
+        <a href="../docs/" data-copy-en="Documentation">使用文档</a>
+        <a class="is-active" href="./" aria-current="page" data-copy-en="Release notes">更新日志</a>
       </nav>
-      <a class="product-home-link" href="../../../">返回首页</a>
+      <div class="product-header-actions">
+        <a class="product-home-link" href="../../../" data-copy-en="Back home">返回首页</a>
+        <div data-site-tools></div>
+      </div>
     </div>
   </header>
 
@@ -28,28 +33,28 @@
     <section class="document-hero changelog-hero">
       <div class="shell">
         <p class="gdb-kicker"><span></span> RELEASE NOTES</p>
-        <h1>更新日志</h1>
-        <p>按版本查看 GDB Previewer 的功能演进与关键修复。</p>
+        <h1 data-copy-en="Release notes">更新日志</h1>
+        <p data-copy-en="Browse GDB Previewer features and key fixes by version.">按版本查看 GDB Previewer 的功能演进与关键修复。</p>
       </div>
     </section>
 
     <div class="shell release-reader-layout">
-      <aside class="version-panel" aria-label="版本列表">
+      <aside class="version-panel" aria-label="版本列表" data-aria-en="Version list">
         <h2>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13 11 22l-9-9V4h9l9 9ZM7 8h.01"></path></svg>
-          版本列表
+          <span data-copy-en="Versions">版本列表</span>
         </h2>
         <button class="version-option version-active" type="button" data-version-target="v4" aria-pressed="true">
-          <span>⌄</span><b>V4.0.0</b><small>当前版本</small>
+          <span>⌄</span><b>V4.0.0</b><small data-copy-en="Current">当前版本</small>
         </button>
         <button class="version-option" type="button" data-version-target="v3" aria-pressed="false">
-          <span>›</span><b>V3.0.0</b><small>历史版本</small>
+          <span>›</span><b>V3.0.0</b><small data-copy-en="Previous">历史版本</small>
         </button>
         <button class="version-option" type="button" data-version-target="v2" aria-pressed="false">
-          <span>›</span><b>V2.0.0</b><small>历史版本</small>
+          <span>›</span><b>V2.0.0</b><small data-copy-en="Previous">历史版本</small>
         </button>
         <button class="version-option" type="button" data-version-target="v1" aria-pressed="false">
-          <span>›</span><b>V1</b><small>历史版本</small>
+          <span>›</span><b>V1</b><small data-copy-en="Previous">历史版本</small>
         </button>
       </aside>
 
@@ -59,48 +64,48 @@
             <div><small>CURRENT RELEASE</small><h2>V4.0.0</h2></div>
             <time datetime="2026-07-28">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v3M17 3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Z"></path></svg>
-              最近更新 2026-07-28
+              <span data-copy-en="Last updated 2026-07-28">最近更新 2026-07-28</span>
             </time>
           </header>
           <div class="release-document-body">
-            <section class="release-overview" id="v4-overview" data-toc-label="本版概览">
-              <p>V4 持续收拢空间数据的查看、编辑、符号与输出流程。最近一次更新把空间预览与布局图纸拆成两个独立页面，同时强化样式库、汇集事务与字段分析的可靠性。</p>
-              <div class="release-tags" aria-label="版本重点">
-                <span>空间预览</span><span>布局与出图</span><span>样式库</span><span>事务恢复</span>
+            <section class="release-overview" id="v4-overview" data-toc-label="本版概览" data-toc-en="Overview">
+              <p data-copy-en="V4 continues to consolidate spatial data viewing, editing, symbology, and output. The latest update separates spatial preview and layout into distinct pages while improving the reliability of the style library, gather transactions, and field analysis.">V4 持续收拢空间数据的查看、编辑、符号与输出流程。最近一次更新把空间预览与布局图纸拆成两个独立页面，同时强化样式库、汇集事务与字段分析的可靠性。</p>
+              <div class="release-tags" aria-label="版本重点" data-aria-en="Release highlights">
+                <span data-copy-en="Spatial preview">空间预览</span><span data-copy-en="Layout and output">布局与出图</span><span data-copy-en="Style library">样式库</span><span data-copy-en="Transaction recovery">事务恢复</span>
               </div>
             </section>
-            <section class="release-section" id="v4-layout" data-toc-label="布局与出图">
+            <section class="release-section" id="v4-layout" data-toc-label="布局与出图" data-toc-en="Layout and output">
               <span class="release-date">2026.07.28</span>
-              <h3>空间预览与布局图纸双页</h3>
-              <p>浏览地图和制作图纸成为两个清晰的工作阶段，不再把浏览工具与排版工具堆在同一画布。</p>
+              <h3 data-copy-en="Separate spatial preview and layout pages">空间预览与布局图纸双页</h3>
+              <p data-copy-en="Map exploration and layout production are now two clear stages instead of mixing navigation and composition tools on one canvas.">浏览地图和制作图纸成为两个清晰的工作阶段，不再把浏览工具与排版工具堆在同一画布。</p>
               <ul>
-                <li>空间预览顶部新增互斥的“空间预览 / 布局”切换。</li>
-                <li>布局页支持 A4/A3、纵向/横向、标题、图例、比例尺和指北针。</li>
-                <li>布局文档与地图快照自动保存，并支持整页 PNG 导出。</li>
+                <li data-copy-en="A mutually exclusive Spatial Preview / Layout switch now appears at the top of the preview.">空间预览顶部新增互斥的“空间预览 / 布局”切换。</li>
+                <li data-copy-en="The layout page supports A4/A3, portrait/landscape orientation, title, legend, scale bar, and north arrow.">布局页支持 A4/A3、纵向/横向、标题、图例、比例尺和指北针。</li>
+                <li data-copy-en="Layout documents and map snapshots save automatically, with full-page PNG export.">布局文档与地图快照自动保存，并支持整页 PNG 导出。</li>
               </ul>
             </section>
-            <section class="release-section" id="v4-styles" data-toc-label="样式库">
+            <section class="release-section" id="v4-styles" data-toc-label="样式库" data-toc-en="Style library">
               <span class="release-date">2026.07.26</span>
-              <h3>样式库专用排布与内容编辑</h3>
-              <p>不同渲染器按照符号系统自身语义展示，不再被压成同一种大卡片。</p>
+              <h3 data-copy-en="Purpose-built style layouts and editing">样式库专用排布与内容编辑</h3>
+              <p data-copy-en="Each renderer is presented according to its symbology semantics instead of being forced into the same oversized card.">不同渲染器按照符号系统自身语义展示，不再被压成同一种大卡片。</p>
               <ul>
-                <li>唯一值、单一符号、分级色彩、二元色彩与连续色带获得专用排布。</li>
-                <li>样式库支持编辑与重命名，并通过原子写入保护原库文件。</li>
+                <li data-copy-en="Unique value, single symbol, graduated color, bivariate color, and continuous ramps each have dedicated layouts.">唯一值、单一符号、分级色彩、二元色彩与连续色带获得专用排布。</li>
+                <li data-copy-en="The style library supports editing and renaming, with atomic writes protecting the original library file.">样式库支持编辑与重命名，并通过原子写入保护原库文件。</li>
               </ul>
             </section>
-            <section class="release-section" id="v4-gather" data-toc-label="汇集恢复">
+            <section class="release-section" id="v4-gather" data-toc-label="汇集恢复" data-toc-en="Gather recovery">
               <span class="release-date">2026.07.26</span>
-              <h3>汇集事务进度与恢复</h3>
-              <p>进度明确区分写入、核验与提交，同一目标使用独占事务锁，并可恢复产品生成的静置 staging 结果。</p>
+              <h3 data-copy-en="Gather transaction progress and recovery">汇集事务进度与恢复</h3>
+              <p data-copy-en="Progress now distinguishes writing, verification, and commit stages. Each target uses an exclusive transaction lock, and idle staging results created by the application can be recovered.">进度明确区分写入、核验与提交，同一目标使用独占事务锁，并可恢复产品生成的静置 staging 结果。</p>
             </section>
-            <section class="release-section" id="v4-fields" data-toc-label="字段分析">
+            <section class="release-section" id="v4-fields" data-toc-label="字段分析" data-toc-en="Field analysis">
               <span class="release-date">2026.07.23</span>
-              <h3>字段分析与连续数值符号</h3>
-              <p>字段统计改为纯属性分页扫描，唯一值支持文本、数字、日期、布尔值、空值及复合字段。</p>
+              <h3 data-copy-en="Field analysis and continuous numeric symbology">字段分析与连续数值符号</h3>
+              <p data-copy-en="Field statistics now use paged attribute-only scans. Unique values support text, numbers, dates, booleans, nulls, and composite fields.">字段统计改为纯属性分页扫描，唯一值支持文本、数字、日期、布尔值、空值及复合字段。</p>
             </section>
-            <footer class="release-document-footer" id="v4-docs" data-toc-label="使用文档">
-              <div><small>NEXT</small><strong>开始使用 GDB Previewer</strong></div>
-              <a href="../docs/">阅读使用文档 <span>→</span></a>
+            <footer class="release-document-footer" id="v4-docs" data-toc-label="使用文档" data-toc-en="Documentation">
+              <div><small>NEXT</small><strong data-copy-en="Get started with GDB Previewer">开始使用 GDB Previewer</strong></div>
+              <a href="../docs/"><b data-copy-en="Read the documentation">阅读使用文档</b> <span>→</span></a>
             </footer>
           </div>
         </article>
@@ -108,24 +113,24 @@
         <article class="release-document" id="release-v3" data-release-panel="v3" hidden>
           <header class="release-document-header">
             <div><small>HISTORICAL RELEASE</small><h2>V3.0.0</h2></div>
-            <span class="release-meta">桌面预览与轻量编辑</span>
+            <span class="release-meta" data-copy-en="Desktop preview and lightweight editing">桌面预览与轻量编辑</span>
           </header>
           <div class="release-document-body">
-            <section class="release-overview" id="v3-overview" data-toc-label="本版概览">
-              <p>V3 将 GDB Previewer 扩展为同时支持 GDB、SHP 与 MDB 的 Windows 空间数据预览与轻量编辑工具。</p>
-              <div class="release-tags"><span>GDB</span><span>SHP</span><span>MDB</span><span>轻量编辑</span></div>
+            <section class="release-overview" id="v3-overview" data-toc-label="本版概览" data-toc-en="Overview">
+              <p data-copy-en="V3 expanded GDB Previewer into a Windows tool for previewing and lightly editing GDB, SHP, and MDB spatial data.">V3 将 GDB Previewer 扩展为同时支持 GDB、SHP 与 MDB 的 Windows 空间数据预览与轻量编辑工具。</p>
+              <div class="release-tags"><span>GDB</span><span>SHP</span><span>MDB</span><span data-copy-en="Lightweight editing">轻量编辑</span></div>
             </section>
-            <section class="release-section" id="v3-preview" data-toc-label="预览与编辑">
-              <h3>属性、图形与编辑联动</h3>
+            <section class="release-section" id="v3-preview" data-toc-label="预览与编辑" data-toc-en="Preview and editing">
+              <h3 data-copy-en="Synchronized attributes, geometry, and editing">属性、图形与编辑联动</h3>
               <ul>
-                <li>属性表侧栏支持选中行图形预览、宽度调整、折叠与状态记忆。</li>
-                <li>地图支持按光标缩放、拖动平移和一键适配。</li>
-                <li>编辑模式按字段类型校验输入，并支持逐步撤销写回。</li>
+                <li data-copy-en="The attribute-table sidebar supports geometry previews for selected rows, width adjustment, collapse, and state persistence.">属性表侧栏支持选中行图形预览、宽度调整、折叠与状态记忆。</li>
+                <li data-copy-en="The map supports cursor-centered zoom, drag panning, and one-click fit.">地图支持按光标缩放、拖动平移和一键适配。</li>
+                <li data-copy-en="Edit mode validates input by field type and supports step-by-step undo before write-back.">编辑模式按字段类型校验输入，并支持逐步撤销写回。</li>
               </ul>
             </section>
-            <section class="release-section" id="v3-export" data-toc-label="格式与导出">
-              <h3>三种数据格式与完整导出</h3>
-              <p>支持导出属性表 CSV、单个要素 SHP，或将 MDB、GDB、SHP 另存为新的 GDB。</p>
+            <section class="release-section" id="v3-export" data-toc-label="格式与导出" data-toc-en="Formats and export">
+              <h3 data-copy-en="Three data formats and complete export">三种数据格式与完整导出</h3>
+              <p data-copy-en="Export attribute tables as CSV, individual features as SHP, or save MDB, GDB, and SHP sources as a new GDB.">支持导出属性表 CSV、单个要素 SHP，或将 MDB、GDB、SHP 另存为新的 GDB。</p>
             </section>
           </div>
         </article>
@@ -133,19 +138,19 @@
         <article class="release-document" id="release-v2" data-release-panel="v2" hidden>
           <header class="release-document-header">
             <div><small>HISTORICAL RELEASE</small><h2>V2.0.0</h2></div>
-            <span class="release-meta">全用户安装版</span>
+            <span class="release-meta" data-copy-en="All-users installer">全用户安装版</span>
           </header>
           <div class="release-document-body">
-            <section class="release-overview" id="v2-overview" data-toc-label="本版概览">
-              <p>V2 建立了面向所有 Windows 用户的安装、更新、修复与卸载流程，并保持 GDB 文件夹的系统集成。</p>
-              <div class="release-tags"><span>全用户安装</span><span>维护模式</span><span>文件关联</span></div>
+            <section class="release-overview" id="v2-overview" data-toc-label="本版概览" data-toc-en="Overview">
+              <p data-copy-en="V2 established installation, update, repair, and uninstall workflows for all Windows users while retaining system integration for GDB folders.">V2 建立了面向所有 Windows 用户的安装、更新、修复与卸载流程，并保持 GDB 文件夹的系统集成。</p>
+              <div class="release-tags"><span data-copy-en="All-users install">全用户安装</span><span data-copy-en="Maintenance mode">维护模式</span><span data-copy-en="File associations">文件关联</span></div>
             </section>
-            <section class="release-section" id="v2-installer" data-toc-label="安装维护">
-              <h3>统一安装维护入口</h3>
+            <section class="release-section" id="v2-installer" data-toc-label="安装维护" data-toc-en="Installation and maintenance">
+              <h3 data-copy-en="Unified installation and maintenance">统一安装维护入口</h3>
               <ul>
-                <li>安装位置迁移至 Program Files，并使用机器级注册表。</li>
-                <li>安装器提供安装、更新、修复与卸载四种维护操作。</li>
-                <li>保留双击与右键打开 GDB 文件夹的系统入口。</li>
+                <li data-copy-en="The installation moved to Program Files and uses machine-wide registry settings.">安装位置迁移至 Program Files，并使用机器级注册表。</li>
+                <li data-copy-en="The installer provides install, update, repair, and uninstall maintenance operations.">安装器提供安装、更新、修复与卸载四种维护操作。</li>
+                <li data-copy-en="Double-click and context-menu entry points for GDB folders remain available.">保留双击与右键打开 GDB 文件夹的系统入口。</li>
               </ul>
             </section>
           </div>
@@ -154,31 +159,31 @@
         <article class="release-document" id="release-v1" data-release-panel="v1" hidden>
           <header class="release-document-header">
             <div><small>FIRST RELEASE</small><h2>V1</h2></div>
-            <span class="release-meta">首个公开形态</span>
+            <span class="release-meta" data-copy-en="First public release">首个公开形态</span>
           </header>
           <div class="release-document-body">
-            <section class="release-overview" id="v1-overview" data-toc-label="本版概览">
-              <p>V1 是 GDB Previewer 的首个轻量分发版本，聚焦 File Geodatabase 的快速打开与查看。</p>
-              <div class="release-tags"><span>GDB 预览</span><span>用户级安装</span><span>右键打开</span></div>
+            <section class="release-overview" id="v1-overview" data-toc-label="本版概览" data-toc-en="Overview">
+              <p data-copy-en="V1 was the first lightweight distribution of GDB Previewer, focused on quickly opening and viewing file geodatabases.">V1 是 GDB Previewer 的首个轻量分发版本，聚焦 File Geodatabase 的快速打开与查看。</p>
+              <div class="release-tags"><span data-copy-en="GDB preview">GDB 预览</span><span data-copy-en="Per-user install">用户级安装</span><span data-copy-en="Open from context menu">右键打开</span></div>
             </section>
-            <section class="release-section" id="v1-integration" data-toc-label="系统集成">
-              <h3>从资源管理器直接打开 GDB</h3>
+            <section class="release-section" id="v1-integration" data-toc-label="系统集成" data-toc-en="System integration">
+              <h3 data-copy-en="Open GDB directly from File Explorer">从资源管理器直接打开 GDB</h3>
               <ul>
-                <li>支持双击 GDB 文件夹启动预览器。</li>
-                <li>提供“用 GDB Previewer 打开”右键菜单。</li>
-                <li>修复中文批处理分发包在带空格路径下的启动问题。</li>
+                <li data-copy-en="Double-click a GDB folder to launch the previewer.">支持双击 GDB 文件夹启动预览器。</li>
+                <li data-copy-en="Use the “Open with GDB Previewer” context-menu command.">提供“用 GDB Previewer 打开”右键菜单。</li>
+                <li data-copy-en="Fixed startup failures for the Chinese batch distribution when paths contain spaces.">修复中文批处理分发包在带空格路径下的启动问题。</li>
               </ul>
             </section>
           </div>
         </article>
       </div>
 
-      <aside class="release-toc" aria-label="当前版本目录">
+      <aside class="release-toc" aria-label="当前版本目录" data-aria-en="Current version contents">
         <h2 data-release-toc-title>在 V4.0.0 中</h2>
         <nav data-release-toc-links></nav>
       </aside>
     </div>
   </main>
-  <script src="../../../assets/js/pages/release-reader.js?v=20260729-1"></script>
+  <script type="module" src="../../../assets/js/pages/changelog.js?v=20260729-3"></script>
 </body>
 </html>

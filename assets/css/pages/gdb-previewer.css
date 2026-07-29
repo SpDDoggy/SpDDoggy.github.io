@@ -67,6 +67,13 @@ html.gdb-page-root {
   color: var(--blue);
 }
 
+.product-header-actions {
+  display: flex;
+  align-items: center;
+  justify-self: end;
+  gap: 14px;
+}
+
 .gdb-hero {
   position: relative;
   height: calc(100dvh - var(--header-height));
@@ -268,9 +275,13 @@ html.gdb-page-root {
   font: 600 10px/1 Consolas, monospace;
 }
 
-.app-preview figcaption span {
+.app-preview figcaption > span:first-child {
   color: rgb(198 90 54);
   font-weight: 800;
+}
+
+.app-preview figcaption b {
+  font-weight: inherit;
 }
 
 .capability-section,
@@ -915,6 +926,10 @@ html[data-theme="dark"] .format-table > div + div {
 
   .product-nav a {
     padding-inline: 9px;
+  }
+
+  .product-home-link {
+    display: none;
   }
 
   .gdb-hero {
