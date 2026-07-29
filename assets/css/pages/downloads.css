@@ -17,7 +17,7 @@
   position: relative;
   display: grid;
   min-height: calc(100dvh - var(--header-height));
-  padding: clamp(30px, 5vh, 56px) 0;
+  padding: clamp(20px, 3.2vh, 34px) 0 clamp(36px, 5vh, 56px);
   overflow: hidden;
   background:
     linear-gradient(rgb(23 104 242 / 4%) 1px, transparent 1px),
@@ -45,12 +45,12 @@
 .download-layout {
   position: relative;
   z-index: 1;
-  align-self: center;
+  align-self: start;
   max-width: 1120px;
 }
 
 .download-heading {
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .download-heading span {
@@ -60,7 +60,7 @@
 }
 
 .download-heading h1 {
-  margin: 10px 0 0;
+  margin: 8px 0 0;
   color: var(--ink);
   font-size: clamp(48px, 6vw, 76px);
   letter-spacing: -.09em;
@@ -71,7 +71,7 @@
   grid-auto-flow: column;
   grid-auto-columns: minmax(190px, 1fr);
   gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   padding: 3px;
   overflow-x: auto;
   scrollbar-width: thin;
@@ -83,7 +83,7 @@
   display: grid;
   grid-template-columns: 28px minmax(0, 1fr);
   align-items: center;
-  min-height: 54px;
+  min-height: 50px;
   padding: 0 18px;
   color: #657891;
   text-align: left;
@@ -146,7 +146,7 @@
 }
 
 .download-workbench {
-  min-height: min(570px, calc(100dvh - var(--header-height) - 224px));
+  min-height: min(520px, calc(100dvh - var(--header-height) - 186px));
   overflow: visible;
   background: transparent;
   border-block: 1px solid rgb(159 187 223 / 52%);
@@ -154,7 +154,7 @@
 
 .product-panel {
   display: grid;
-  grid-template-columns: 188px minmax(0, 1fr);
+  grid-template-columns: 208px minmax(0, 1fr);
   gap: clamp(28px, 4vw, 56px);
   min-height: inherit;
 }
@@ -171,7 +171,7 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
-  padding: 34px 30px 28px 0;
+  padding: 28px 34px 24px 0;
   color: var(--ink);
   background: transparent;
   border-right: 1px solid rgb(159 187 223 / 52%);
@@ -184,24 +184,24 @@
 }
 
 .version-rail h2 {
-  margin: 10px 0 0;
+  margin: 8px 0 0;
   color: var(--ink);
-  font-size: 32px;
+  font-size: 28px;
   letter-spacing: -.06em;
 }
 
 .version-list {
   display: grid;
   gap: 2px;
-  margin-top: 34px;
+  margin-top: 22px;
 }
 
 .version-option {
   position: relative;
   display: grid;
-  grid-template-columns: 30px minmax(0, 1fr) auto;
+  grid-template-columns: 32px minmax(0, 1fr) auto;
   align-items: center;
-  min-height: 40px;
+  min-height: 34px;
   padding: 0;
   color: #6d7f96;
   text-align: left;
@@ -219,8 +219,8 @@
   position: absolute;
   width: 0;
   height: 2px;
-  right: 0;
-  bottom: 0;
+  left: 32px;
+  bottom: 5px;
   background: rgb(198 90 54);
   border-radius: 2px;
   content: "";
@@ -244,17 +244,18 @@
 }
 
 .version-option.is-active::after {
-  width: 46px;
+  width: 22px;
   height: 2px;
 }
 
 .version-option span {
   color: #91a2b8;
-  font: 700 10px/1 Consolas, "Cascadia Mono", monospace;
+  font: 700 9px/1 Consolas, "Cascadia Mono", monospace;
 }
 
 .version-option b {
-  font-size: 11px;
+  font-size: 10px;
+  letter-spacing: .01em;
 }
 
 .version-option small {
@@ -267,21 +268,41 @@
 }
 
 .version-option.is-featured {
-  grid-template-columns: 38px minmax(0, 1fr) auto;
-  min-height: 78px;
-  margin-bottom: 12px;
-  border-top: 1px solid rgb(159 187 223 / 52%);
+  grid-template-columns: 64px minmax(0, 1fr);
+  grid-template-rows: 1fr 1fr;
+  min-height: 92px;
+  margin-bottom: 10px;
+  padding: 10px 0 14px;
   border-bottom: 1px solid rgb(159 187 223 / 52%);
 }
 
 .version-option.is-featured span {
+  grid-row: 1 / -1;
+  align-self: center;
   color: var(--blue);
-  font-size: 12px;
+  font: 800 44px/.82 "Arial Black", sans-serif;
+  letter-spacing: -.12em;
 }
 
 .version-option.is-featured b {
-  font-size: 18px;
-  letter-spacing: -.03em;
+  align-self: end;
+  font-size: 15px;
+  letter-spacing: -.04em;
+}
+
+.version-option.is-featured small {
+  align-self: start;
+  justify-self: start;
+  padding: 3px 6px;
+}
+
+.version-option.is-featured::after {
+  left: 64px;
+  bottom: 14px;
+}
+
+.version-option.is-featured.is-active::after {
+  width: 30px;
 }
 
 .version-empty {
@@ -329,7 +350,7 @@
   align-content: center;
   align-items: end;
   min-height: 100%;
-  padding: clamp(46px, 6vw, 72px) clamp(10px, 2vw, 26px) clamp(46px, 6vw, 72px) 0;
+  padding: clamp(38px, 5vw, 60px) clamp(10px, 2vw, 26px) clamp(38px, 5vw, 60px) 0;
   overflow: visible;
 }
 
@@ -612,8 +633,14 @@ html[data-theme="dark"] .preparing-status {
   .version-list {
     grid-auto-flow: column;
     grid-auto-columns: minmax(132px, 1fr);
+    align-items: center;
     margin-top: 18px;
     overflow-x: auto;
+  }
+
+  .version-option:not(.is-featured) {
+    align-self: center;
+    min-height: 40px;
   }
 
   .version-option::after {
@@ -631,13 +658,24 @@ html[data-theme="dark"] .preparing-status {
   }
 
   .version-option.is-featured {
-    min-height: 64px;
+    grid-template-columns: 46px minmax(0, 1fr);
+    min-height: 68px;
     margin: 0;
+    padding: 5px 0 8px;
     border-block: 0;
   }
 
+  .version-option.is-featured span {
+    font-size: 30px;
+  }
+
   .version-option.is-featured b {
-    font-size: 15px;
+    font-size: 13px;
+  }
+
+  .version-option.is-featured::after {
+    left: 46px;
+    bottom: 7px;
   }
 
   .version-meter {
