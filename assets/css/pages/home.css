@@ -239,21 +239,6 @@ h1 em {
   right: 5%;
 }
 
-.map-credit {
-  position: absolute;
-  z-index: 4;
-  left: 14px;
-  bottom: 10px;
-  margin: 0;
-  color: #91a1b7;
-  font-size: 8px;
-}
-
-.map-credit a:hover,
-.map-credit a:focus-visible {
-  color: var(--blue);
-}
-
 html[data-theme="dark"] .map-layer {
   background: #101a27;
 }
@@ -278,10 +263,6 @@ html[data-theme="dark"] .button-primary {
 html[data-theme="dark"] .button-primary:hover,
 html[data-theme="dark"] .button-primary:focus-visible {
   background: #243750;
-}
-
-html[data-theme="dark"] .map-credit {
-  color: #718198;
 }
 
 html[data-theme="dark"] .product-transition-portal {
@@ -335,15 +316,6 @@ html[data-theme="dark"] .product-transition-portal {
     display: none;
   }
 
-  .map-credit {
-    position: relative;
-    left: auto;
-    right: auto;
-    bottom: auto;
-    width: var(--shell);
-    margin: -16px auto 10px;
-    text-align: right;
-  }
 }
 
 @media (max-width: 430px) {
@@ -407,11 +379,6 @@ html[data-theme="dark"] .product-transition-portal {
     height: 28px;
   }
 
-  .map-credit {
-    top: 4px;
-    bottom: auto;
-    left: 6px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

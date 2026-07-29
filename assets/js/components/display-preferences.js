@@ -13,7 +13,7 @@ const copy = {
     languageAction: "Switch to English",
     themeLightAction: "切换浅色模式",
     themeDarkAction: "切换深色模式",
-    pageTitle: "DvSpatial · GIS 工具入口",
+    pageTitle: "DvSpatial",
     pageDescription: "David 的 GIS 软件、ArcGIS Pro 工具与空间智能实践入口。"
   },
   en: {
@@ -30,7 +30,7 @@ const copy = {
     languageAction: "切换到中文",
     themeLightAction: "Switch to light theme",
     themeDarkAction: "Switch to dark theme",
-    pageTitle: "DvSpatial · GIS tools",
+    pageTitle: "DvSpatial",
     pageDescription: "Independent GIS software, ArcGIS Pro tools, and spatial intelligence practice by David."
   }
 };
