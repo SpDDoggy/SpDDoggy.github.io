@@ -149,7 +149,6 @@
   min-height: min(520px, calc(100dvh - var(--header-height) - 186px));
   overflow: visible;
   background: transparent;
-  border-block: 1px solid rgb(159 187 223 / 52%);
 }
 
 .product-panel {
@@ -174,7 +173,6 @@
   padding: 28px 34px 24px 0;
   color: var(--ink);
   background: transparent;
-  border-right: 1px solid rgb(159 187 223 / 52%);
 }
 
 .version-rail header span {
@@ -273,7 +271,6 @@
   min-height: 92px;
   margin-bottom: 10px;
   padding: 10px 0 14px;
-  border-bottom: 1px solid rgb(159 187 223 / 52%);
 }
 
 .version-option.is-featured span {
@@ -309,7 +306,6 @@
   margin-top: 34px;
   padding: 18px 12px;
   color: #7f91a8;
-  border-top: 1px solid rgb(159 187 223 / 52%);
   border-radius: 0;
   font-size: 11px;
   font-weight: 700;
@@ -347,10 +343,10 @@
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  align-content: center;
+  align-content: start;
   align-items: end;
   min-height: 100%;
-  padding: clamp(38px, 5vw, 60px) clamp(10px, 2vw, 26px) clamp(38px, 5vw, 60px) 0;
+  padding: clamp(38px, 4vw, 48px) clamp(10px, 2vw, 26px) clamp(38px, 5vw, 60px) 0;
   overflow: visible;
 }
 
@@ -514,17 +510,8 @@ html[data-theme="dark"] .product-tab.is-active {
   border-color: #4978b9;
 }
 
-html[data-theme="dark"] .download-workbench {
-  background: transparent;
-  border-color: #30445e;
-}
-
 html[data-theme="dark"] .release-stage {
   background: transparent;
-}
-
-html[data-theme="dark"] .version-rail {
-  border-color: #30445e;
 }
 
 html[data-theme="dark"] .version-rail h2,
@@ -616,7 +603,6 @@ html[data-theme="dark"] .preparing-status {
   .version-rail {
     padding: 20px 0;
     border-right: 0;
-    border-bottom: 1px solid rgb(159 187 223 / 52%);
   }
 
   .version-rail header {
