@@ -8,10 +8,10 @@
   <meta name="description" content="DvSpatial 工具下载空间。">
   <meta name="theme-color" content="#f8fbff">
   <title>下载空间 · DvSpatial</title>
-  <script src="../assets/js/components/theme-boot.js?v=20260729-3"></script>
+  <script src="../assets/js/components/theme-boot.js?v=20260729-4"></script>
   <link rel="icon" href="../assets/images/brand/favicon.svg?v=20260728-5" type="image/svg+xml">
-  <link rel="stylesheet" href="../assets/css/site.css?v=20260729-3">
-  <link rel="stylesheet" href="../assets/css/pages/downloads.css?v=20260729-3">
+  <link rel="stylesheet" href="../assets/css/site.css?v=20260729-4">
+  <link rel="stylesheet" href="../assets/css/pages/downloads.css?v=20260729-4">
 </head>
 <body class="download-page">
   <header class="site-header">
@@ -28,29 +28,92 @@
 
   <main class="download-main">
     <div class="shell download-layout">
-      <header>
-        <p>DVSPATIAL</p>
-        <h1 data-copy-en="Downloads">下载</h1>
-      </header>
+      <section class="download-deck" aria-labelledby="download-title">
+        <aside class="download-rail">
+          <div class="download-heading">
+            <span>DVSPATIAL / 02</span>
+            <h1 id="download-title" data-copy-en="Download">下载</h1>
+          </div>
 
-      <div class="download-list">
-        <article>
-          <div>
-            <h2>DvStudio</h2>
-            <p data-copy-en="ArcGIS Pro toolkit">ArcGIS Pro 工具套件</p>
+          <div class="product-tabs" role="tablist" aria-label="选择产品" data-aria-en="Choose a product">
+            <button class="product-tab is-active" id="tab-gdb" type="button" role="tab"
+                    aria-selected="true" aria-controls="panel-gdb" data-product-tab="gdb">
+              <span>01</span>
+              <b>GDB Previewer</b>
+            </button>
+            <button class="product-tab" id="tab-dvstudio" type="button" role="tab"
+                    aria-selected="false" aria-controls="panel-dvstudio" tabindex="-1"
+                    data-product-tab="dvstudio">
+              <span>02</span>
+              <b>DvStudio</b>
+            </button>
           </div>
-          <span data-copy-en="Coming soon">尚未发布</span>
-        </article>
-        <article>
-          <div>
-            <h2>GDB Previewer</h2>
-            <p data-copy-en="Inspect GDB · SHP · MDB">查看 GDB · SHP · MDB</p>
+
+          <div class="rail-marker" aria-hidden="true">
+            <span></span><span></span><span></span>
           </div>
-          <span data-copy-en="Coming soon">尚未发布</span>
-        </article>
-      </div>
+        </aside>
+
+        <div class="download-panels">
+          <section class="download-panel is-active" id="panel-gdb" role="tabpanel"
+                   aria-labelledby="tab-gdb" data-product-panel="gdb">
+            <div class="current-release">
+              <div class="release-number" aria-hidden="true">04</div>
+              <div class="release-copy">
+                <p data-copy-en="Current release">当前版本</p>
+                <h2>GDB Previewer</h2>
+                <div class="release-meta">
+                  <strong>V4.0.0</strong>
+                  <span>Windows x64</span>
+                  <span>.GDB / .SHP / .MDB</span>
+                </div>
+              </div>
+              <button class="release-download" type="button" disabled>
+                <span data-copy-en="Pending">待发布</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 18h14"></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="release-archive">
+              <header>
+                <h3 data-copy-en="Previous releases">历史版本</h3>
+                <span>ARCHIVE / 03</span>
+              </header>
+              <ol class="version-track">
+                <li>
+                  <span>03</span>
+                  <div><b>V3.0.0</b><small>Windows x64</small></div>
+                  <button type="button" disabled data-copy-en="Pending">待发布</button>
+                </li>
+                <li>
+                  <span>02</span>
+                  <div><b>V2.0.0</b><small>Windows x64</small></div>
+                  <button type="button" disabled data-copy-en="Pending">待发布</button>
+                </li>
+                <li>
+                  <span>01</span>
+                  <div><b>V1</b><small>Windows</small></div>
+                  <button type="button" disabled data-copy-en="Pending">待发布</button>
+                </li>
+              </ol>
+            </div>
+          </section>
+
+          <section class="download-panel dvstudio-panel" id="panel-dvstudio" role="tabpanel"
+                   aria-labelledby="tab-dvstudio" data-product-panel="dvstudio" hidden>
+            <div class="dvstudio-status">
+              <span aria-hidden="true">DS</span>
+              <p data-copy-en="ArcGIS Pro toolkit">ArcGIS Pro 工具套件</p>
+              <h2>DvStudio</h2>
+              <strong data-copy-en="In preparation">准备中</strong>
+            </div>
+          </section>
+        </div>
+      </section>
     </div>
   </main>
-  <script type="module" src="../assets/js/pages/site.js?v=20260729-3"></script>
+  <script type="module" src="../assets/js/pages/downloads.js?v=20260729-4"></script>
 </body>
 </html>
