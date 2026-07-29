@@ -8,10 +8,10 @@
   <meta name="description" content="DvSpatial 工具下载空间。">
   <meta name="theme-color" content="#f8fbff">
   <title>下载空间 · DvSpatial</title>
-  <script src="../assets/js/components/theme-boot.js?v=20260729-4"></script>
+  <script src="../assets/js/components/theme-boot.js?v=20260729-5"></script>
   <link rel="icon" href="../assets/images/brand/favicon.svg?v=20260728-5" type="image/svg+xml">
-  <link rel="stylesheet" href="../assets/css/site.css?v=20260729-4">
-  <link rel="stylesheet" href="../assets/css/pages/downloads.css?v=20260729-4">
+  <link rel="stylesheet" href="../assets/css/site.css?v=20260729-5">
+  <link rel="stylesheet" href="../assets/css/pages/downloads.css?v=20260729-5">
 </head>
 <body class="download-page">
   <header class="site-header">
@@ -28,45 +28,63 @@
 
   <main class="download-main">
     <div class="shell download-layout">
-      <section class="download-deck" aria-labelledby="download-title">
-        <aside class="download-rail">
-          <div class="download-heading">
-            <span>DVSPATIAL / 02</span>
-            <h1 id="download-title" data-copy-en="Download">下载</h1>
-          </div>
+      <header class="download-heading">
+        <span>DVSPATIAL / DOWNLOADS</span>
+        <h1 data-copy-en="Download">下载</h1>
+      </header>
 
-          <div class="product-tabs" role="tablist" aria-label="选择产品" data-aria-en="Choose a product">
-            <button class="product-tab is-active" id="tab-gdb" type="button" role="tab"
-                    aria-selected="true" aria-controls="panel-gdb" data-product-tab="gdb">
-              <span>01</span>
-              <b>GDB Previewer</b>
-            </button>
-            <button class="product-tab" id="tab-dvstudio" type="button" role="tab"
-                    aria-selected="false" aria-controls="panel-dvstudio" tabindex="-1"
-                    data-product-tab="dvstudio">
-              <span>02</span>
-              <b>DvStudio</b>
-            </button>
-          </div>
+      <div class="product-tabs" role="tablist" aria-label="选择产品" data-aria-en="Choose a product">
+        <button class="product-tab is-active" id="tab-gdb" type="button" role="tab"
+                aria-selected="true" aria-controls="panel-gdb" data-product-tab="gdb">
+          <span>01</span>
+          <b>GDB Previewer</b>
+        </button>
+        <button class="product-tab" id="tab-dvstudio" type="button" role="tab"
+                aria-selected="false" aria-controls="panel-dvstudio" tabindex="-1"
+                data-product-tab="dvstudio">
+          <span>02</span>
+          <b>DvStudio</b>
+        </button>
+      </div>
 
-          <div class="rail-marker" aria-hidden="true">
-            <span></span><span></span><span></span>
-          </div>
-        </aside>
+      <section class="download-workbench">
+        <section class="product-panel is-active" id="panel-gdb" role="tabpanel"
+                 aria-labelledby="tab-gdb" data-product-panel="gdb">
+          <aside class="version-rail">
+            <header>
+              <span>GDB</span>
+              <h2 data-copy-en="Versions">版本</h2>
+            </header>
+            <div class="version-list" aria-label="GDB Previewer 版本" data-aria-en="GDB Previewer versions">
+              <button class="version-option is-active" type="button" aria-pressed="true"
+                      data-version-target="gdb-v4">
+                <span>04</span><b>V4.0.0</b><small data-copy-en="Current">当前</small>
+              </button>
+              <button class="version-option" type="button" aria-pressed="false"
+                      data-version-target="gdb-v3">
+                <span>03</span><b>V3.0.0</b>
+              </button>
+              <button class="version-option" type="button" aria-pressed="false"
+                      data-version-target="gdb-v2">
+                <span>02</span><b>V2.0.0</b>
+              </button>
+              <button class="version-option" type="button" aria-pressed="false"
+                      data-version-target="gdb-v1">
+                <span>01</span><b>V1</b>
+              </button>
+            </div>
+            <div class="version-meter" aria-hidden="true"><span></span><i></i></div>
+          </aside>
 
-        <div class="download-panels">
-          <section class="download-panel is-active" id="panel-gdb" role="tabpanel"
-                   aria-labelledby="tab-gdb" data-product-panel="gdb">
-            <div class="current-release">
-              <div class="release-number" aria-hidden="true">04</div>
-              <div class="release-copy">
-                <p data-copy-en="Current release">当前版本</p>
-                <h2>GDB Previewer</h2>
-                <div class="release-meta">
-                  <strong>V4.0.0</strong>
-                  <span>Windows x64</span>
-                  <span>.GDB / .SHP / .MDB</span>
-                </div>
+          <div class="release-stage">
+            <article class="release-view is-active" data-version-panel="gdb-v4">
+              <div class="release-watermark" aria-hidden="true">04</div>
+              <p data-copy-en="Current release">当前版本</p>
+              <h2>GDB Previewer</h2>
+              <div class="release-meta">
+                <strong>V4.0.0</strong>
+                <span>Windows x64</span>
+                <span class="release-formats">.GDB / .SHP / .MDB</span>
               </div>
               <button class="release-download" type="button" disabled>
                 <span data-copy-en="Pending">待发布</span>
@@ -74,46 +92,83 @@
                   <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 18h14"></path>
                 </svg>
               </button>
-            </div>
+            </article>
 
-            <div class="release-archive">
-              <header>
-                <h3 data-copy-en="Previous releases">历史版本</h3>
-                <span>ARCHIVE / 03</span>
-              </header>
-              <ol class="version-track">
-                <li>
-                  <span>03</span>
-                  <div><b>V3.0.0</b><small>Windows x64</small></div>
-                  <button type="button" disabled data-copy-en="Pending">待发布</button>
-                </li>
-                <li>
-                  <span>02</span>
-                  <div><b>V2.0.0</b><small>Windows x64</small></div>
-                  <button type="button" disabled data-copy-en="Pending">待发布</button>
-                </li>
-                <li>
-                  <span>01</span>
-                  <div><b>V1</b><small>Windows</small></div>
-                  <button type="button" disabled data-copy-en="Pending">待发布</button>
-                </li>
-              </ol>
-            </div>
-          </section>
+            <article class="release-view" data-version-panel="gdb-v3" hidden>
+              <div class="release-watermark" aria-hidden="true">03</div>
+              <p data-copy-en="Previous release">历史版本</p>
+              <h2>GDB Previewer</h2>
+              <div class="release-meta">
+                <strong>V3.0.0</strong>
+                <span>Windows x64</span>
+                <span class="release-formats">.GDB / .SHP / .MDB</span>
+              </div>
+              <button class="release-download" type="button" disabled>
+                <span data-copy-en="Pending">待发布</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 18h14"></path>
+                </svg>
+              </button>
+            </article>
 
-          <section class="download-panel dvstudio-panel" id="panel-dvstudio" role="tabpanel"
-                   aria-labelledby="tab-dvstudio" data-product-panel="dvstudio" hidden>
-            <div class="dvstudio-status">
-              <span aria-hidden="true">DS</span>
+            <article class="release-view" data-version-panel="gdb-v2" hidden>
+              <div class="release-watermark" aria-hidden="true">02</div>
+              <p data-copy-en="Previous release">历史版本</p>
+              <h2>GDB Previewer</h2>
+              <div class="release-meta">
+                <strong>V2.0.0</strong>
+                <span>Windows x64</span>
+                <span class="release-formats">.GDB / .SHP / .MDB</span>
+              </div>
+              <button class="release-download" type="button" disabled>
+                <span data-copy-en="Pending">待发布</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 18h14"></path>
+                </svg>
+              </button>
+            </article>
+
+            <article class="release-view" data-version-panel="gdb-v1" hidden>
+              <div class="release-watermark" aria-hidden="true">01</div>
+              <p data-copy-en="Previous release">历史版本</p>
+              <h2>GDB Previewer</h2>
+              <div class="release-meta">
+                <strong>V1</strong>
+                <span>Windows</span>
+              </div>
+              <button class="release-download" type="button" disabled>
+                <span data-copy-en="Pending">待发布</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 18h14"></path>
+                </svg>
+              </button>
+            </article>
+          </div>
+        </section>
+
+        <section class="product-panel" id="panel-dvstudio" role="tabpanel"
+                 aria-labelledby="tab-dvstudio" data-product-panel="dvstudio" hidden>
+          <aside class="version-rail">
+            <header>
+              <span>DVS</span>
+              <h2 data-copy-en="Versions">版本</h2>
+            </header>
+            <div class="version-empty" data-copy-en="No releases">暂无版本</div>
+            <div class="version-meter" aria-hidden="true"><span></span><i></i></div>
+          </aside>
+
+          <div class="release-stage">
+            <article class="release-view dvstudio-release is-active">
+              <div class="release-watermark" aria-hidden="true">DS</div>
               <p data-copy-en="ArcGIS Pro toolkit">ArcGIS Pro 工具套件</p>
               <h2>DvStudio</h2>
-              <strong data-copy-en="In preparation">准备中</strong>
-            </div>
-          </section>
-        </div>
+              <strong class="preparing-status" data-copy-en="In preparation">准备中</strong>
+            </article>
+          </div>
+        </section>
       </section>
     </div>
   </main>
-  <script type="module" src="../assets/js/pages/downloads.js?v=20260729-4"></script>
+  <script type="module" src="../assets/js/pages/downloads.js?v=20260729-5"></script>
 </body>
 </html>

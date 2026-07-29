@@ -2,22 +2,23 @@ import { initializeDisplayPreferences } from "../components/display-preferences.
 
 initializeDisplayPreferences();
 
-const tabs = [...document.querySelectorAll("[data-product-tab]")];
-const panels = [...document.querySelectorAll("[data-product-panel]")];
+const productTabs = [...document.querySelectorAll("[data-product-tab]")];
+const productPanels = [...document.querySelectorAll("[data-product-panel]")];
+const versionOptions = [...document.querySelectorAll("[data-version-target]")];
+const versionPanels = [...document.querySelectorAll("[data-version-panel]")];
 
-const selectProduct = (productId, updateUrl = true) => {
-  const selectedTab = tabs.find((tab) => tab.dataset.productTab === productId);
-  const selectedPanel = panels.find((panel) => panel.dataset.productPanel === productId);
-  if (!selectedTab || !selectedPanel) return;
+const selectVersion = (versionId, updateUrl = true) => {
+  const selectedOption = versionOptions.find((option) => option.dataset.versionTarget === versionId);
+  const selectedPanel = versionPanels.find((panel) => panel.dataset.versionPanel === versionId);
+  if (!selectedOption || !selectedPanel) return;
 
-  tabs.forEach((tab) => {
-    const isSelected = tab === selectedTab;
-    tab.classList.toggle("is-active", isSelected);
-    tab.setAttribute("aria-selected", String(isSelected));
-    tab.tabIndex = isSelected ? 0 : -1;
+  const ownerPanel = selectedOption.closest("[data-product-panel]");
+  ownerPanel?.querySelectorAll("[data-version-target]").forEach((option) => {
+    const isSelected = option === selectedOption;
+    option.classList.toggle("is-active", isSelected);
+    option.setAttribute("aria-pressed", String(isSelected));
   });
-
-  panels.forEach((panel) => {
+  ownerPanel?.querySelectorAll("[data-version-panel]").forEach((panel) => {
     const isSelected = panel === selectedPanel;
     panel.hidden = !isSelected;
     panel.classList.toggle("is-active", isSelected);
@@ -25,22 +26,76 @@ const selectProduct = (productId, updateUrl = true) => {
 
   if (updateUrl) {
     const nextUrl = new URL(window.location.href);
-    nextUrl.searchParams.set("product", productId);
+    nextUrl.searchParams.set("version", versionId);
     window.history.replaceState({}, "", nextUrl);
   }
 };
 
-tabs.forEach((tab, index) => {
+const selectProduct = (productId, updateUrl = true) => {
+  const selectedTab = productTabs.find((tab) => tab.dataset.productTab === productId);
+  const selectedPanel = productPanels.find((panel) => panel.dataset.productPanel === productId);
+  if (!selectedTab || !selectedPanel) return;
+
+  productTabs.forEach((tab) => {
+    const isSelected = tab === selectedTab;
+    tab.classList.toggle("is-active", isSelected);
+    tab.setAttribute("aria-selected", String(isSelected));
+    tab.tabIndex = isSelected ? 0 : -1;
+  });
+  productPanels.forEach((panel) => {
+    const isSelected = panel === selectedPanel;
+    panel.hidden = !isSelected;
+    panel.classList.toggle("is-active", isSelected);
+  });
+
+  const activeVersion = selectedPanel.querySelector("[data-version-target].is-active")
+    ?? selectedPanel.querySelector("[data-version-target]");
+
+  if (updateUrl) {
+    const nextUrl = new URL(window.location.href);
+    nextUrl.searchParams.set("product", productId);
+    if (activeVersion) nextUrl.searchParams.set("version", activeVersion.dataset.versionTarget);
+    else nextUrl.searchParams.delete("version");
+    window.history.replaceState({}, "", nextUrl);
+  }
+};
+
+productTabs.forEach((tab, index) => {
   tab.addEventListener("click", () => selectProduct(tab.dataset.productTab));
   tab.addEventListener("keydown", (event) => {
-    if (!["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(event.key)) return;
+    if (!["ArrowLeft", "ArrowRight"].includes(event.key)) return;
     event.preventDefault();
-    const direction = ["ArrowDown", "ArrowRight"].includes(event.key) ? 1 : -1;
-    const nextTab = tabs[(index + direction + tabs.length) % tabs.length];
+    const direction = event.key === "ArrowRight" ? 1 : -1;
+    const nextTab = productTabs[(index + direction + productTabs.length) % productTabs.length];
     selectProduct(nextTab.dataset.productTab);
     nextTab.focus();
   });
 });
 
+versionOptions.forEach((option, index) => {
+  option.addEventListener("click", () => selectVersion(option.dataset.versionTarget));
+  option.addEventListener("keydown", (event) => {
+    if (!["ArrowUp", "ArrowDown"].includes(event.key)) return;
+    const ownerPanel = option.closest("[data-product-panel]");
+    const ownerOptions = [...ownerPanel.querySelectorAll("[data-version-target]")];
+    const ownerIndex = ownerOptions.indexOf(option);
+    if (ownerIndex < 0) return;
+    event.preventDefault();
+    const direction = event.key === "ArrowDown" ? 1 : -1;
+    const nextOption = ownerOptions[(ownerIndex + direction + ownerOptions.length) % ownerOptions.length];
+    selectVersion(nextOption.dataset.versionTarget);
+    nextOption.focus();
+  });
+});
+
 const requestedProduct = new URL(window.location.href).searchParams.get("product");
-selectProduct(tabs.some((tab) => tab.dataset.productTab === requestedProduct) ? requestedProduct : "gdb", false);
+const initialProduct = productTabs.some((tab) => tab.dataset.productTab === requestedProduct)
+  ? requestedProduct
+  : "gdb";
+selectProduct(initialProduct, false);
+
+const requestedVersion = new URL(window.location.href).searchParams.get("version");
+const requestedOption = versionOptions.find((option) => option.dataset.versionTarget === requestedVersion);
+if (requestedOption && requestedOption.closest("[data-product-panel]")?.dataset.productPanel === initialProduct) {
+  selectVersion(requestedVersion, false);
+}
