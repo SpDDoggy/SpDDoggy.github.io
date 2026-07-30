@@ -203,6 +203,10 @@
   margin-top: 0;
 }
 
+.version-rail-list-only .version-empty {
+  margin-top: 0;
+}
+
 .version-option {
   position: relative;
   display: grid;
@@ -435,7 +439,7 @@
   stroke-width: 1.8;
 }
 
-.dvstudio-release {
+.unreleased-release {
   grid-template-columns: 1fr;
 }
 

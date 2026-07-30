@@ -11,7 +11,7 @@
   <script src="../assets/js/components/theme-boot.js?v=20260729-5"></script>
   <link rel="icon" href="../assets/images/brand/favicon.svg?v=20260728-5" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/css/site.css?v=20260729-6">
-  <link rel="stylesheet" href="../assets/css/pages/downloads.css?v=20260731-1">
+  <link rel="stylesheet" href="../assets/css/pages/downloads.css?v=20260731-2">
 </head>
 <body class="download-page">
   <header class="site-header">
@@ -44,6 +44,12 @@
                 data-product-tab="dvstudio">
           <span>02</span>
           <b>DvStudio</b>
+        </button>
+        <button class="product-tab" id="tab-dem-studio" type="button" role="tab"
+                aria-selected="false" aria-controls="panel-dem-studio" tabindex="-1"
+                data-product-tab="dem-studio">
+          <span>03</span>
+          <b>DEM Studio</b>
         </button>
       </div>
 
@@ -131,19 +137,35 @@
 
         <section class="product-panel" id="panel-dvstudio" role="tabpanel"
                  aria-labelledby="tab-dvstudio" data-product-panel="dvstudio" hidden>
-          <aside class="version-rail">
-            <header>
-              <span>DVS</span>
-              <h2 data-copy-en="Date · Version">日期-版本</h2>
-            </header>
-            <div class="version-empty" data-copy-en="No releases">暂无版本</div>
+          <aside class="version-rail version-rail-list-only">
+            <div class="version-list" aria-label="DvStudio 版本" data-aria-en="DvStudio versions">
+              <div class="version-empty" data-copy-en="No releases">暂无版本</div>
+            </div>
           </aside>
 
           <div class="release-stage">
-            <article class="release-view dvstudio-release is-active">
+            <article class="release-view unreleased-release is-active">
               <div class="release-watermark" aria-hidden="true">DS</div>
               <p data-copy-en="ArcGIS Pro toolkit">ArcGIS Pro 工具套件</p>
               <h2>DvStudio</h2>
+              <strong class="preparing-status" data-copy-en="In preparation">准备中</strong>
+            </article>
+          </div>
+        </section>
+
+        <section class="product-panel" id="panel-dem-studio" role="tabpanel"
+                 aria-labelledby="tab-dem-studio" data-product-panel="dem-studio" hidden>
+          <aside class="version-rail version-rail-list-only">
+            <div class="version-list" aria-label="DEM Studio 版本" data-aria-en="DEM Studio versions">
+              <div class="version-empty" data-copy-en="No releases">暂无版本</div>
+            </div>
+          </aside>
+
+          <div class="release-stage">
+            <article class="release-view unreleased-release is-active">
+              <div class="release-watermark" aria-hidden="true">DEM</div>
+              <p data-copy-en="Desktop terrain workspace">桌面地形工作区</p>
+              <h2>DEM Studio</h2>
               <strong class="preparing-status" data-copy-en="In preparation">准备中</strong>
             </article>
           </div>
