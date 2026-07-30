@@ -98,4 +98,9 @@ const requestedVersion = new URL(window.location.href).searchParams.get("version
 const requestedOption = versionOptions.find((option) => option.dataset.versionTarget === requestedVersion);
 if (requestedOption && requestedOption.closest("[data-product-panel]")?.dataset.productPanel === initialProduct) {
   selectVersion(requestedVersion, false);
+} else if (requestedVersion) {
+  const activeOption = productPanels
+    .find((panel) => panel.dataset.productPanel === initialProduct)
+    ?.querySelector("[data-version-target].is-active");
+  if (activeOption) selectVersion(activeOption.dataset.versionTarget);
 }

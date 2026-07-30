@@ -137,6 +137,10 @@ h1 em {
 }
 
 .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
   margin-top: 30px;
 }
 
@@ -175,6 +179,21 @@ h1 em {
 .button-primary:hover,
 .button-primary:focus-visible {
   background: #1a2d4b;
+}
+
+.button-secondary {
+  min-width: 132px;
+  color: #354b68;
+  background: rgb(240 244 249 / 86%);
+  border: 1px solid rgb(159 183 215 / 58%);
+  box-shadow: 0 10px 24px rgb(31 64 112 / 7%);
+}
+
+.button-secondary:hover,
+.button-secondary:focus-visible {
+  color: var(--ink);
+  background: rgb(255 255 255 / 94%);
+  border-color: #91b3e1;
 }
 
 .button-arrow {
@@ -265,6 +284,19 @@ html[data-theme="dark"] .button-primary:focus-visible {
   background: #243750;
 }
 
+html[data-theme="dark"] .button-secondary {
+  color: #c7d6e8;
+  background: rgb(27 42 64 / 88%);
+  border-color: #3b5472;
+}
+
+html[data-theme="dark"] .button-secondary:hover,
+html[data-theme="dark"] .button-secondary:focus-visible {
+  color: #f2f6fb;
+  background: #243750;
+  border-color: #56769d;
+}
+
 html[data-theme="dark"] .product-transition-portal {
   background:
     radial-gradient(circle at 44% 38%, #182a45 0 20%, #14243b 48%, #10213b 76%, #1768f2 100%);
@@ -333,7 +365,7 @@ html[data-theme="dark"] .product-transition-portal {
   }
 
   .hero-actions {
-    display: block;
+    gap: 8px;
   }
 
   .button {
@@ -342,7 +374,12 @@ html[data-theme="dark"] .product-transition-portal {
   }
 
   .button-primary {
+    flex: 1 1 190px;
     padding-right: 8px;
+  }
+
+  .button-secondary {
+    flex: 0 1 126px;
   }
 
   .button-arrow {

@@ -11,7 +11,7 @@
   <script src="../assets/js/components/theme-boot.js?v=20260729-5"></script>
   <link rel="icon" href="../assets/images/brand/favicon.svg?v=20260728-5" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/css/site.css?v=20260729-6">
-  <link rel="stylesheet" href="../assets/css/pages/downloads.css?v=20260729-10">
+  <link rel="stylesheet" href="../assets/css/pages/downloads.css?v=20260730-1">
 </head>
 <body class="download-page">
   <header class="site-header">
@@ -57,51 +57,30 @@
             </header>
             <div class="version-list" aria-label="GDB Previewer 版本" data-aria-en="GDB Previewer versions">
               <button class="version-option is-featured is-active" type="button" aria-pressed="true"
-                      data-version-target="gdb-v4">
-                <span>04</span><b>V4.0.0</b><small data-copy-en="Current">当前</small>
-              </button>
-              <button class="version-option" type="button" aria-pressed="false"
                       data-version-target="gdb-v3">
-                <span>03</span><b>V3.0.0</b>
+                <span>03</span><b>V3</b><small data-copy-en="Current">当前</small>
               </button>
               <button class="version-option" type="button" aria-pressed="false"
                       data-version-target="gdb-v2">
-                <span>02</span><b>V2.0.0</b>
+                <span>02</span><b>V2</b>
               </button>
               <button class="version-option" type="button" aria-pressed="false"
                       data-version-target="gdb-v1">
                 <span>01</span><b>V1</b>
               </button>
             </div>
-            <div class="version-meter" aria-hidden="true"><span></span><i></i></div>
           </aside>
 
           <div class="release-stage">
-            <article class="release-view is-active" data-version-panel="gdb-v4">
-              <div class="release-watermark" aria-hidden="true">04</div>
+            <article class="release-view is-active" data-version-panel="gdb-v3">
+              <div class="release-watermark" aria-hidden="true">03</div>
               <p data-copy-en="Current release">当前版本</p>
               <h2>GDB Previewer</h2>
               <div class="release-meta">
-                <strong>V4.0.0</strong>
+                <strong>V3</strong>
                 <span>Windows x64</span>
                 <span class="release-formats">.GDB / .SHP / .MDB</span>
-              </div>
-              <button class="release-download" type="button" disabled>
-                <span data-copy-en="Pending">待发布</span>
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 18h14"></path>
-                </svg>
-              </button>
-            </article>
-
-            <article class="release-view" data-version-panel="gdb-v3" hidden>
-              <div class="release-watermark" aria-hidden="true">03</div>
-              <p data-copy-en="Previous release">历史版本</p>
-              <h2>GDB Previewer</h2>
-              <div class="release-meta">
-                <strong>V3.0.0</strong>
-                <span>Windows x64</span>
-                <span class="release-formats">.GDB / .SHP / .MDB</span>
+                <time datetime="2026-06-29" data-copy-en="Released June 29, 2026">2026年6月29日发布</time>
               </div>
               <button class="release-download" type="button" disabled>
                 <span data-copy-en="Pending">待发布</span>
@@ -116,9 +95,10 @@
               <p data-copy-en="Previous release">历史版本</p>
               <h2>GDB Previewer</h2>
               <div class="release-meta">
-                <strong>V2.0.0</strong>
+                <strong>V2</strong>
                 <span>Windows x64</span>
                 <span class="release-formats">.GDB / .SHP / .MDB</span>
+                <time datetime="2026-06-17" data-copy-en="Released June 17, 2026">2026年6月17日发布</time>
               </div>
               <button class="release-download" type="button" disabled>
                 <span data-copy-en="Pending">待发布</span>
@@ -135,6 +115,7 @@
               <div class="release-meta">
                 <strong>V1</strong>
                 <span>Windows</span>
+                <time datetime="2026-05-15" data-copy-en="Released May 15, 2026">2026年5月15日发布</time>
               </div>
               <button class="release-download" type="button" disabled>
                 <span data-copy-en="Pending">待发布</span>
@@ -154,7 +135,6 @@
               <h2 data-copy-en="Versions">版本</h2>
             </header>
             <div class="version-empty" data-copy-en="No releases">暂无版本</div>
-            <div class="version-meter" aria-hidden="true"><span></span><i></i></div>
           </aside>
 
           <div class="release-stage">
@@ -169,6 +149,6 @@
       </section>
     </div>
   </main>
-  <script type="module" src="../assets/js/pages/downloads.js?v=20260729-5"></script>
+  <script type="module" src="../assets/js/pages/downloads.js?v=20260730-1"></script>
 </body>
 </html>

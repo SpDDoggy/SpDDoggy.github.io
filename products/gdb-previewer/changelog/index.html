@@ -44,14 +44,11 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13 11 22l-9-9V4h9l9 9ZM7 8h.01"></path></svg>
           <span data-copy-en="Versions">版本列表</span>
         </h2>
-        <button class="version-option version-active" type="button" data-version-target="v4" aria-pressed="true">
-          <span>⌄</span><b>V4.0.0</b><small data-copy-en="Current">当前版本</small>
-        </button>
-        <button class="version-option" type="button" data-version-target="v3" aria-pressed="false">
-          <span>›</span><b>V3.0.0</b><small data-copy-en="Previous">历史版本</small>
+        <button class="version-option version-active" type="button" data-version-target="v3" aria-pressed="true">
+          <span>⌄</span><b>V3</b><small data-copy-en="Current">当前版本</small>
         </button>
         <button class="version-option" type="button" data-version-target="v2" aria-pressed="false">
-          <span>›</span><b>V2.0.0</b><small data-copy-en="Previous">历史版本</small>
+          <span>›</span><b>V2</b><small data-copy-en="Previous">历史版本</small>
         </button>
         <button class="version-option" type="button" data-version-target="v1" aria-pressed="false">
           <span>›</span><b>V1</b><small data-copy-en="Previous">历史版本</small>
@@ -59,61 +56,13 @@
       </aside>
 
       <div class="release-documents">
-        <article class="release-document" id="release-v4" data-release-panel="v4">
+        <article class="release-document" id="release-v3" data-release-panel="v3">
           <header class="release-document-header">
-            <div><small>CURRENT RELEASE</small><h2>V4.0.0</h2></div>
-            <time datetime="2026-07-28">
+            <div><small>CURRENT RELEASE</small><h2>V3</h2></div>
+            <time datetime="2026-06-29">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v3M17 3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Z"></path></svg>
-              <span data-copy-en="Last updated 2026-07-28">最近更新 2026-07-28</span>
+              <span data-copy-en="Released June 29, 2026">2026年6月29日发布</span>
             </time>
-          </header>
-          <div class="release-document-body">
-            <section class="release-overview" id="v4-overview" data-toc-label="本版概览" data-toc-en="Overview">
-              <p data-copy-en="V4 continues to consolidate spatial data viewing, editing, symbology, and output. The latest update separates spatial preview and layout into distinct pages while improving the reliability of the style library, gather transactions, and field analysis.">V4 持续收拢空间数据的查看、编辑、符号与输出流程。最近一次更新把空间预览与布局图纸拆成两个独立页面，同时强化样式库、汇集事务与字段分析的可靠性。</p>
-              <div class="release-tags" aria-label="版本重点" data-aria-en="Release highlights">
-                <span data-copy-en="Spatial preview">空间预览</span><span data-copy-en="Layout and output">布局与出图</span><span data-copy-en="Style library">样式库</span><span data-copy-en="Transaction recovery">事务恢复</span>
-              </div>
-            </section>
-            <section class="release-section" id="v4-layout" data-toc-label="布局与出图" data-toc-en="Layout and output">
-              <span class="release-date">2026.07.28</span>
-              <h3 data-copy-en="Separate spatial preview and layout pages">空间预览与布局图纸双页</h3>
-              <p data-copy-en="Map exploration and layout production are now two clear stages instead of mixing navigation and composition tools on one canvas.">浏览地图和制作图纸成为两个清晰的工作阶段，不再把浏览工具与排版工具堆在同一画布。</p>
-              <ul>
-                <li data-copy-en="A mutually exclusive Spatial Preview / Layout switch now appears at the top of the preview.">空间预览顶部新增互斥的“空间预览 / 布局”切换。</li>
-                <li data-copy-en="The layout page supports A4/A3, portrait/landscape orientation, title, legend, scale bar, and north arrow.">布局页支持 A4/A3、纵向/横向、标题、图例、比例尺和指北针。</li>
-                <li data-copy-en="Layout documents and map snapshots save automatically, with full-page PNG export.">布局文档与地图快照自动保存，并支持整页 PNG 导出。</li>
-              </ul>
-            </section>
-            <section class="release-section" id="v4-styles" data-toc-label="样式库" data-toc-en="Style library">
-              <span class="release-date">2026.07.26</span>
-              <h3 data-copy-en="Purpose-built style layouts and editing">样式库专用排布与内容编辑</h3>
-              <p data-copy-en="Each renderer is presented according to its symbology semantics instead of being forced into the same oversized card.">不同渲染器按照符号系统自身语义展示，不再被压成同一种大卡片。</p>
-              <ul>
-                <li data-copy-en="Unique value, single symbol, graduated color, bivariate color, and continuous ramps each have dedicated layouts.">唯一值、单一符号、分级色彩、二元色彩与连续色带获得专用排布。</li>
-                <li data-copy-en="The style library supports editing and renaming, with atomic writes protecting the original library file.">样式库支持编辑与重命名，并通过原子写入保护原库文件。</li>
-              </ul>
-            </section>
-            <section class="release-section" id="v4-gather" data-toc-label="汇集恢复" data-toc-en="Gather recovery">
-              <span class="release-date">2026.07.26</span>
-              <h3 data-copy-en="Gather transaction progress and recovery">汇集事务进度与恢复</h3>
-              <p data-copy-en="Progress now distinguishes writing, verification, and commit stages. Each target uses an exclusive transaction lock, and idle staging results created by the application can be recovered.">进度明确区分写入、核验与提交，同一目标使用独占事务锁，并可恢复产品生成的静置 staging 结果。</p>
-            </section>
-            <section class="release-section" id="v4-fields" data-toc-label="字段分析" data-toc-en="Field analysis">
-              <span class="release-date">2026.07.23</span>
-              <h3 data-copy-en="Field analysis and continuous numeric symbology">字段分析与连续数值符号</h3>
-              <p data-copy-en="Field statistics now use paged attribute-only scans. Unique values support text, numbers, dates, booleans, nulls, and composite fields.">字段统计改为纯属性分页扫描，唯一值支持文本、数字、日期、布尔值、空值及复合字段。</p>
-            </section>
-            <footer class="release-document-footer" id="v4-docs" data-toc-label="使用文档" data-toc-en="Documentation">
-              <div><small>NEXT</small><strong data-copy-en="Get started with GDB Previewer">开始使用 GDB Previewer</strong></div>
-              <a href="../docs/"><b data-copy-en="Read the documentation">阅读使用文档</b> <span>→</span></a>
-            </footer>
-          </div>
-        </article>
-
-        <article class="release-document" id="release-v3" data-release-panel="v3" hidden>
-          <header class="release-document-header">
-            <div><small>HISTORICAL RELEASE</small><h2>V3.0.0</h2></div>
-            <span class="release-meta" data-copy-en="Desktop preview and lightweight editing">桌面预览与轻量编辑</span>
           </header>
           <div class="release-document-body">
             <section class="release-overview" id="v3-overview" data-toc-label="本版概览" data-toc-en="Overview">
@@ -137,8 +86,11 @@
 
         <article class="release-document" id="release-v2" data-release-panel="v2" hidden>
           <header class="release-document-header">
-            <div><small>HISTORICAL RELEASE</small><h2>V2.0.0</h2></div>
-            <span class="release-meta" data-copy-en="All-users installer">全用户安装版</span>
+            <div><small>HISTORICAL RELEASE</small><h2>V2</h2></div>
+            <time datetime="2026-06-17">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v3M17 3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Z"></path></svg>
+              <span data-copy-en="Released June 17, 2026">2026年6月17日发布</span>
+            </time>
           </header>
           <div class="release-document-body">
             <section class="release-overview" id="v2-overview" data-toc-label="本版概览" data-toc-en="Overview">
@@ -159,7 +111,10 @@
         <article class="release-document" id="release-v1" data-release-panel="v1" hidden>
           <header class="release-document-header">
             <div><small>FIRST RELEASE</small><h2>V1</h2></div>
-            <span class="release-meta" data-copy-en="First public release">首个公开形态</span>
+            <time datetime="2026-05-15">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v3M17 3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Z"></path></svg>
+              <span data-copy-en="Released May 15, 2026">2026年5月15日发布</span>
+            </time>
           </header>
           <div class="release-document-body">
             <section class="release-overview" id="v1-overview" data-toc-label="本版概览" data-toc-en="Overview">
@@ -179,11 +134,11 @@
       </div>
 
       <aside class="release-toc" aria-label="当前版本目录" data-aria-en="Current version contents">
-        <h2 data-release-toc-title>在 V4.0.0 中</h2>
+        <h2 data-release-toc-title>在 V3 中</h2>
         <nav data-release-toc-links></nav>
       </aside>
     </div>
   </main>
-  <script type="module" src="../../../assets/js/pages/changelog.js?v=20260729-3"></script>
+  <script type="module" src="../../../assets/js/pages/changelog.js?v=20260730-1"></script>
 </body>
 </html>

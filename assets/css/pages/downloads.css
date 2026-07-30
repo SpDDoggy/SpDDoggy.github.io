@@ -311,27 +311,6 @@
   font-weight: 700;
 }
 
-.version-meter {
-  display: grid;
-  grid-template-columns: 36px 1fr;
-  gap: 5px;
-  margin-top: auto;
-}
-
-.version-meter span,
-.version-meter i {
-  height: 5px;
-  border-radius: 5px;
-}
-
-.version-meter span {
-  background: rgb(198 90 54);
-}
-
-.version-meter i {
-  background: #c8d7e9;
-}
-
 .release-stage {
   position: relative;
   min-width: 0;
@@ -419,7 +398,8 @@
 }
 
 .release-meta strong,
-.release-meta span {
+.release-meta span,
+.release-meta time {
   padding: 8px 10px;
   border-radius: 6px;
   font-size: 11px;
@@ -430,11 +410,17 @@
   background: var(--blue);
 }
 
-.release-meta span {
+.release-meta span,
+.release-meta time {
   color: #526985;
   border: 1px solid rgb(126 159 203 / 44%);
   background: rgb(255 255 255 / 54%);
   font-family: Consolas, "Cascadia Mono", monospace;
+}
+
+.release-meta time {
+  border-color: transparent;
+  background: transparent;
 }
 
 .release-download {
@@ -525,15 +511,12 @@ html[data-theme="dark"] .version-option {
   color: #93a6bd;
 }
 
-html[data-theme="dark"] .version-meter i {
-  background: #30445e;
-}
-
 html[data-theme="dark"] .release-view > h2 {
   color: #eef4fc;
 }
 
-html[data-theme="dark"] .release-meta span {
+html[data-theme="dark"] .release-meta span,
+html[data-theme="dark"] .release-meta time {
   color: #b7c8dc;
   border-color: #486384;
   background: rgb(17 36 59 / 58%);
@@ -662,10 +645,6 @@ html[data-theme="dark"] .preparing-status {
   .version-option.is-featured::after {
     left: 46px;
     bottom: 7px;
-  }
-
-  .version-meter {
-    display: none;
   }
 
   .version-empty {

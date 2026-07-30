@@ -4,12 +4,11 @@ export const initializeReleaseReader = () => {
   const tocTitle = document.querySelector("[data-release-toc-title]");
   const tocLinks = document.querySelector("[data-release-toc-links]");
   let sectionObserver = null;
-  let selectedVersion = "v4";
+  let selectedVersion = "v3";
 
   const versionLabels = Object.freeze({
-    v4: "V4.0.0",
-    v3: "V3.0.0",
-    v2: "V2.0.0",
+    v3: "V3",
+    v2: "V2",
     v1: "V1"
   });
 
@@ -95,5 +94,12 @@ export const initializeReleaseReader = () => {
   });
 
   const requestedVersion = new URL(window.location.href).searchParams.get("version");
-  selectVersion(versionLabels[requestedVersion] ? requestedVersion : "v4", false);
+  const initialVersion = versionLabels[requestedVersion] ? requestedVersion : "v3";
+  selectVersion(initialVersion, false);
+  if (requestedVersion && requestedVersion !== initialVersion) {
+    const nextUrl = new URL(window.location.href);
+    nextUrl.searchParams.set("version", initialVersion);
+    nextUrl.hash = "";
+    window.history.replaceState(null, "", nextUrl);
+  }
 };
