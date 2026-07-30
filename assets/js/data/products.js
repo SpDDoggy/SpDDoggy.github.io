@@ -29,8 +29,7 @@ export const products = Object.freeze([
       en: "Digital elevation model tools"
     }),
     icon: "terrain",
-    pageUrl: "https://github.com/SpDDoggy/DemStudio",
-    external: true,
+    pageUrl: "products/dem-studio/",
     downloadUrl: null
   }
 ]);

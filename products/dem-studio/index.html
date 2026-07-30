@@ -1,0 +1,234 @@
+<!doctype html>
+<html class="dem-page-root" lang="zh-CN" data-theme="light" data-page="dem-studio"
+      data-title-en="DEM Studio · DvSpatial"
+      data-description-en="DEM Studio: a local-first desktop workspace for terrain visualization and georeferenced DEM output.">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DEM Studio：本地优先的桌面地形可视化与 DEM 渲染工作区。">
+  <meta name="theme-color" content="#f8fbff">
+  <title>DEM Studio · DvSpatial</title>
+  <script src="../../assets/js/components/theme-boot.js?v=20260729-3"></script>
+  <link rel="icon" href="../../assets/images/brand/favicon.svg?v=20260728-5" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/site.css?v=20260730-1">
+  <link rel="stylesheet" href="../../assets/css/pages/dem-studio.css?v=20260730-1">
+</head>
+<body class="dem-product-page">
+  <header class="dem-site-header">
+    <div class="shell dem-header-layout">
+      <a class="brand" href="../../" aria-label="DvSpatial 首页" data-aria-en="DvSpatial home">
+        <strong><span>Dv</span>Spatial</strong>
+      </a>
+      <nav class="dem-nav" aria-label="DEM Studio 导航" data-aria-en="DEM Studio navigation">
+        <a class="is-active" href="#overview" data-copy-en="Overview">概览</a>
+        <a href="#workflow" data-copy-en="Workflow">工作流</a>
+        <a href="#capabilities" data-copy-en="Capabilities">能力</a>
+        <a href="#platform" data-copy-en="Platforms">平台</a>
+      </nav>
+      <div class="dem-header-actions">
+        <a class="dem-home-link" href="../../" data-copy-en="Back home">返回首页</a>
+        <div data-site-tools></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="dem-hero" id="overview">
+      <div class="dem-contours" aria-hidden="true"></div>
+      <div class="shell dem-hero-grid">
+        <div class="dem-hero-copy">
+          <p class="dem-kicker">
+            <img src="../../assets/images/products/dem-studio-icon.svg?v=20260730-1" alt="">
+            DEM STUDIO · 0.12.1
+          </p>
+          <h1>
+            <span data-copy-en="Turn elevation data">把高程数据，</span>
+            <em data-copy-en="into terrain.">塑造成地形。</em>
+          </h1>
+          <p class="dem-lead"
+             data-copy-en="Import elevation data, explore interactive terrain, tune the camera and surface, then export georeferenced results—all in one local desktop workspace.">
+            导入高程数据，查看可交互地形，调整相机与表面效果，再导出带地理参考的结果——全部在一个本地桌面工作区完成。
+          </p>
+          <div class="dem-actions">
+            <a class="dem-primary-action" href="#workflow">
+              <span data-copy-en="View the workflow">查看工作流</span>
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v12M6 11l4 4 4-4"></path></svg>
+            </a>
+            <a class="dem-secondary-action" href="#platform" data-copy-en="Platform status">平台状态</a>
+          </div>
+          <ul class="dem-format-list" aria-label="支持的输入格式" data-aria-en="Supported input formats">
+            <li>GeoTIFF</li>
+            <li>HGT</li>
+            <li>ASC</li>
+            <li>Image Heightmap</li>
+          </ul>
+        </div>
+
+        <figure class="dem-workspace-preview">
+          <div class="dem-preview-topline" aria-hidden="true">
+            <span>LOCAL TERRAIN WORKSPACE</span>
+            <b>WINDOWS · X64</b>
+          </div>
+          <img src="../../assets/images/products/dem-studio-workspace.png?v=20260730-1"
+               alt="DEM Studio Windows 工作区，包含高程数据资源、三维地形视口和地形设置面板"
+               data-alt-en="DEM Studio Windows workspace with elevation data resources, a 3D terrain viewport, and terrain controls">
+          <figcaption>
+            <span data-copy-en="Real application interface">真实应用界面</span>
+            <b data-copy-en="Synthetic DEM benchmark">合成 DEM 基准地形</b>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="dem-workflow-section" id="workflow" aria-labelledby="dem-workflow-title">
+      <div class="shell">
+        <div class="dem-section-heading dem-section-heading-split">
+          <div>
+            <p>FROM DATA TO TERRAIN</p>
+            <h2 id="dem-workflow-title" data-copy-en="One complete terrain workflow.">一条完整的地形工作流。</h2>
+          </div>
+          <p data-copy-en="Move from source elevation data to an inspectable terrain scene and a georeferenced output without leaving the desktop workspace.">
+            从源高程数据进入可检查的地形场景，再输出带地理参考的结果，全程不离开桌面工作区。
+          </p>
+        </div>
+
+        <ol class="dem-workflow-list">
+          <li>
+            <span>01</span>
+            <div>
+              <small>IMPORT</small>
+              <h3 data-copy-en="Bring in elevation data">导入高程数据</h3>
+              <p data-copy-en="Open GeoTIFF/TIFF, SRTM HGT, ASCII Grid, and image heightmaps, with coordinate sidecars when available.">
+                打开 GeoTIFF/TIFF、SRTM HGT、ASCII Grid 与图像高度图，并读取可用的坐标侧车文件。
+              </p>
+            </div>
+          </li>
+          <li>
+            <span>02</span>
+            <div>
+              <small>SHAPE</small>
+              <h3 data-copy-en="Shape and inspect terrain">塑形并检查地形</h3>
+              <p data-copy-en="Adjust elevation, camera, lighting, materials, mesh quality, smoothing, and post-processing in real time.">
+                实时调整高度、相机、光照、材质、网格质量、平滑与后期效果。
+              </p>
+            </div>
+          </li>
+          <li>
+            <span>03</span>
+            <div>
+              <small>EXPORT</small>
+              <h3 data-copy-en="Export georeferenced results">导出地理参考结果</h3>
+              <p data-copy-en="Create PNG, PNG with World File, GeoTIFF, or TIFF with World File output.">
+                输出 PNG、PNG + World File、GeoTIFF 或 TIFF + World File。
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="dem-capability-section" id="capabilities" aria-labelledby="dem-capability-title">
+      <div class="shell dem-capability-layout">
+        <div class="dem-capability-heading">
+          <p class="dem-kicker-line">LOCAL-FIRST TERRAIN ENGINE</p>
+          <h2 id="dem-capability-title" data-copy-en="Terrain work stays close to the data.">地形处理，始终贴近数据。</h2>
+          <p data-copy-en="Files, rendering, presets, and application state remain on the local machine; the core workflow has no cloud or CDN dependency.">
+            文件处理、渲染、预设与应用状态都保留在本机，核心工作流不依赖云端或 CDN。
+          </p>
+        </div>
+
+        <div class="dem-capability-list">
+          <article>
+            <span>01</span>
+            <div>
+              <h3>Rust DEM Core</h3>
+              <p data-copy-en="DEM decoding, NoData handling, statistics, preview sampling, smoothing, and GeoTIFF encoding.">
+                DEM 解码、NoData 处理、统计、预览抽样、平滑与 GeoTIFF 编码。
+              </p>
+            </div>
+          </article>
+          <article>
+            <span>02</span>
+            <div>
+              <h3>Three.js / WebGL</h3>
+              <p data-copy-en="Interactive terrain, camera, materials, lighting, and a separate progressive path-tracing channel.">
+                可交互地形、相机、材质与光照，并提供独立的渐进式路径追踪通道。
+              </p>
+            </div>
+          </article>
+          <article>
+            <span>03</span>
+            <div>
+              <h3>Tauri 2</h3>
+              <p data-copy-en="Native file access, system dialogs, local settings, frameless windows, and cross-platform packaging.">
+                原生文件访问、系统对话框、本地设置、无边框窗口与跨平台打包。
+              </p>
+            </div>
+          </article>
+          <article>
+            <span>04</span>
+            <div>
+              <h3 data-copy-en="File-backed large rasters">文件后备大栅格</h3>
+              <p data-copy-en="A verified file-backed preview path keeps large elevation datasets inspectable without loading every sample into the interface.">
+                已验证的文件后备预览路径，让大幅高程数据无需全部进入界面内存也能查看。
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dem-platform-section" id="platform" aria-labelledby="dem-platform-title">
+      <div class="shell">
+        <div class="dem-section-heading">
+          <p>PLATFORM STATUS</p>
+          <h2 id="dem-platform-title" data-copy-en="Built across platforms. Verified where evidence exists.">面向多平台构建，只标记已有验证。</h2>
+        </div>
+
+        <div class="dem-platform-grid">
+          <article class="is-verified">
+            <span>WINDOWS</span>
+            <strong>X64</strong>
+            <b data-copy-en="Verified">已验证</b>
+            <p data-copy-en="Release build, application launch, and ASC runtime smoke test completed on Windows 11.">
+              已在 Windows 11 完成 Release 构建、应用启动与 ASC 运行时冒烟。
+            </p>
+          </article>
+          <article>
+            <span>MACOS</span>
+            <strong>ARM64 · X64</strong>
+            <b data-copy-en="Configured">工程已配置</b>
+            <p data-copy-en="App and DMG targets are configured; runner and real-device validation remain pending.">
+              App 与 DMG 目标已配置，等待 runner 与实机验证。
+            </p>
+          </article>
+          <article>
+            <span>LINUX</span>
+            <strong>X64</strong>
+            <b data-copy-en="Configured">工程已配置</b>
+            <p data-copy-en="AppImage and Deb targets are configured; WebKitGTK and real-device validation remain pending.">
+              AppImage 与 Deb 目标已配置，等待 WebKitGTK 与实机验证。
+            </p>
+          </article>
+        </div>
+
+        <div class="dem-release-boundary">
+          <span data-copy-en="Distribution status">分发状态</span>
+          <p data-copy-en="Signed installers and the production update channel are not yet publicly available.">
+            签名安装包与正式更新渠道尚未公开。
+          </p>
+          <a href="../../" data-copy-en="Browse all products">继续浏览产品</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="dem-footer">
+    <div class="shell">
+      <strong>DEM Studio</strong>
+      <span data-copy-en="Local-first terrain visualization.">本地优先的地形可视化工作区。</span>
+    </div>
+  </footer>
+  <script type="module" src="../../assets/js/pages/site.js?v=20260729-3"></script>
+</body>
+</html>
