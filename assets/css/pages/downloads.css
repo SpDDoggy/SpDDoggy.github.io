@@ -438,7 +438,31 @@
   border: 1px solid rgb(198 90 54 / 34%);
   border-radius: 9px;
   font-weight: 800;
-  cursor: not-allowed;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.release-download:hover {
+  color: #803a24;
+  background: rgb(255 255 255 / 90%);
+  border-color: rgb(198 90 54 / 62%);
+  box-shadow: 0 12px 26px rgb(79 104 139 / 14%);
+  transform: translateY(-1px);
+}
+
+.release-download:active {
+  transform: translateY(0);
+}
+
+.release-download:focus-visible {
+  outline: 3px solid rgb(23 104 242 / 28%);
+  outline-offset: 3px;
 }
 
 .release-download svg {
@@ -528,6 +552,12 @@ html[data-theme="dark"] .release-download {
   color: #f0ae95;
   background: rgb(14 28 45 / 66%);
   border-color: rgb(198 90 54 / 44%);
+}
+
+html[data-theme="dark"] .release-download:hover {
+  color: #ffd0bd;
+  background: rgb(22 42 64 / 88%);
+  border-color: rgb(224 118 80 / 72%);
 }
 
 html[data-theme="dark"] .preparing-status {
