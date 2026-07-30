@@ -11,7 +11,7 @@
   <script src="../assets/js/components/theme-boot.js?v=20260729-5"></script>
   <link rel="icon" href="../assets/images/brand/favicon.svg?v=20260728-5" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/css/site.css?v=20260729-6">
-  <link rel="stylesheet" href="../assets/css/pages/downloads.css?v=20260730-3">
+  <link rel="stylesheet" href="../assets/css/pages/downloads.css?v=20260731-1">
 </head>
 <body class="download-page">
   <header class="site-header">
@@ -50,23 +50,19 @@
       <section class="download-workbench">
         <section class="product-panel is-active" id="panel-gdb" role="tabpanel"
                  aria-labelledby="tab-gdb" data-product-panel="gdb">
-          <aside class="version-rail">
-            <header>
-              <span>GDB</span>
-              <h2 data-copy-en="Date · Version">日期-版本</h2>
-            </header>
+          <aside class="version-rail version-rail-list-only">
             <div class="version-list" aria-label="GDB Previewer 版本" data-aria-en="GDB Previewer versions">
-              <button class="version-option is-featured is-active" type="button" aria-pressed="true"
+              <button class="version-option is-active" type="button" aria-pressed="true"
                       data-version-target="gdb-v3">
-                <time datetime="2026-06-29">2026.06.29</time><b>V3</b><small data-copy-en="Current">当前</small>
+                <time datetime="2026-06-29">2026.06.29</time><span class="version-separator" aria-hidden="true">-</span><b>V3</b>
               </button>
               <button class="version-option" type="button" aria-pressed="false"
                       data-version-target="gdb-v2">
-                <time datetime="2026-06-17">2026.06.17</time><b>V2</b>
+                <time datetime="2026-06-17">2026.06.17</time><span class="version-separator" aria-hidden="true">-</span><b>V2</b>
               </button>
               <button class="version-option" type="button" aria-pressed="false"
                       data-version-target="gdb-v1">
-                <time datetime="2026-05-15">2026.05.15</time><b>V1</b>
+                <time datetime="2026-05-15">2026.05.15</time><span class="version-separator" aria-hidden="true">-</span><b>V1</b>
               </button>
             </div>
           </aside>

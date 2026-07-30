@@ -190,46 +190,48 @@
 
 .version-list {
   display: grid;
-  gap: 2px;
+  gap: 4px;
   margin-top: 22px;
+}
+
+.version-rail-list-only {
+  justify-content: flex-start;
+  padding-top: 34px;
+}
+
+.version-rail-list-only .version-list {
+  margin-top: 0;
 }
 
 .version-option {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(78px, 1fr) 28px auto;
+  grid-template-columns: minmax(0, 1fr) 12px 30px;
+  gap: 6px;
   align-items: center;
-  min-height: 34px;
-  padding: 0;
+  min-height: 42px;
+  padding: 0 10px;
   color: #6d7f96;
   text-align: left;
   background: transparent;
   border: 0;
-  border-radius: 0;
+  border-radius: 7px;
   cursor: pointer;
   transition:
     color 160ms ease,
-    background 160ms ease,
+    background-color 160ms ease,
     transform 160ms ease;
-}
-
-.version-option::after {
-  position: absolute;
-  width: 0;
-  height: 2px;
-  left: 0;
-  bottom: 5px;
-  background: rgb(198 90 54);
-  border-radius: 2px;
-  content: "";
-  transition: width 200ms cubic-bezier(.22, 1, .36, 1);
 }
 
 .version-option:hover,
 .version-option:focus-visible {
   color: var(--ink);
-  background: transparent;
-  outline: none;
+  background: rgb(23 104 242 / 6%);
+}
+
+.version-option:focus-visible {
+  outline: 2px solid rgb(23 104 242 / 30%);
+  outline-offset: 2px;
 }
 
 .version-option:active {
@@ -237,71 +239,25 @@
 }
 
 .version-option.is-active {
-  color: var(--ink);
-  background: transparent;
+  color: var(--blue);
+  background: rgb(23 104 242 / 8%);
 }
 
-.version-option.is-active::after {
-  width: 22px;
-  height: 2px;
+.version-option time,
+.version-option .version-separator,
+.version-option b {
+  color: inherit;
+  font: 700 12px/1.2 Consolas, "Cascadia Mono", monospace;
+  letter-spacing: 0;
 }
 
-.version-option time {
-  color: #91a2b8;
-  font: 700 9px/1 Consolas, "Cascadia Mono", monospace;
-  letter-spacing: -.02em;
+.version-option .version-separator {
+  text-align: center;
 }
 
 .version-option b {
-  font-size: 10px;
-  letter-spacing: .01em;
-}
-
-.version-option small {
-  padding: 4px 6px;
-  color: var(--blue);
-  background: rgb(23 104 242 / 9%);
-  border-radius: 5px;
-  font-size: 9px;
+  text-align: right;
   font-weight: 700;
-  white-space: nowrap;
-}
-
-.version-option.is-featured {
-  grid-template-columns: minmax(112px, 1fr) 34px auto;
-  grid-template-rows: 1fr 1fr;
-  min-height: 86px;
-  margin-bottom: 10px;
-  padding: 10px 0 14px;
-}
-
-.version-option.is-featured time {
-  grid-row: 1 / -1;
-  align-self: center;
-  color: var(--blue);
-  font: 800 21px/.9 Consolas, "Cascadia Mono", monospace;
-  letter-spacing: -.08em;
-}
-
-.version-option.is-featured b {
-  align-self: end;
-  font-size: 15px;
-  letter-spacing: -.04em;
-}
-
-.version-option.is-featured small {
-  align-self: start;
-  justify-self: start;
-  padding: 3px 6px;
-}
-
-.version-option.is-featured::after {
-  left: 0;
-  bottom: 14px;
-}
-
-.version-option.is-featured.is-active::after {
-  width: 30px;
 }
 
 .version-empty {
@@ -537,6 +493,12 @@ html[data-theme="dark"] .version-option {
   color: #93a6bd;
 }
 
+html[data-theme="dark"] .version-option:hover,
+html[data-theme="dark"] .version-option:focus-visible,
+html[data-theme="dark"] .version-option.is-active {
+  background: rgb(70 122 190 / 14%);
+}
+
 html[data-theme="dark"] .release-view > h2 {
   color: #eef4fc;
 }
@@ -633,50 +595,19 @@ html[data-theme="dark"] .preparing-status {
 
   .version-list {
     grid-auto-flow: column;
-    grid-auto-columns: minmax(176px, 1fr);
+    grid-auto-columns: minmax(164px, 1fr);
     align-items: center;
     margin-top: 18px;
+    padding: 2px;
     overflow-x: auto;
   }
 
-  .version-option:not(.is-featured) {
-    align-self: center;
-    min-height: 40px;
+  .version-rail-list-only {
+    padding: 20px 0 4px;
   }
 
-  .version-option::after {
-    width: 0;
-    height: 3px;
-    right: auto;
-    left: 0;
-    bottom: -2px;
-    transition: width 200ms cubic-bezier(.22, 1, .36, 1);
-  }
-
-  .version-option.is-active::after {
-    width: 30px;
-    height: 3px;
-  }
-
-  .version-option.is-featured {
-    grid-template-columns: minmax(112px, 1fr) 28px auto;
-    min-height: 68px;
-    margin: 0;
-    padding: 5px 0 8px;
-    border-block: 0;
-  }
-
-  .version-option.is-featured time {
-    font-size: 20px;
-  }
-
-  .version-option.is-featured b {
-    font-size: 13px;
-  }
-
-  .version-option.is-featured::after {
-    left: 0;
-    bottom: 7px;
+  .version-rail-list-only .version-list {
+    margin-top: 0;
   }
 
   .version-empty {
