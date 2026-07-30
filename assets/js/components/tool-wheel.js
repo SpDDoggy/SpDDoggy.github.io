@@ -10,6 +10,11 @@ const iconMarkup = {
       <ellipse cx="16" cy="7" rx="9" ry="4"></ellipse>
       <path d="M7 7v7c0 2.2 4 4 9 4s9-1.8 9-4V7"></path>
       <path d="M7 14v7c0 2.2 4 4 9 4s9-1.8 9-4v-7"></path>
+    </svg>`,
+  terrain: `
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M4 25 12 9l4.2 7.2L20 12l8 13H4Z"></path>
+      <path d="m8.5 20 3.5-4 2.4 2.4"></path>
     </svg>`
 };
 
@@ -105,6 +110,10 @@ export const initializeToolWheel = (products) => {
     if (control instanceof HTMLAnchorElement) {
       control.href = product.pageUrl;
       control.dataset.productLink = "";
+      if (product.external) {
+        control.target = "_blank";
+        control.rel = "noreferrer";
+      }
     } else {
       control.type = "button";
       control.setAttribute("aria-pressed", "false");

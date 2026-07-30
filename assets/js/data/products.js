@@ -20,5 +20,17 @@ export const products = Object.freeze([
     icon: "database",
     pageUrl: "products/gdb-previewer/",
     downloadUrl: null
+  },
+  {
+    id: "dem-studio",
+    name: "DEM Studio",
+    description: Object.freeze({
+      zh: "数字高程模型工具",
+      en: "Digital elevation model tools"
+    }),
+    icon: "terrain",
+    pageUrl: "https://github.com/SpDDoggy/DemStudio",
+    external: true,
+    downloadUrl: null
   }
 ]);
