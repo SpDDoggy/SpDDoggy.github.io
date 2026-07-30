@@ -196,6 +196,18 @@ h1 em {
   border-color: #91b3e1;
 }
 
+.button-placeholder,
+.button-placeholder:hover,
+.button-placeholder:focus-visible {
+  color: #78889c;
+  background: rgb(240 244 249 / 68%);
+  border-color: rgb(174 194 220 / 42%);
+  box-shadow: none;
+  cursor: default;
+  opacity: .72;
+  transform: none;
+}
+
 .button-arrow {
   display: grid;
   flex: 0 0 auto;
@@ -295,6 +307,14 @@ html[data-theme="dark"] .button-secondary:focus-visible {
   color: #f2f6fb;
   background: #243750;
   border-color: #56769d;
+}
+
+html[data-theme="dark"] .button-placeholder,
+html[data-theme="dark"] .button-placeholder:hover,
+html[data-theme="dark"] .button-placeholder:focus-visible {
+  color: #8190a3;
+  background: rgb(28 43 62 / 58%);
+  border-color: #34485f;
 }
 
 html[data-theme="dark"] .product-transition-portal {
