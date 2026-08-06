@@ -320,12 +320,14 @@
   color: rgb(23 104 242 / 6%);
   font: 800 clamp(190px, 24vw, 330px)/1 "Arial Black", sans-serif;
   letter-spacing: -.12em;
+  pointer-events: none;
   user-select: none;
 }
 
 .release-view > p,
 .release-view > h2,
 .release-meta,
+.release-downloads,
 .release-download,
 .preparing-status {
   position: relative;
@@ -385,11 +387,25 @@
   background: transparent;
 }
 
+.release-downloads {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  min-width: 0;
+  max-width: 100%;
+  margin-top: 30px;
+}
+
+.release-downloads .release-download {
+  margin-top: 0;
+}
+
 .release-download {
   display: grid;
-  grid-template-columns: auto 38px;
+  grid-template-columns: minmax(0, 1fr) 38px;
   align-items: center;
   gap: 18px;
+  min-width: 0;
   min-height: 54px;
   margin-top: 30px;
   padding: 8px 8px 8px 20px;
@@ -406,6 +422,23 @@
     border-color 160ms ease,
     box-shadow 160ms ease,
     transform 160ms ease;
+}
+
+.release-download-copy {
+  display: grid;
+  gap: 3px;
+}
+
+.release-download-copy b {
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.release-download-copy small {
+  color: #71839a;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 .release-download:hover {
@@ -526,6 +559,10 @@ html[data-theme="dark"] .release-download:hover {
   border-color: rgb(224 118 80 / 72%);
 }
 
+html[data-theme="dark"] .release-download-copy small {
+  color: #9fb2c9;
+}
+
 html[data-theme="dark"] .preparing-status {
   color: #aebfd3;
   background: rgb(23 42 64 / 72%);
@@ -556,7 +593,18 @@ html[data-theme="dark"] .preparing-status {
 
 @media (max-width: 760px) {
   .download-main {
+    grid-template-columns: minmax(0, 1fr);
     padding: 24px 0 36px;
+  }
+
+  .download-layout,
+  .download-workbench,
+  .product-panel,
+  .release-stage,
+  .release-view,
+  .release-downloads {
+    min-width: 0;
+    max-width: 100%;
   }
 
   .download-heading {
@@ -638,6 +686,11 @@ html[data-theme="dark"] .preparing-status {
   .release-download {
     justify-self: start;
   }
+
+  .release-downloads {
+    display: grid;
+    justify-items: start;
+  }
 }
 
 @media (max-width: 430px) {
@@ -656,6 +709,11 @@ html[data-theme="dark"] .preparing-status {
   }
 
   .release-meta .release-formats {
+    width: 100%;
+  }
+
+  .release-downloads,
+  .release-downloads .release-download {
     width: 100%;
   }
 }

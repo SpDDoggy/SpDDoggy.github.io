@@ -11,7 +11,7 @@
   <script src="../assets/js/components/theme-boot.js?v=20260729-5"></script>
   <link rel="icon" href="../assets/images/brand/favicon.svg?v=20260728-5" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/css/site.css?v=20260729-6">
-  <link rel="stylesheet" href="../assets/css/pages/downloads.css?v=20260731-2">
+  <link rel="stylesheet" href="../assets/css/pages/downloads.css?v=20260806-1">
 </head>
 <body class="download-page">
   <header class="site-header">
@@ -59,6 +59,10 @@
           <aside class="version-rail version-rail-list-only">
             <div class="version-list" aria-label="GDB Previewer 版本" data-aria-en="GDB Previewer versions">
               <button class="version-option is-active" type="button" aria-pressed="true"
+                      data-version-target="gdb-v4">
+                <time datetime="2026-08-06">2026.08.06</time><span class="version-separator" aria-hidden="true">-</span><b>V4</b>
+              </button>
+              <button class="version-option" type="button" aria-pressed="false"
                       data-version-target="gdb-v3">
                 <time datetime="2026-06-29">2026.06.29</time><span class="version-separator" aria-hidden="true">-</span><b>V3</b>
               </button>
@@ -74,9 +78,45 @@
           </aside>
 
           <div class="release-stage">
-            <article class="release-view is-active" data-version-panel="gdb-v3">
-              <div class="release-watermark" aria-hidden="true">03</div>
+            <article class="release-view is-active" data-version-panel="gdb-v4">
+              <div class="release-watermark" aria-hidden="true">04</div>
               <p data-copy-en="Current release">当前版本</p>
+              <h2>GDB Previewer</h2>
+              <div class="release-meta">
+                <strong>V4</strong>
+                <span>Windows x64</span>
+                <span class="release-formats">.GDB / .SHP / .MDB</span>
+                <time datetime="2026-08-06" data-copy-en="Released August 6, 2026">2026年8月6日发布</time>
+              </div>
+              <div class="release-downloads">
+                <a class="release-download" href="./gdb-previewer/GDBPreviewer_V4_win-x64_Setup.exe"
+                   download aria-label="下载 GDB Previewer V4 框架依赖版"
+                   data-aria-en="Download GDB Previewer V4 framework-dependent edition">
+                  <span class="release-download-copy">
+                    <b data-copy-en="Framework-dependent">框架依赖版</b>
+                    <small data-copy-en="Requires .NET 8">需要 .NET 8</small>
+                  </span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 18h14"></path>
+                  </svg>
+                </a>
+                <a class="release-download" href="./gdb-previewer/GDBPreviewer_V4_win-x64_SC_Setup.exe"
+                   download aria-label="下载 GDB Previewer V4 自包含版"
+                   data-aria-en="Download GDB Previewer V4 self-contained edition">
+                  <span class="release-download-copy">
+                    <b data-copy-en="Self-contained">自包含版</b>
+                    <small data-copy-en="No .NET required">无需预装 .NET</small>
+                  </span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 18h14"></path>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="release-view" data-version-panel="gdb-v3" hidden>
+              <div class="release-watermark" aria-hidden="true">03</div>
+              <p data-copy-en="Previous release">历史版本</p>
               <h2>GDB Previewer</h2>
               <div class="release-meta">
                 <strong>V3</strong>
