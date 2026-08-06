@@ -69,39 +69,90 @@
           </header>
           <div class="release-document-body">
             <section class="release-overview" id="v4-overview" data-toc-label="本版概览" data-toc-en="Overview">
-              <p data-copy-en="V4 expands GDB Previewer from data inspection into an integrated Windows workspace for spatial preview, symbology, layout composition, attribute editing, and verified export.">V4 将 GDB Previewer 从数据查看工具扩展为集空间预览、符号系统、布局制图、属性编辑与校验导出于一体的 Windows 工作空间。</p>
-              <div class="release-tags"><span data-copy-en="Large datasets">大型数据</span><span data-copy-en="Symbology">符号系统</span><span data-copy-en="Layouts">布局制图</span><span data-copy-en="Safe export">安全导出</span></div>
+              <p data-copy-en="V4 is a major upgrade that expands GDB Previewer from a data viewer into an integrated Windows GIS workspace. It introduces a new settings center, a new symbology system, and a new layout workspace, while strengthening large-layer preview, attribute editing, data gathering, and verified export.">V4 是一次重大版本升级，将 GDB Previewer 从数据查看工具扩展为完整的 Windows GIS 工作空间。本版首次带来全新设置中心、全新符号系统和全新布局制图，并全面增强大型图层预览、属性编辑、数据汇集与校验导出。</p>
+              <div class="release-tags"><span data-copy-en="New settings">全新设置</span><span data-copy-en="New symbology">全新符号系统</span><span data-copy-en="New layouts">全新布局制图</span><span data-copy-en="Large datasets">大型数据</span><span data-copy-en="Safe export">安全导出</span></div>
             </section>
-            <section class="release-section" id="v4-preview" data-toc-label="空间预览与符号" data-toc-en="Spatial preview and symbology">
-              <h3 data-copy-en="Screen-accurate display and reusable styles">准确显示与可复用符号</h3>
+            <section class="release-section" id="v4-settings" data-toc-label="全新设置中心" data-toc-en="New settings center">
+              <h3 data-copy-en="New: one place for application preferences">全新功能：统一管理应用设置</h3>
               <ul>
-                <li data-copy-en="Large point, line, and polygon layers use scale-aware rendering without replacing real geometry with bounding boxes or fake shapes.">大型点、线、面图层采用分比例尺显示，不以包络矩形或伪图形代替真实几何。</li>
-                <li data-copy-en="Selection, attribute inspection, and export continue to use original feature identity and geometry independently of display caches.">选择、属性查看与导出继续读取原始要素身份和几何，不以显示缓存替代事实数据。</li>
-                <li data-copy-en="Portable .prestyle libraries support single, unique-value, graduated, bivariate, unclassed, and proportional symbol workflows.">可移植的 .prestyle 样式库支持单一、唯一值、分级、二元、未分类和比例符号工作流。</li>
+                <li data-copy-en="The new settings center consolidates general preferences, spatial-preview controls, symbology defaults, cache management, diagnostics, performance logs, and advanced storage options.">新增独立设置中心，集中管理常规偏好、空间预览控制、符号默认值、缓存、诊断、性能日志与高级存储选项。</li>
+                <li data-copy-en="Preview controls now cover wheel direction, zoom speed, panning behavior, multi-select modifiers, click behavior, and fixed mouse and keyboard shortcuts.">空间预览控制新增滚轮方向、缩放速度、平移方式、多选修饰键、点击行为，以及固定鼠标与键盘快捷操作。</li>
+                <li data-copy-en="Configure separate default and selected-feature symbols for point, line, and polygon layers, with high-DPI previews that update with the current display.">可分别设置点、线、面图层的默认符号与点选符号，并提供随显示器缩放更新的高清预览。</li>
+                <li data-copy-en="Cache, configuration, log, and symbol-storage locations can be managed centrally; location changes use copy-and-verify migration before switching to the new path.">缓存、配置、日志与符号配置的存储位置可集中管理；更改位置时先复制并校验，再切换到新路径。</li>
+                <li data-copy-en="Selective cleanup lets you remove legend, annotation, or symbology display caches independently while preserving unchecked data.">缓存清理支持按图例、注记和符号系统显示缓存分别勾选，未选中的缓存不会被删除。</li>
+                <li data-copy-en="Optional diagnostics and performance logs record key opening, loading, rendering, and export events, with bounded file rotation for long-running use.">诊断日志与性能日志可按需开启，记录数据源打开、加载、渲染和导出等关键事件，并采用有界轮转控制长期占用。</li>
               </ul>
             </section>
-            <section class="release-section" id="v4-layout" data-toc-label="布局制图" data-toc-en="Layout composition">
-              <h3 data-copy-en="Compose and export complete map pages">编排并导出完整地图页面</h3>
+            <section class="release-section" id="v4-symbology" data-toc-label="全新符号系统" data-toc-en="New symbology system">
+              <h3 data-copy-en="New: build, reuse, and share real map symbols">全新功能：创建、复用并分享真实地图符号</h3>
               <ul>
-                <li data-copy-en="Create multiple A4 or A3 layouts with map frames, titles, legends, scale bars, north arrows, text, markers, and vector decoration objects.">创建多个 A4 或 A3 布局，加入地图框、标题、图例、比例尺、指北针、文字、标记和矢量整饰对象。</li>
-                <li data-copy-en="Layout elements support alignment, snapping, grouping, ordering, rotation, node editing, undo and redo, and automatic persistence.">布局元素支持对齐吸附、分组、层级、旋转、节点编辑、撤销重做和自动保存。</li>
-                <li data-copy-en="Export PNG, JPEG, TIFF, or BMP pages up to 600 DPI, with map frames rerendered at the target resolution.">整页可导出为 PNG、JPEG、TIFF 或 BMP，最高 600 DPI；地图框会按目标分辨率重新渲染。</li>
+                <li data-copy-en="A new symbology dialog is available directly from point, line, and polygon layers, with geometry-aware controls and a live preview.">点、线、面图层新增“符号系统”入口，按几何类型提供对应编辑控件与实时预览。</li>
+                <li data-copy-en="Nine renderer families cover single symbols, unique values, graduated colors, bivariate colors, unclassed continuous colors, graduated symbols, proportional symbols, charts, and dictionaries where applicable.">按适用几何支持单一符号、唯一值、分级色彩、二元色彩、未分类连续色彩、分级符号、比例符号、图表和字典共九类符号系统。</li>
+                <li data-copy-en="Unique-value and numeric renderers analyze real attribute fields, including compound fields, null values, actual ranges, class breaks, and bounded Fisher-Jenks classification.">唯一值与数值类符号直接分析真实属性字段，支持复合字段、空值、真实范围、分类断点和有界 Fisher-Jenks 分类。</li>
+                <li data-copy-en="Symbols are composed from ordered real layers. Edit RGBA color, opacity, marker size, line width, visibility, duplication, deletion, and stacking order for each layer.">符号由有序的真实图层组成，可逐层编辑 RGBA 颜色、不透明度、标记大小、线宽、显隐、复制、删除与叠放顺序。</li>
+                <li data-copy-en="Legends, editor previews, and map rendering share the same renderer, so fills, outlines, markers, color ramps, and composite symbols remain visually consistent.">图例、编辑预览与地图显示共用同一渲染结果，填充、轮廓、标记、色带与复合符号保持一致。</li>
+                <li data-copy-en="The portable .prestyle format supports creating, renaming, importing, exporting, deleting, and quickly matching reusable styles without ArcGIS style dependencies.">新增可移植的 .prestyle 样式格式，支持创建、重命名、导入、导出、删除与快速匹配，不依赖 ArcGIS 样式文件。</li>
+                <li data-copy-en="Per-layer assignments persist across restarts, use backup recovery, and invalidate only display caches when symbol appearance changes.">逐图层符号配置可跨启动恢复，并具备备份恢复能力；样式变化只使相关显示缓存失效，不影响原始几何读取。</li>
               </ul>
             </section>
-            <section class="release-section" id="v4-data" data-toc-label="数据编辑与导出" data-toc-en="Data editing and export">
-              <h3 data-copy-en="Transactional edits and verified output">事务式编辑与校验输出</h3>
+            <section class="release-section" id="v4-layout" data-toc-label="全新布局制图" data-toc-en="New layout workspace">
+              <h3 data-copy-en="New: compose and export complete map pages">全新功能：编排并导出完整地图页面</h3>
               <ul>
-                <li data-copy-en="Editable FileGDB and Shapefile attributes support pending changes, undo and redo, recovery, conflict detection, and reread verification after save; MDB remains read-only.">FileGDB 与 Shapefile 属性支持待提交更改、撤销重做、恢复、冲突检测和保存后复读校验；MDB 保持只读。</li>
-                <li data-copy-en="Batch export selected layers to Shapefile or FileGDB, or gather supported GDB, SHP, and MDB sources into a verified new GDB.">批量把所选图层导出为 Shapefile 或 FileGDB，也可将受支持的 GDB、SHP、MDB 数据源汇集到经过校验的新 GDB。</li>
-                <li data-copy-en="Exports use temporary targets, integrity checks, deterministic conflict handling, and recoverable replacement so failed operations do not commit partial output.">导出采用临时目标、完整性校验、确定性冲突处理和可回滚替换，失败操作不会提交半成品。</li>
+                <li data-copy-en="A new standalone layout workspace supports multiple named layouts with A4 or A3 paper in portrait or landscape orientation.">新增独立布局工作区，支持创建多个命名布局，并可选 A4/A3、纵向或横向纸张。</li>
+                <li data-copy-en="Add map frames, titles, legends, scale bars, north arrows, custom text, and markers, then manage visibility and order from the layout layer list.">可添加地图框、标题、图例、比例尺、指北针、自定义文字和标记，并在布局图层列表中管理显隐与顺序。</li>
+                <li data-copy-en="Elements support drag, resize, rotate, flip, lock, order changes, multi-selection, grouping, undo, redo, and automatic saving.">布局元素支持拖动、缩放、旋转、翻转、锁定、层级调整、多选、分组、撤销、重做与自动保存。</li>
+                <li data-copy-en="Text supports local fonts, size, weight, italic, underline, color, and selection-level rich-text formatting that persists into export.">文字支持本机字体、字号、字重、斜体、下划线、颜色及选区级富文本格式，并可完整保留到导出结果。</li>
+                <li data-copy-en="Rectangle, line, arrow, and polygon decorations support full-page creation, node editing, fill and stroke styles, copy, paste, and duplicate.">新增矩形、线段、箭头和多边形整饰对象，支持整页创建、节点编辑、填充与描边样式，以及复制、粘贴和创建副本。</li>
+                <li data-copy-en="Page edges, centers, other elements, and vector nodes provide shared snapping guides; hold Alt to temporarily disable snapping.">页面边界、中心线、其他元素及矢量节点提供统一吸附参考线，按住 Alt 可临时关闭吸附。</li>
+                <li data-copy-en="Activate a map frame for real spatial preview, pan, zoom, and selection. Data-source switches, layer visibility, and symbol changes refresh without disturbing page composition.">地图框可激活为真实空间预览进行平移、缩放与选取；切换数据源、图层显隐或符号后可刷新内容，不破坏已完成的排版。</li>
+                <li data-copy-en="Export complete pages as PNG, JPEG, TIFF, or BMP at 96, 150, 300, or 600 DPI, with background, JPEG quality, and TIFF compression options. Map frames rerender at the target resolution.">整页可导出为 PNG、JPEG、TIFF 或 BMP，支持 96/150/300/600 DPI、背景、JPEG 质量和 TIFF 压缩；地图框按目标分辨率重新渲染。</li>
               </ul>
             </section>
-            <section class="release-section" id="v4-start" data-toc-label="启动与运行体验" data-toc-en="Startup and desktop experience">
-              <h3 data-copy-en="A complete desktop entry point">完整的桌面入口</h3>
+            <section class="release-section" id="v4-preview" data-toc-label="空间预览" data-toc-en="Spatial preview">
+              <h3 data-copy-en="More complete and responsive large-layer display">更完整、更流畅的大型图层显示</h3>
               <ul>
-                <li data-copy-en="The new home screen opens GDB, SHP, and MDB sources through file selection or drag and drop, and keeps a manageable recent-project list.">全新首页可通过选择或拖放打开 GDB、SHP、MDB，并管理最近使用项目。</li>
-                <li data-copy-en="The settings center brings preview controls, symbol defaults, cache locations, diagnostics, and bounded cleanup into one place.">设置中心统一管理预览操作、默认符号、缓存位置、诊断信息和受控清理。</li>
-                <li data-copy-en="V4 is available as a framework-dependent installer and a self-contained installer for Windows 10 and 11 x64.">V4 为 Windows 10/11 x64 提供框架依赖版与自包含版两个安装程序。</li>
+                <li data-copy-en="Large point, line, and polygon layers use scale-aware rendering from detailed views to full extent without replacing real geometry with bounding boxes or fake shapes.">大型点、线、面图层从局部细节到全图范围采用分比例尺显示，不以包络矩形或伪图形代替真实几何。</li>
+                <li data-copy-en="Improved frame replacement and fallback rendering reduce partial layers, blank views, stale-frame residue, and display loss when a fast rendering path is unavailable.">改进帧替换与降级渲染，减少图层局部缺失、空白画面、旧帧残留，以及快速渲染链不可用时的显示中断。</li>
+                <li data-copy-en="Selection, multi-selection, zoom to selection, attribute inspection, and export continue to use original feature identity and geometry.">点选、多选、缩放至所选项、属性查看和导出继续读取原始要素标识与原始几何。</li>
+                <li data-copy-en="Unselected features retain their original hue while selection uses a separate highlight, keeping thematic maps recognizable during inspection.">选中要素使用独立高亮，未选要素保留原有色相，查看专题图时不会统一变成灰色。</li>
+                <li data-copy-en="Loading, layer switching, first-frame rendering, and optional persistent-cache work provide cancellable progress; display caches never replace source data for inspection or export.">数据加载、图层切换、首帧渲染和可选持久缓存均提供可取消进度；显示缓存不会代替源数据参与查看或导出。</li>
+              </ul>
+            </section>
+            <section class="release-section" id="v4-attributes" data-toc-label="属性查看与编辑" data-toc-en="Attribute viewing and editing">
+              <h3 data-copy-en="Edit with a clear pending-change workflow">以清晰的待提交流程编辑属性</h3>
+              <ul>
+                <li data-copy-en="Attribute tables keep paging, sorting, searching, statistics, row selection, and map linkage for GDB, SHP, and MDB sources.">GDB、SHP 与 MDB 属性表继续支持分页、排序、搜索、统计、行选择及地图联动。</li>
+                <li data-copy-en="Editable FileGDB and Shapefile sources support batch changes, undo, redo, pending-change review, discard, and save.">可编辑的 FileGDB 与 Shapefile 支持批量更改、撤销、重做、待提交检查、放弃与保存。</li>
+                <li data-copy-en="Interrupted edits can be recovered, while external-change conflicts and write locks are detected before commit.">异常中断后可恢复编辑草稿；提交前会检测外部变更冲突与写入锁。</li>
+                <li data-copy-en="Saved FileGDB and Shapefile data is reopened and reread for verification; MDB remains browse, preview, and export only.">FileGDB 与 Shapefile 保存后会重新打开并复读校验；MDB 继续限于浏览、预览与导出。</li>
+                <li data-copy-en="Feature attributes can be edited directly from spatial preview and share the same pending-change set and atomic save path as the attribute table.">可从空间预览直接编辑图斑属性，并与属性表共享同一批待提交更改及原子保存链路。</li>
+              </ul>
+            </section>
+            <section class="release-section" id="v4-export" data-toc-label="数据导出与汇集" data-toc-en="Data export and gathering">
+              <h3 data-copy-en="Verified output without partial results">经校验的输出，不遗留半成品</h3>
+              <ul>
+                <li data-copy-en="Batch export selected layers to a Shapefile folder or a new FileGDB, with deterministic renaming when output names conflict.">可将所选图层批量导出到 Shapefile 目录或新 FileGDB；名称冲突时采用确定性重命名。</li>
+                <li data-copy-en="Gather supported GDB, SHP, and MDB sources into a new GDB while handling field domains, relationships, attachments, and feature-dataset hierarchy where supported.">可把受支持的 GDB、SHP 与 MDB 数据汇集到新 GDB，并处理字段域、关系、附件及 Feature Dataset 层级等已支持语义。</li>
+                <li data-copy-en="A preflight plan lists unsupported or affected items before gathering so exclusions are explicit instead of silent.">汇集执行前会列出不支持项与受影响项，让跳过范围明确可见，不做静默忽略。</li>
+                <li data-copy-en="Exports use temporary targets, integrity checks, deterministic conflict handling, and recoverable replacement; cancellation or failure does not commit partial output.">导出采用临时目标、完整性校验、确定性冲突处理与可回滚替换；取消或失败不会提交半成品。</li>
+                <li data-copy-en="When spatial reference is missing, choose to preserve source coordinates, assign an explicit reference, or cancel rather than receiving an ambiguous result.">坐标系缺失时，可明确选择保留原坐标、指定空间参考或取消，不再默认生成语义不明的结果。</li>
+              </ul>
+            </section>
+            <section class="release-section" id="v4-home" data-toc-label="全新首页" data-toc-en="New home screen">
+              <h3 data-copy-en="New: start directly from your data">全新功能：从数据直接开始</h3>
+              <ul>
+                <li data-copy-en="Launching without a data source now opens an actionable home screen instead of showing usage text and exiting.">未指定数据源时会进入可操作首页，不再显示用法后直接退出。</li>
+                <li data-copy-en="Open .gdb, .shp, and .mdb sources by choosing a GDB folder, choosing a file, or dragging data into the application.">可通过选择 GDB 文件夹、选择文件或拖放数据打开 .gdb、.shp 与 .mdb。</li>
+                <li data-copy-en="Recent projects can be opened, located in File Explorer, pinned, removed individually, or cleared as a group.">最近使用项目支持直接打开、在资源管理器中定位、固定、单独移除或全部清空。</li>
+              </ul>
+            </section>
+            <section class="release-section" id="v4-desktop" data-toc-label="桌面体验与兼容性" data-toc-en="Desktop experience and compatibility">
+              <h3 data-copy-en="A more resilient Windows desktop release">更完整、更稳健的 Windows 桌面版本</h3>
+              <ul>
+                <li data-copy-en="V4 targets Windows 10 and Windows 11 x64 and is available as both framework-dependent and self-contained installers.">V4 面向 Windows 10/11 x64，同时提供框架依赖版与自包含版安装程序。</li>
+                <li data-copy-en="Window and panel lifecycles are more stable when opening or closing attribute tables, switching between preview and layout, maximizing, or returning to the main window.">打开或关闭属性表、切换预览与布局、最大化或返回主窗口时，窗口与面板状态更加稳定。</li>
+                <li data-copy-en="Caches, layout history, autosave, and symbol previews use explicit capacity, memory, or serial-execution limits for long-running sessions.">缓存、布局历史、自动保存与符号预览均加入明确的容量、内存或串行执行边界，适合长时间运行。</li>
+                <li data-copy-en="Personal Geodatabase files remain read-only for source editing, and this release does not include macOS or Linux versions.">Personal Geodatabase 源数据继续保持只读写回边界；本版本不提供 macOS 或 Linux 版本。</li>
               </ul>
             </section>
           </div>
