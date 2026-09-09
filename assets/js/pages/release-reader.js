@@ -4,9 +4,10 @@ export const initializeReleaseReader = () => {
   const tocTitle = document.querySelector("[data-release-toc-title]");
   const tocLinks = document.querySelector("[data-release-toc-links]");
   let sectionObserver = null;
-  let selectedVersion = "v4";
+  let selectedVersion = "v4-1";
 
   const versionLabels = Object.freeze({
+    "v4-1": "4.1",
     v4: "V4",
     v3: "V3",
     v2: "V2",
@@ -95,7 +96,7 @@ export const initializeReleaseReader = () => {
   });
 
   const requestedVersion = new URL(window.location.href).searchParams.get("version");
-  const initialVersion = versionLabels[requestedVersion] ? requestedVersion : "v4";
+  const initialVersion = versionLabels[requestedVersion] ? requestedVersion : "v4-1";
   selectVersion(initialVersion, false);
   if (requestedVersion && requestedVersion !== initialVersion) {
     const nextUrl = new URL(window.location.href);

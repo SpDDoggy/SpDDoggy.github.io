@@ -12,7 +12,7 @@ export const products = Object.freeze([
   },
   {
     id: "gdb-previewer",
-    name: "GDB Previewer",
+    name: "GeoPreviewer",
     description: Object.freeze({
       zh: "查看 GDB · SHP · MDB",
       en: "Inspect GDB · SHP · MDB"

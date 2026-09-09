@@ -1,3 +1,3 @@
-import { initializeDisplayPreferences } from "../components/display-preferences.js?v=20260730-4";
+import { initializeDisplayPreferences } from "../components/display-preferences.js?v=20260909-1";
 
 initializeDisplayPreferences();

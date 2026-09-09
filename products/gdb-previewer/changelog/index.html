@@ -1,13 +1,13 @@
 <!doctype html>
 <html class="gdb-page-root" lang="zh-CN" data-theme="light" data-page="gdb-changelog"
-      data-title-en="Release notes · GDB Previewer"
-      data-description-en="GDB Previewer release notes and version history.">
+      data-title-en="Release notes · GeoPreviewer"
+      data-description-en="GeoPreviewer release notes and version history.">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="GDB Previewer 历史版本更新日志。">
+  <meta name="description" content="GeoPreviewer 历史版本更新日志。">
   <meta name="theme-color" content="#f8fbff">
-  <title>更新日志 · GDB Previewer</title>
+  <title>更新日志 · GeoPreviewer</title>
   <script src="../../../assets/js/components/theme-boot.js?v=20260729-3"></script>
   <link rel="icon" href="../../../assets/images/brand/favicon.svg?v=20260728-5" type="image/svg+xml">
   <link rel="stylesheet" href="../../../assets/css/site.css?v=20260729-6">
@@ -17,7 +17,7 @@
   <header class="product-site-header">
     <div class="shell product-header-layout">
       <a class="brand" href="../../../" aria-label="DvSpatial 首页" data-aria-en="DvSpatial home"><strong><span>Dv</span>Spatial</strong></a>
-      <nav class="product-nav" aria-label="GDB Previewer 导航" data-aria-en="GDB Previewer navigation">
+      <nav class="product-nav" aria-label="GeoPreviewer 导航" data-aria-en="GeoPreviewer navigation">
         <a href="../" data-copy-en="Overview">概览</a>
         <a href="../docs/" data-copy-en="Documentation">使用文档</a>
         <a class="is-active" href="./" aria-current="page" data-copy-en="Release notes">更新日志</a>
@@ -34,7 +34,7 @@
       <div class="shell">
         <p class="gdb-kicker"><span></span> RELEASE NOTES</p>
         <h1 data-copy-en="Release notes">更新日志</h1>
-        <p data-copy-en="Browse GDB Previewer features and key fixes by version.">按版本查看 GDB Previewer 的功能演进与关键修复。</p>
+        <p data-copy-en="Browse GeoPreviewer features and key fixes by version.">按版本查看 GeoPreviewer 的功能演进与关键修复。</p>
       </div>
     </section>
 
@@ -44,8 +44,11 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13 11 22l-9-9V4h9l9 9ZM7 8h.01"></path></svg>
           <span data-copy-en="Versions">版本列表</span>
         </h2>
-        <button class="version-option version-active" type="button" data-version-target="v4" aria-pressed="true">
-          <span>⌄</span><b>V4</b><small data-copy-en="Current">当前版本</small>
+        <button class="version-option version-active" type="button" data-version-target="v4-1" aria-pressed="true">
+          <span>⌄</span><b>4.1</b><small>GeoPreviewer</small>
+        </button>
+        <button class="version-option" type="button" data-version-target="v4" aria-pressed="false">
+          <span>›</span><b>V4</b><small data-copy-en="Previous">历史版本</small>
         </button>
         <button class="version-option" type="button" data-version-target="v3" aria-pressed="false">
           <span>›</span><b>V3</b><small data-copy-en="Previous">历史版本</small>
@@ -59,9 +62,69 @@
       </aside>
 
       <div class="release-documents">
-        <article class="release-document" id="release-v4" data-release-panel="v4">
+        <article class="release-document" id="release-v4-1" data-release-panel="v4-1">
           <header class="release-document-header">
-            <div><small>CURRENT RELEASE</small><h2>V4</h2></div>
+            <div><small>GEOPREVIEWER</small><h2>4.1</h2></div>
+          </header>
+          <div class="release-document-body">
+            <section class="release-overview" id="v4-1-overview" data-toc-label="本版概览" data-toc-en="Overview">
+              <p data-copy-en="GDB Previewer becomes GeoPreviewer 4.1. This update focuses on browsing large layers and inspecting data, improving feature display, loading and zooming, selection synchronization, and unique-value classification to keep the map, attribute table, and selected features aligned.">GDB Previewer 更新为 GeoPreviewer 4.1。本次更新围绕大型图层浏览与数据检查，改进图斑显示、加载缩放、选择联动和唯一值分类，让地图、属性表与选中要素保持一致。</p>
+              <div class="release-tags"><span data-copy-en="Complete display">完整显示</span><span data-copy-en="Smoother browsing">流畅浏览</span><span data-copy-en="Accurate synchronization">准确联动</span></div>
+            </section>
+            <section class="release-section" id="v4-1-coverage" data-toc-label="图斑显示更完整" data-toc-en="More complete feature display">
+              <h3 data-copy-en="More complete feature display">图斑显示更完整</h3>
+              <ul>
+                <li data-copy-en="Fixed large SHP layers displaying only a sampled subset of features. Features within the current viewport can now be displayed in full.">修复大型 SHP 图层仅显示部分抽样要素的问题，当前视口内的图斑可以完整显示。</li>
+                <li data-copy-en="Dense feature views no longer substitute a sample for the viewport contents, reducing cases where missing display features could be mistaken for missing data.">查看密集图斑时，不再以抽样结果代替当前视口内容，减少因要素漏显而误判数据缺失的情况。</li>
+                <li data-copy-en="After panning or zooming, the view displays the corresponding features for the current viewport, making it easier to inspect their distribution and neighboring relationships.">平移或缩放后，按当前视口展示对应要素，便于连续检查图斑分布与相邻关系。</li>
+              </ul>
+            </section>
+            <section class="release-section" id="v4-1-loading" data-toc-label="加载与缩放更快" data-toc-en="Faster loading and zooming">
+              <h3 data-copy-en="Faster loading and zooming">加载与缩放更快</h3>
+              <ul>
+                <li data-copy-en="Full-layer streaming improves the reading process for large layers and reduces repeated access to the same data.">采用全图流式读取，优化大型图层的读取过程，减少重复访问同一份数据。</li>
+                <li data-copy-en="Parallel coordinate transformation reduces the time spent transforming large numbers of features before display.">坐标转换采用并行处理，减少大量要素进入地图显示前的转换等待。</li>
+                <li data-copy-en="Loading and zooming reuse complete geometries already read, reducing repeated reads and coordinate calculations during continuous browsing.">加载与缩放复用已读取的完整几何，减少重复读取和坐标计算，让连续浏览更顺畅。</li>
+              </ul>
+            </section>
+            <section class="release-section" id="v4-1-selection" data-toc-label="选择切换更流畅" data-toc-en="Smoother selection changes">
+              <h3 data-copy-en="Smoother selection changes">选择切换更流畅</h3>
+              <ul>
+                <li data-copy-en="Selecting a feature reuses existing geometry, reducing the cost of reading the layer again to display the selection.">点选要素时复用已有几何，减少为显示选中状态而再次读取图层的开销。</li>
+                <li data-copy-en="Highlighting and switching selected features reuse the existing base map instead of repeatedly redrawing the entire layer.">高亮和切换选中要素时复用已有底图，避免反复重绘整层。</li>
+                <li data-copy-en="Clearing a selection also reuses existing map content, reducing delays when repeatedly selecting, switching, and clearing features.">取消选择同样复用已有地图内容，减少连续点选、切换与取消操作中的等待。</li>
+              </ul>
+            </section>
+            <section class="release-section" id="v4-1-projection" data-toc-label="高亮与定位更准确" data-toc-en="More accurate highlighting and positioning">
+              <h3 data-copy-en="More accurate highlighting and positioning">高亮与定位更准确</h3>
+              <ul>
+                <li data-copy-en="Fixed cases where selected MDB features were not highlighted on the map, so the selection is displayed correctly.">修复部分 MDB 要素已被选中、地图中却未显示高亮的问题，让选中结果在地图中正确呈现。</li>
+                <li data-copy-en="Fixed positioning offsets when zooming to selected features, aligning the zoom extent with their displayed positions.">修复缩放至选中要素时的定位偏移，使定位范围与要素实际显示位置保持一致。</li>
+                <li data-copy-en="Unified projection state between map geometry and selection geometry to prevent inconsistent coordinate handling from causing misplaced highlights or incorrect positioning.">统一主图几何与选择几何的投影状态，避免两者坐标处理不一致造成高亮错位或定位异常。</li>
+              </ul>
+            </section>
+            <section class="release-section" id="v4-1-attributes" data-toc-label="属性表加载优化" data-toc-en="Improved attribute table loading">
+              <h3 data-copy-en="Improved attribute table loading">属性表加载优化</h3>
+              <ul>
+                <li data-copy-en="Reduced pre-reading before opening the attribute table, shortening the data preparation stage.">减少属性表打开前的预读，缩短进入表格前的数据准备过程。</li>
+                <li data-copy-en="Reduced repeated attribute reads and improved large-table loading to reduce delays when opening attributes for large layers.">减少属性数据的重复读取，优化大表装载过程，降低打开大型图层属性表的等待。</li>
+                <li data-copy-en="Fixed selection synchronization between the attribute table and map preview, so table selections correctly correspond to map features.">修复属性表选择与主图预览联动，使表格中的选择能够正确对应地图中的要素。</li>
+              </ul>
+            </section>
+            <section class="release-section" id="v4-1-unique-values" data-toc-label="唯一值分类修复" data-toc-en="Fixed unique-value classification">
+              <h3 data-copy-en="Fixed unique-value classification">唯一值分类修复</h3>
+              <ul>
+                <li data-copy-en="Fixed unique-value classification errors caused by layer identifier mapping in GDB, MDB, and SHP data, so classification targets the correct layer.">修复 GDB、MDB、SHP 图层编号映射导致的唯一值分类异常，确保分类操作对应正确图层。</li>
+                <li data-copy-en="Optimized classification field reads to reduce data access overhead when generating unique-value classes.">优化分类字段读取，减少生成唯一值分类时的数据读取开销。</li>
+                <li data-copy-en="Improved unique-value classification across all three data sources, making it easier to inspect the spatial distribution of categories by attribute field.">改善三类数据源的唯一值分类流程，便于按属性字段检查不同类别的空间分布。</li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <article class="release-document" id="release-v4" data-release-panel="v4" hidden>
+          <header class="release-document-header">
+            <div><small>GDB PREVIEWER</small><h2>V4</h2></div>
             <time datetime="2026-08-06">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v3M17 3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Z"></path></svg>
               <span data-copy-en="Released August 6, 2026">2026年8月6日发布</span>
@@ -236,11 +299,11 @@
       </div>
 
       <aside class="release-toc" aria-label="当前版本目录" data-aria-en="Current version contents">
-        <h2 data-release-toc-title>在 V4 中</h2>
+        <h2 data-release-toc-title>在 4.1 中</h2>
         <nav data-release-toc-links></nav>
       </aside>
     </div>
   </main>
-  <script type="module" src="../../../assets/js/pages/changelog.js?v=20260806-1"></script>
+  <script type="module" src="../../../assets/js/pages/changelog.js?v=20260909-1"></script>
 </body>
 </html>
