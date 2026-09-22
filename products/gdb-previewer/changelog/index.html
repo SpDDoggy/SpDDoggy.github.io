@@ -63,72 +63,149 @@
 
       <div class="release-documents">
         <article class="release-document" id="release-v4-1" data-release-panel="v4-1">
-          <header class="release-document-header">
-            <div><small>GEOPREVIEWER</small><h2>4.1</h2></div>
-          </header>
-          <div class="release-document-body">
-            <section class="release-overview" id="v4-1-overview" data-toc-label="本版概览" data-toc-en="Overview">
-              <p data-copy-en="GDB Previewer becomes GeoPreviewer 4.1, with support for Windows, macOS, and Linux as its biggest update. This release also improves large-layer display, loading and zooming, selection synchronization, attribute tables, and unique-value classification.">GDB Previewer 更新为 GeoPreviewer 4.1，最大的变化是支持 Windows、macOS、Linux 三端。本次更新同时改进大型图层显示、加载缩放、选择联动、属性表与唯一值分类。</p>
-              <div class="release-tags"><span data-copy-en="Cross-platform">三端支持</span><span>Windows</span><span>macOS</span><span>Linux</span></div>
-            </section>
-            <section class="release-section" id="v4-1-platforms" data-toc-label="Windows / macOS / Linux" data-toc-en="Windows / macOS / Linux">
-              <h3 data-copy-en="Major update: Windows, macOS, and Linux support">重大更新：支持 Windows、macOS、Linux 三端</h3>
-              <ul>
-                <li data-copy-en="GeoPreviewer expands from Windows to Windows, macOS, and Linux, bringing spatial data browsing and processing to all three desktop platforms.">GeoPreviewer 从 Windows 扩展至 Windows、macOS、Linux，让空间数据查看与处理覆盖三大桌面平台。</li>
-                <li data-copy-en="Choose your operating system for everyday GDB, SHP, and MDB workflows, including spatial preview, attribute inspection, symbology, and map layouts.">在不同操作系统上使用 GDB、SHP、MDB 数据，完成空间预览、属性查看、符号化与布局制图等常用工作。</li>
-                <li data-copy-en="The cross-platform release carries forward the GDB Previewer workflow, making it easier to continue familiar GIS tasks when switching operating systems.">跨平台版本延续 GDB Previewer 的使用流程，切换操作系统后仍可沿用熟悉的数据检查与制图方式。</li>
-              </ul>
-            </section>
-            <section class="release-section" id="v4-1-coverage" data-toc-label="图斑显示更完整" data-toc-en="More complete feature display">
-              <h3 data-copy-en="More complete feature display">图斑显示更完整</h3>
-              <ul>
-                <li data-copy-en="Fixed large SHP layers displaying only a sampled subset of features. Features within the current viewport can now be displayed in full.">修复大型 SHP 图层仅显示部分抽样要素的问题，当前视口内的图斑可以完整显示。</li>
-                <li data-copy-en="Dense feature views no longer substitute a sample for the viewport contents, reducing cases where missing display features could be mistaken for missing data.">查看密集图斑时，不再以抽样结果代替当前视口内容，减少因要素漏显而误判数据缺失的情况。</li>
-                <li data-copy-en="After panning or zooming, the view displays the corresponding features for the current viewport, making it easier to inspect their distribution and neighboring relationships.">平移或缩放后，按当前视口展示对应要素，便于连续检查图斑分布与相邻关系。</li>
-              </ul>
-            </section>
-            <section class="release-section" id="v4-1-loading" data-toc-label="加载与缩放更快" data-toc-en="Faster loading and zooming">
-              <h3 data-copy-en="Faster loading and zooming">加载与缩放更快</h3>
-              <ul>
-                <li data-copy-en="Full-layer streaming improves the reading process for large layers and reduces repeated access to the same data.">采用全图流式读取，优化大型图层的读取过程，减少重复访问同一份数据。</li>
-                <li data-copy-en="Parallel coordinate transformation reduces the time spent transforming large numbers of features before display.">坐标转换采用并行处理，减少大量要素进入地图显示前的转换等待。</li>
-                <li data-copy-en="Loading and zooming reuse complete geometries already read, reducing repeated reads and coordinate calculations during continuous browsing.">加载与缩放复用已读取的完整几何，减少重复读取和坐标计算，让连续浏览更顺畅。</li>
-              </ul>
-            </section>
-            <section class="release-section" id="v4-1-selection" data-toc-label="选择切换更流畅" data-toc-en="Smoother selection changes">
-              <h3 data-copy-en="Smoother selection changes">选择切换更流畅</h3>
-              <ul>
-                <li data-copy-en="Selecting a feature reuses existing geometry, reducing the cost of reading the layer again to display the selection.">点选要素时复用已有几何，减少为显示选中状态而再次读取图层的开销。</li>
-                <li data-copy-en="Highlighting and switching selected features reuse the existing base map instead of repeatedly redrawing the entire layer.">高亮和切换选中要素时复用已有底图，避免反复重绘整层。</li>
-                <li data-copy-en="Clearing a selection also reuses existing map content, reducing delays when repeatedly selecting, switching, and clearing features.">取消选择同样复用已有地图内容，减少连续点选、切换与取消操作中的等待。</li>
-              </ul>
-            </section>
-            <section class="release-section" id="v4-1-projection" data-toc-label="高亮与定位更准确" data-toc-en="More accurate highlighting and positioning">
-              <h3 data-copy-en="More accurate highlighting and positioning">高亮与定位更准确</h3>
-              <ul>
-                <li data-copy-en="Fixed cases where selected MDB features were not highlighted on the map, so the selection is displayed correctly.">修复部分 MDB 要素已被选中、地图中却未显示高亮的问题，让选中结果在地图中正确呈现。</li>
-                <li data-copy-en="Fixed positioning offsets when zooming to selected features, aligning the zoom extent with their displayed positions.">修复缩放至选中要素时的定位偏移，使定位范围与要素实际显示位置保持一致。</li>
-                <li data-copy-en="Unified projection state between map geometry and selection geometry to prevent inconsistent coordinate handling from causing misplaced highlights or incorrect positioning.">统一主图几何与选择几何的投影状态，避免两者坐标处理不一致造成高亮错位或定位异常。</li>
-              </ul>
-            </section>
-            <section class="release-section" id="v4-1-attributes" data-toc-label="属性表加载优化" data-toc-en="Improved attribute table loading">
-              <h3 data-copy-en="Improved attribute table loading">属性表加载优化</h3>
-              <ul>
-                <li data-copy-en="Reduced pre-reading before opening the attribute table, shortening the data preparation stage.">减少属性表打开前的预读，缩短进入表格前的数据准备过程。</li>
-                <li data-copy-en="Reduced repeated attribute reads and improved large-table loading to reduce delays when opening attributes for large layers.">减少属性数据的重复读取，优化大表装载过程，降低打开大型图层属性表的等待。</li>
-                <li data-copy-en="Fixed selection synchronization between the attribute table and map preview, so table selections correctly correspond to map features.">修复属性表选择与主图预览联动，使表格中的选择能够正确对应地图中的要素。</li>
-              </ul>
-            </section>
-            <section class="release-section" id="v4-1-unique-values" data-toc-label="唯一值分类修复" data-toc-en="Fixed unique-value classification">
-              <h3 data-copy-en="Fixed unique-value classification">唯一值分类修复</h3>
-              <ul>
-                <li data-copy-en="Fixed unique-value classification errors caused by layer identifier mapping in GDB, MDB, and SHP data, so classification targets the correct layer.">修复 GDB、MDB、SHP 图层编号映射导致的唯一值分类异常，确保分类操作对应正确图层。</li>
-                <li data-copy-en="Optimized classification field reads to reduce data access overhead when generating unique-value classes.">优化分类字段读取，减少生成唯一值分类时的数据读取开销。</li>
-                <li data-copy-en="Improved unique-value classification across all three data sources, making it easier to inspect the spatial distribution of categories by attribute field.">改善三类数据源的唯一值分类流程，便于按属性字段检查不同类别的空间分布。</li>
-              </ul>
-            </section>
-          </div>
-        </article>
+<header class="release-document-header"><div><small>GEOPREVIEWER</small><h2>4.1</h2></div></header>
+<div class="release-document-body">
+<section class="release-overview" id="v4-1-overview" data-toc-label="本版概览" data-toc-en="Overview">
+<p data-copy-en="Compared with V4, the largest change in 4.1 is expansion to Windows, macOS and Linux, alongside style resources, category matching, map coordinate systems and scale tools, plus improvements to large-data browsing and attribute tables.">4.1 相比 V4，最大的变化是扩展至 Windows、macOS、Linux，并新增样式资源、分类匹配、地图坐标系与比例尺工具，改进大数据浏览和属性表体验。</p>
+<p data-copy-en="These notes reflect the current 4.1 development state. MDB attribute write-back and the new update prompt are further development items. Actual feature, platform and architecture availability depends on the corresponding published installer.">本页按 4.1 当前开发状态整理。MDB 属性写回、新版更新弹窗等属于后续开发内容；功能、平台与架构的实际可用性以对应发布安装包为准。</p>
+</section>
+<section class="release-section" id="v4-1-added" data-toc-label="一、新增功能" data-toc-en="1. New features">
+<h3 data-copy-en="1. New features">一、新增功能</h3>
+<h4 data-copy-en="1. Cross-platform support">1. 跨平台支持</h4>
+<ul>
+<li data-copy-en="The desktop moves from Windows WPF to Avalonia and .NET 10, adding platform adaptation and builds for macOS Intel and Apple Silicon, and Linux x64 and arm64, with native-library loading, packaging and file associations. The Windows framework-dependent edition requires .NET 10 Runtime x64. Download availability depends on published packages.">桌面架构由 Windows WPF 迁移至 Avalonia，运行环境升级至 .NET 10。新增 macOS Intel、Apple Silicon 及 Linux x64、arm64 平台适配与构建支持，配套原生库加载、安装打包和文件打开注册。Windows 框架依赖版要求 .NET 10 Runtime x64；可下载的平台与架构以实际发布安装包为准。</li>
+</ul>
+<h4 data-copy-en="2. ArcGIS style import">2. ArcGIS 样式导入</h4>
+<ul>
+<li data-copy-en="Read, browse and import .style and .stylx files; filter by name, code, type and conversion status, then preview and select multiple symbols. Convert supported point, line, polygon, text, north-arrow and scale-bar styles while retaining sources, original definitions and fonts. Unsupported entries and missing required fonts are marked explicitly, without substituting default symbols.">支持读取、浏览和导入 .style、.stylx，按名称、编码、类型和转换状态筛选，预览并多选符号。支持多种点、线、面及适用的文字、指北针、比例尺样式转换，保留来源、原始定义和字体资源。无法转换或缺少必要字体的条目单独标识，不以默认符号代替转换结果。</li>
+</ul>
+<h4 data-copy-en="3. Category symbol matching">3. 分类符号匹配</h4>
+<ul>
+<li data-copy-en="A dedicated Match category symbols command matches category values or names against existing collections or external STYLE/STYLX files. Compare current and proposed symbols, automatically select unique matches, choose among multiple candidates, replace candidates individually, filter and select categories to apply. Unique-value categories can match through another attribute field, such as names instead of codes. External matching does not automatically import the entire style collection.">新增独立“匹配分类符号”入口，从已有集合或外部 STYLE、STYLX 文件按分类值、名称等匹配。支持前后对比、唯一候选自动选定、多候选手动选择、逐项更换、筛选与勾选应用范围。唯一值分类可另选属性字段匹配，适用于代码分类与名称样式的对应；外部匹配不会自动将整套资源加入样式库。</li>
+</ul>
+<h4 data-copy-en="4. Style library">4. 样式资源库</h4>
+<ul>
+<li data-copy-en="A three-pane library combines a collection tree, resource browser and property preview. Manage collections, groups and subgroups; browse points, lines, polygons and color schemes. Rename, duplicate, move, export or delete resources, use resource and group context menus, edit names, categories and keys, and switch between grid and list views. Unsaved edits offer Save, Discard or Cancel before switching, closing or other operations.">采用集合树、资源浏览、预览属性三栏结构，支持集合、分组和子分组，以及点、线、面、颜色组分类浏览。新增重命名、副本、移动、导出、删除及资源和分组右键菜单，支持编辑名称、分类和键，切换网格与列表。未保存修改在切换、关闭或其他操作前可选择保存、放弃或取消。</li>
+</ul>
+<h4 data-copy-en="5. Color scheme resources and editing">5. 颜色组资源与编辑</h4>
+<ul>
+<li data-copy-en="Manage continuous, discrete and bivariate color schemes. Preview gradients and add, remove, edit or reverse color stops; edit bivariate color matrices. Save and reuse schemes. Applying a scheme updates applicable symbol colors without rebuilding classification fields, values or intervals.">新增连续、离散和二元颜色组管理。连续颜色组支持渐变预览和色标增删、修改、反转；二元颜色组支持矩阵颜色编辑。颜色组可保存复用，应用时仅更新适用的符号颜色，不重建分类字段、分类值或区间。</li>
+</ul>
+<h4 data-copy-en="6. Batch category styling">6. 分类符号批量调整</h4>
+<ul>
+<li data-copy-en="Select multiple categories to change body color and opacity, outline color and opacity, and outline width together, reducing repeated visits to the symbol editor.">可同时选择多个分类，批量修改主体颜色与透明度、轮廓颜色与透明度及轮廓宽度，减少逐项打开符号编辑器的操作。</li>
+</ul>
+<h4 data-copy-en="7. Portable style format">7. 便携样式格式</h4>
+<ul>
+<li data-copy-en="The new .gpstyle format stores complex symbols, external resources, fonts and source definitions. Font deduplication avoids repeated copies and reduces reliance on original external file paths.">新增 .gpstyle，保存复杂符号、外部资源、字体及符号来源定义；重复字体资源去重，降低对原始外部文件路径的依赖。</li>
+</ul>
+<h4 data-copy-en="8. Map display coordinate systems">8. 地图显示坐标系切换</h4>
+<ul>
+<li data-copy-en="Choose the source coordinate system, WGS 84, Web Mercator, CGCS2000, or applicable UTM and Gauss–Krüger zones. Search by name, EPSG code, zone, central meridian or combined keywords. Overlay layers in a common display system, with synchronized extents, spatial queries and selection highlights. Source data is unchanged.">新增地图坐标系入口，支持数据原坐标系、WGS 84、Web Mercator、CGCS2000 及适用的 UTM、高斯投影分带；可按名称、EPSG 编码、带号、中央经线和组合关键词搜索。不同坐标系图层可统一显示，切换后同步地图范围、空间查询与选择高亮，仅改变显示，不改写源数据。</li>
+</ul>
+<h4 data-copy-en="9. Map scale tools">9. 地图比例尺工具</h4>
+<ul>
+<li data-copy-en="A numeric scale and optional meter/kilometer scale bar are available. Enter a denominator to zoom precisely around the map center. Set, return to or clear a reference scale; symbols and labels can resize according to the reference and current scales.">新增数字比例尺和可选米／千米线段比例尺；输入分母可围绕地图中心精确缩放。参考比例尺支持设置、返回和清除，符号与标注可随参考比例和当前比例调整显示尺寸。</li>
+</ul>
+<h4 data-copy-en="10. Multiple basemap services">10. 多底图服务管理</h4>
+<ul>
+<li data-copy-en="A collapsible lower-left basemap sidebar supports multiple overlaid services, individual visibility and drag reordering. Imagery and labels are separate services with independent configuration and ordering.">新增左侧底部可折叠底图侧栏，支持多服务叠加、逐服务显隐和拖动排序。影像与注记拆分为独立服务，可分别配置和排序。</li>
+</ul>
+<h4 data-copy-en="11. Basemap service configurations">11. 底图服务配置库</h4>
+<ul>
+<li data-copy-en="Manage built-in and multiple custom configurations, with copy, edit and delete operations for XYZ and manually configured WMTS services. Add one or multiple services to the map and set opacity, zoom levels and keys per service. Saving a configuration and adding it to the map are separate; removing a map service keeps its saved configuration.">管理内置配置与多份自定义配置，支持复制、编辑、删除，支持 XYZ 和手动配置的 WMTS。服务可单项或多选添加到地图，按服务配置透明度、显示级别和密钥。保存配置与加入地图分开操作，从地图移除服务不会删除配置。</li>
+</ul>
+<h4 data-copy-en="12. CDF-compressed GDB support">12. CDF 压缩 GDB 支持</h4>
+<ul>
+<li data-copy-en="Windows x64 can read CDF-compressed File Geodatabases, including catalog browsing, attributes, geometry preview and feature picking. This addresses compressed databases that fail to open or expose their catalog without displaying map geometry.">新增 Windows x64 下 CDF 压缩 File Geodatabase 读取，覆盖目录浏览、属性读取、几何预览和要素拾取，解决部分压缩库无法打开或目录可读但地图不显示的问题。</li>
+</ul>
+<h4 data-copy-en="13. MDB attribute write-back (further development)">13. MDB 普通属性写回（后续开发）</h4>
+<ul>
+<li data-copy-en="Development builds support editing applicable ordinary fields, including text, Memo and numeric values, in existing MDB records without Access, ACE, ODBC or Java. Saving checks source-file and original-value conflicts, modifies a copy, verifies it by rereading, then replaces the original. Geometry, OID and system fields are excluded. Availability depends on the corresponding installer.">开发版本支持编辑与保存 MDB 已有记录的文本、Memo、数值等适用普通字段，无需 Access、ACE、ODBC 或 Java。保存时检查源文件和原值冲突，在副本上修改并复读核验后替换原文件；几何、OID 和系统字段不在编辑范围内。实际可用性以对应安装包为准。</li>
+</ul>
+<h4 data-copy-en="14. Layout additions">14. 布局相关新增</h4>
+<ul>
+<li data-copy-en="Import applicable ArcGIS text, north-arrow and scale-bar styles and retain them through layout save and reload. A Disable layouts option hides the layout entry while keeping existing layout records.">支持导入适用的 ArcGIS 文字、指北针和比例尺样式，并纳入布局保存与重读流程。新增禁用布局选项，可隐藏布局入口，已有布局记录保留。</li>
+</ul>
+<h4 data-copy-en="15. Software updates (new flow in further development)">15. 软件更新（新版流程后续开发）</h4>
+<ul>
+<li data-copy-en="Adds background checks after startup, periodic checks while running, and manual checks, with downloading, release notes and exit-to-install actions. The new prompt offers Update now, Skip this version, Disable automatic updates and Later. Skipping uses the specific version identity, allowing newer builds to prompt again. Unsaved attribute and layout edits are handled before installation; file size and SHA-256 are checked in the download/install process. The new flow depends on the corresponding installer.">新增启动后后台检查、运行期间定期检查和手动检查，支持下载、查看更新说明及退出安装。新版提示提供立即更新、跳过此版本、关闭自动更新和稍后处理；按具体版本身份跳过，新构建仍可提示。安装前处理未保存的属性和布局修改，下载及安装前校验文件大小和 SHA-256；新版流程以对应安装包为准。</li>
+</ul>
+<h4 data-copy-en="16. Build identity">16. 构建身份识别</h4>
+<ul>
+<li data-copy-en="Display version, release channel and build number are managed separately, distinguishing development, stable and later builds labeled 4.1. The installer uses build identity to recognize upgrades, repairs and attempts to install older packages.">显示版本、发布通道与构建编号分开管理，同为“4.1”的开发版、正式版和后续构建可区分新旧；安装程序依据构建身份识别升级、修复和旧包覆盖。</li>
+</ul>
+</section>
+<section class="release-section" id="v4-1-improved" data-toc-label="二、性能与体验优化" data-toc-en="2. Performance and usability">
+<h3 data-copy-en="2. Performance and usability">二、性能与体验优化</h3>
+<h4 data-copy-en="1. Large-dataset completeness">1. 大数据完整性</h4>
+<ul>
+<li data-copy-en="Removes fixed full-read caps of 10 million features, 300 million vertices and 10 million attribute rows, plus normal viewport truncation at 60,000 features or 800,000 coordinates. Improves completeness during initial wide-area loading, zooming out from detail and window resizing.">移除完整几何读取的 1,000 万要素与 3 亿顶点上限、完整属性读取的 1,000 万行上限，以及正常地图视口的 60,000 要素与 800,000 坐标截断限制，改善首次大范围加载、细部缩小至全图和窗口变化时的数据完整性。</li>
+</ul>
+<h4 data-copy-en="2. Initial loading of large Shapefiles">2. 大型 SHP 首次加载</h4>
+<ul>
+<li data-copy-en="Large line and polygon Shapefiles use partitioned parallel reads, reducing intermediate coordinate collections, copies and extent calculations. Geometry-only reads avoid unrelated attribute work, while reading and projection prepare information needed by later stages.">大型线、面 SHP 采用分片并行读取，减少中间坐标集合、重复复制与范围计算，降低仅加载几何时的无关属性处理，并在读取和投影中同步准备后续信息。</li>
+</ul>
+<h4 data-copy-en="3. Repeated browsing and classification">3. 重复浏览与分类分析</h4>
+<ul>
+<li data-copy-en="Reuses geometry, attributes, unique-value analysis and classification results to reduce scans when reopening layers or selecting classification fields, and repeated symbol parsing per feature. Completed map views can be restored under matching conditions; changes to data, edit state or coordinate systems invalidate affected caches.">加强几何、属性、唯一值分析与分类结果复用，减少重复打开图层、选择分类字段时的扫描和相同符号的逐要素解析；条件一致时恢复已完成地图，数据、编辑状态或坐标系变化时使相关缓存失效。</li>
+</ul>
+<h4 data-copy-en="4. Zooming and panning">4. 缩放和平移</h4>
+<ul>
+<li data-copy-en="Improves continuous-input scheduling, candidate filtering, deduplication and category mapping, reducing cases where redraw waits for scrolling to stop. Better cancellation prevents stale requests from blocking newer views and fixes prolonged update stalls after rapid zooming in some FileGDB layers.">优化连续输入调度、候选筛选、去重及分类映射，减少等待滚轮停止后才刷新的情况。改进过期请求取消，避免旧请求长期阻塞新视野，修复部分 FileGDB 快速连续缩放后长时间不更新的问题。</li>
+</ul>
+<h4 data-copy-en="5. Complex map rendering">5. 复杂地图绘制</h4>
+<ul>
+<li data-copy-en="Prepares complex maps in batches with broader parallel preparation, reuses brushes, glyphs and vector markers, and improves solid fills and polygon organization. Progressive display shows completed layers or batches earlier.">分批准备复杂地图绘制内容，扩展准备阶段并行处理，复用画笔、字形和矢量标记，优化纯色填充与多边形组织；渐进显示使已完成图层或批次更早出现。</li>
+</ul>
+<h4 data-copy-en="6. Cache usage">6. 缓存占用</h4>
+<ul>
+<li data-copy-en="Reduces overlapping raw geometry persisted for local views and controls full-geometry and rendered-map cache capacities separately. Rendered maps are limited by both count and total size, favoring newer results. The category is renamed Spatial preview cache.">减少局部视野重叠原始几何落盘，分别控制完整几何缓存与地图画面缓存容量；地图画面同时限制数量和总大小，优先保留较新结果，相关分类更名为“空间预览缓存”。</li>
+</ul>
+<h4 data-copy-en="7. Attribute tables">7. 属性表</h4>
+<ul>
+<li data-copy-en="Improves loading, layout and interaction for large tables. Adds row-header drag selection, refines Ctrl/Shift selection and fits spatial previews to all selected features. Fixes selection events swallowing double-click editing and improves background suggestion loading, paging and condition previews for attribute selection.">优化大表加载、布局和交互；新增行头拖动多选，完善 Ctrl／Shift 选择，多选空间预览适配全部所选要素范围。修复双击被选择事件吞掉而无法编辑的问题，优化按属性选择的建议值后台加载、分页与条件预览。</li>
+</ul>
+<h4 data-copy-en="8. Style editing and import stability">8. 样式编辑与导入稳定性</h4>
+<ul>
+<li data-copy-en="Fixes recursive selection restoration causing freezes or exits, null references during list recycling when switching collections, and import preparation overwriting editing bindings. Corrects body-color edits affecting other strokes in complex lines and ineffective polygon outline-width changes; improves legacy STYLE dash and character-line parsing.">修复选择恢复递归导致卡死或退出、切换集合时列表回收引发空引用、重新准备导入覆盖编辑绑定等问题；修复复杂线主体改色误改其他描边、部分面轮廓宽度不生效，改进旧 STYLE 短划线和字符线解析。</li>
+</ul>
+<h4 data-copy-en="9. Switching maps and layouts">9. 地图与布局切换</h4>
+<ul>
+<li data-copy-en="Fixes stale map frames or persistent rendering status when returning from a layout to a spatial preview of the same size. Opening a recent spatial-preview project from the home screen prioritizes spatial-preview mode.">修复从布局返回同尺寸空间预览时停留旧画面或持续显示渲染状态；从首页空间预览最近项目打开数据时，优先进入空间预览模式。</li>
+</ul>
+<h4 data-copy-en="10. Annotation display">10. 注记显示</h4>
+<ul>
+<li data-copy-en="Stops annotation positioning polygons from being filled as ordinary polygons, removing unwanted frames around text while retaining geometry needed for text placement and feature identification.">修复注记定位多边形被当作普通面填充，避免文字周围出现多余面框，同时保留文字与要素识别所需几何。</li>
+</ul>
+<h4 data-copy-en="11. Shapefile attribute errors">11. SHP 属性错误处理</h4>
+<ul>
+<li data-copy-en="Missing, truncated or inconsistent DBF files no longer appear as valid empty attributes. Legal NULL values, normal end-of-read and failures are distinguished consistently across paged, full and selected-field reads.">修复 DBF 缺失、截断或结构不一致被显示为正常空属性的问题，区分合法 NULL、正常结束和读取失败，统一分页、全量及指定字段读取的错误处理。</li>
+</ul>
+<h4 data-copy-en="12. Installation and window behavior">12. 安装与窗口体验</h4>
+<ul>
+<li data-copy-en="The Windows installer shows version, build and progress, improves upgrade, repair and older-build detection, and restores previous installation task selections during upgrades. Improves .NET 10 x64 detection, fixes a specific silent-upgrade crash path and centers the main window in the applicable monitor work area.">Windows 安装界面显示版本、构建号与进度，完善升级、修复和旧构建识别，升级时读取上次安装任务选项；改进 .NET 10 x64 检测，修复静默升级特定崩溃路径，主窗口在适用显示器工作区居中启动。</li>
+</ul>
+</section>
+<section class="release-section" id="v4-1-removed" data-toc-label="三、移除与调整" data-toc-en="3. Removals and changes">
+<h3 data-copy-en="3. Removed, replaced and temporarily hidden">三、移除、替换与暂时隐藏</h3>
+<ul>
+<li data-copy-en="Original spatial-preview basemap button: hidden; everyday management moves to the basemap sidebar.">原空间预览底图按钮：隐藏，由底图侧栏承担日常管理。</li>
+<li data-copy-en="Old global basemap switch in Settings: hidden; visibility is controlled per service.">设置中的旧底图总开关：隐藏，改为逐服务控制显隐。</li>
+<li data-copy-en="Composite basemap configurations: replaced by individual services, with imagery and labels managed separately.">复合底图配置：替换为单服务配置，影像与注记独立管理。</li>
+<li data-copy-en="Standalone ArcGIS library button: removed; import is unified in the style library.">独立“ArcGIS 库”按钮：移除，统一进入样式库导入流程。</li>
+<li data-copy-en="Combined import and category-application flow: split into library import and independent category matching.">导入与分类应用混合流程：拆分为资源入库和独立分类匹配。</li>
+<li data-copy-en="Graduated-symbol creation entry: temporarily hidden in the current editor; underlying code is retained.">分级符号创建入口：当前编辑器中暂时隐藏，底层代码保留。</li>
+<li data-copy-en="Proportional-symbol creation entry: temporarily hidden in the current editor; underlying code is retained.">比例符号创建入口：当前编辑器中暂时隐藏，底层代码保留。</li>
+<li data-copy-en="Google imagery and road presets: no longer included in the current built-in service catalog.">Google 影像、路网预置：当前内置服务目录不再提供。</li>
+<li data-copy-en="Automatic download-and-install setting: removed in the new prompt flow; updates begin with a user choice.">设置中的自动下载安装选项：新版提示流程移除该选项，更新先由用户选择。</li>
+<li data-copy-en="Fixed quantity thresholds for normal maps and full reads: the corresponding truncation limits are removed.">正常地图及完整读取固定数量门槛：移除对应截断限制。</li>
+<li data-copy-en="Overlapping local-view geometry persistence: stops writing duplicate geometry for different local views.">局部视野重叠几何持久缓存：停止按不同局部视野重复落盘。</li>
+<li data-copy-en="Uninstall button inside the installer: no longer provided; use the standard Windows uninstall entry.">安装界面内卸载按钮：当前不再提供，使用 Windows 标准卸载入口。</li>
+</ul>
+</section>
+</div>
+</article>
 
         <article class="release-document" id="release-v4" data-release-panel="v4" hidden>
           <header class="release-document-header">
