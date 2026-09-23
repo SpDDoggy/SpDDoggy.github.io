@@ -59,6 +59,10 @@
           <aside class="version-rail version-rail-list-only">
             <div class="version-list" aria-label="GeoPreviewer 版本" data-aria-en="GeoPreviewer versions">
               <button class="version-option is-active" type="button" aria-pressed="true"
+                      data-version-target="gdb-v4-1">
+                <time datetime="2026-09-23">2026.09.23</time><span class="version-separator" aria-hidden="true">-</span><b>4.1</b>
+              </button>
+              <button class="version-option" type="button" aria-pressed="false"
                       data-version-target="gdb-v4">
                 <time datetime="2026-08-06">2026.08.06</time><span class="version-separator" aria-hidden="true">-</span><b>V4</b>
               </button>
@@ -78,9 +82,46 @@
           </aside>
 
           <div class="release-stage">
-            <article class="release-view is-active" data-version-panel="gdb-v4">
-              <div class="release-watermark" aria-hidden="true">04</div>
+            <article class="release-view is-active" data-version-panel="gdb-v4-1">
+              <div class="release-watermark" aria-hidden="true">4.1</div>
               <p data-copy-en="Available release">可下载版本</p>
+              <h2>GeoPreviewer</h2>
+              <div class="release-meta">
+                <strong>4.1</strong>
+                <span>Windows x64</span>
+                <span data-copy-en="Build 20260923034436">构建 20260923034436</span>
+                <span class="release-formats">.GDB / .SHP / .MDB</span>
+                <time datetime="2026-09-23" data-copy-en="Released September 23, 2026">2026年9月23日发布</time>
+              </div>
+              <div class="release-downloads">
+                <a class="release-download" href="https://github.com/SpDDoggy/GeoPreviewer-Releases/releases/download/v4.1-stable.20260923032004/GeoPreviewer-4.1-stable.20260923034436-win-x64-framework-dependent-setup.exe"
+                   aria-label="下载 GeoPreviewer 4.1 框架依赖版"
+                   data-aria-en="Download GeoPreviewer 4.1 framework-dependent edition">
+                  <span class="release-download-copy">
+                    <b data-copy-en="Framework-dependent">框架依赖版</b>
+                    <small data-copy-en="Requires .NET 10">需要 .NET 10</small>
+                  </span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 18h14"></path>
+                  </svg>
+                </a>
+                <a class="release-download" href="https://github.com/SpDDoggy/GeoPreviewer-Releases/releases/download/v4.1-stable.20260923032004/GeoPreviewer-4.1-stable.20260923034436-win-x64-self-contained-setup.exe"
+                   aria-label="下载 GeoPreviewer 4.1 自包含版"
+                   data-aria-en="Download GeoPreviewer 4.1 self-contained edition">
+                  <span class="release-download-copy">
+                    <b data-copy-en="Self-contained">自包含版</b>
+                    <small data-copy-en="No .NET required">无需预装 .NET</small>
+                  </span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 18h14"></path>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="release-view" data-version-panel="gdb-v4" hidden>
+              <div class="release-watermark" aria-hidden="true">04</div>
+              <p data-copy-en="Previous release">历史版本</p>
               <h2>GDB Previewer</h2>
               <div class="release-meta">
                 <strong>V4</strong>
