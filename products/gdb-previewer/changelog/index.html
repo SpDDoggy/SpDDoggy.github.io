@@ -44,7 +44,10 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13 11 22l-9-9V4h9l9 9ZM7 8h.01"></path></svg>
           <span data-copy-en="Versions">版本列表</span>
         </h2>
-        <button class="version-option version-active" type="button" data-version-target="v4-1" aria-pressed="true">
+        <button class="version-option" type="button" data-version-target="v4-2-1" aria-pressed="false"><span>›</span><b>4.2.1</b><small>GeoPreviewer</small></button>
+<button class="version-option" type="button" data-version-target="v4-2-0" aria-pressed="false"><span>›</span><b>4.2.0</b><small>GeoPreviewer</small></button>
+<button class="version-option" type="button" data-version-target="v4-1-1" aria-pressed="false"><span>›</span><b>4.1.1</b><small>GeoPreviewer</small></button>
+<button class="version-option" type="button" data-version-target="v4-1" aria-pressed="false">
           <span>⌄</span><b>4.1</b><small>GeoPreviewer</small>
         </button>
         <button class="version-option" type="button" data-version-target="v4" aria-pressed="false">
@@ -62,12 +65,24 @@
       </aside>
 
       <div class="release-documents">
-        <article class="release-document" id="release-v4-1" data-release-panel="v4-1">
+<article class="release-document" id="release-v4-2-1" data-release-panel="v4-2-1" hidden><header class="release-document-header"><div><small>GEOPREVIEWER</small><h2>4.2.1</h2></div><time datetime="2026-10-20">2026.10.20</time></header><div class="release-document-body">
+<section class="release-section" id="v4-2-1-s0" data-toc-label="字段编码修复" data-toc-en="Field encoding fixes"><h3 data-copy-en="Field encoding fixes">字段编码修复</h3><ul><li data-copy-en="Fixes save-as and selected-feature export failures caused by Chinese Shapefile field names.">修复 Shapefile 另存为及导出所选要素时，中文字段提示“属性校准失败：未找到字段”的问题。</li><li data-copy-en="Unifies reading and export encoding for GBK and GB18030 Shapefiles.">统一 GBK、GB18030 编码 Shapefile 的读取与导出处理，修复可查看但无法正确另存的问题。</li></ul></section>
+<p><a href="https://github.com/SpDDoggy/GeoPreviewer-Releases/releases/tag/v4.2.1-stable.20261019234418" data-copy-en="Full release notes">完整发布说明</a></p></div></article>
+<article class="release-document" id="release-v4-2-0" data-release-panel="v4-2-0" hidden><header class="release-document-header"><div><small>GEOPREVIEWER</small><h2>4.2.0</h2></div><time datetime="2026-10-14">2026.10.14</time></header><div class="release-document-body">
+<section class="release-section" id="v4-2-0-s0" data-toc-label="更多数据格式" data-toc-en="More data formats"><h3 data-copy-en="More data formats">更多数据格式</h3><ul><li data-copy-en="Adds read-only GeoJSON, KML, KMZ and DXF browsing, map preview, attributes, selection and export.">新增 GeoJSON、KML、KMZ 与 DXF 浏览，支持空间预览、属性查看、选择与导出；新增格式保持源文件只读。</li><li data-copy-en="DXF/DWG display points, lines, polygons and annotations separately. DWG 2D vector reading is experimental; some proprietary CAD entities are unsupported.">DXF/DWG 按点、线、面、注记分类显示，可分别设置符号和导出；DWG 二维矢量读取为试验性功能，部分 CAD 专有实体尚不支持。</li><li data-copy-en="Exports feature classes and same-layer selections to DXF and DWG, retaining source coordinates, 3D elevations and CAD annotations.">支持完整要素类及同一图层所选要素导出为 DXF、DWG，保留原始坐标、三维高程与 CAD 注记。</li></ul></section>
+<section class="release-section" id="v4-2-0-s1" data-toc-label="样式与布局资源" data-toc-en="Styles and layout resources"><h3 data-copy-en="Styles and layout resources">样式与布局资源</h3><ul><li data-copy-en="Extends STYLE/STYLX support for land-survey symbols, line decorations, composite arrows, random point fills and multilayer symbols.">扩大 STYLE、STYLX 兼容，补齐三调常用符号、旧式线装饰、复合箭头、随机点填充及多层组合符号。</li><li data-copy-en="Imports legacy scale bars, scale text, borders and backgrounds; improves font retention and editable dash, offset, cap and hatch parameters.">导入旧版比例尺、比例文本、边框与背景，改善字体保留，并支持调整适用的虚线、线偏移、端点与影线参数。</li></ul></section>
+<section class="release-section" id="v4-2-0-s2" data-toc-label="交互与读取优化" data-toc-en="Interaction and reading improvements"><h3 data-copy-en="Interaction and reading improvements">交互与读取优化</h3><ul><li data-copy-en="Box selection works across all open spatial layers; normal selection replaces, the multiselect key appends, and Esc cancels.">支持对所有已打开空间图层拖框选择；普通框选替换选择，多选键追加，Esc 取消。</li><li data-copy-en="Reuses CAD geometry, text, paged attributes and conversion caches to reduce repeated scans.">复用 CAD 几何、文字、属性分页与转换缓存，减少大型图纸首次打开及重复浏览时的重复扫描。</li><li data-copy-en="Shows full CRS names and EPSG codes; fixes SHP null booleans, 3D geographic export and CAD text placement and initial extents.">坐标系显示完整名称与 EPSG；修复 SHP 逻辑字段空值、三维地理坐标导出，以及 CAD 文字位置与初始范围问题。</li><li data-copy-en="Experimental extent-based CRS suggestions affect preview only and leave source files unchanged.">未定义坐标系的数据可按范围推荐预览坐标系，属于试验性显示功能，原文件不变。</li></ul></section>
+<p><a href="https://github.com/SpDDoggy/GeoPreviewer-Releases/releases/tag/v4.2.0-stable.20261014030027" data-copy-en="Full release notes">完整发布说明</a></p></div></article>
+<article class="release-document" id="release-v4-1-1" data-release-panel="v4-1-1" hidden><header class="release-document-header"><div><small>GEOPREVIEWER</small><h2>4.1.1</h2></div><time datetime="2026-09-29">2026.09.29</time></header><div class="release-document-body">
+<section class="release-section" id="v4-1-1-s0" data-toc-label="底图配置" data-toc-en="Basemap configuration"><h3 data-copy-en="Basemap configuration">底图配置</h3><ul><li data-copy-en="WMTS discovers service layers and matches matrix sets, CRS, styles, formats and zoom levels.">WMTS 支持从服务动态获取并选择图层，自动匹配矩阵集、坐标系、样式、格式与缩放级别。</li><li data-copy-en="Adds Tianditu imagery, imagery labels, vectors and vector labels while retaining visibility, order and custom settings.">补齐天地图影像、影像注记、矢量与矢量注记，升级保留已有显隐、排序和自定义配置。</li></ul></section>
+<section class="release-section" id="v4-1-1-s1" data-toc-label="更新下载" data-toc-en="Update downloads"><h3 data-copy-en="Update downloads">更新下载</h3><ul><li data-copy-en="Checks and downloads prefer Gitee and fall back to GitHub on failure or failed integrity checks, with matching version, size and SHA-256 verification.">检查与下载安装包优先使用 Gitee，失败或校验不通过时回退 GitHub；两端使用一致的版本、大小和 SHA-256 校验。</li></ul></section>
+<p><a href="https://github.com/SpDDoggy/GeoPreviewer-Releases/releases/tag/v4.1.1-stable.20260929151814" data-copy-en="Full release notes">完整发布说明</a></p></div></article>
+        <article class="release-document" id="release-v4-1" data-release-panel="v4-1" hidden>
 <header class="release-document-header"><div><small>GEOPREVIEWER</small><h2>4.1</h2></div><time datetime="2026-09-23">2026.09.23</time></header>
 <div class="release-document-body">
 <section class="release-overview" id="v4-1-overview" data-toc-label="本版概览" data-toc-en="Overview">
 <p data-copy-en="Compared with V4, the largest change in 4.1 is expansion to Windows, macOS and Linux, alongside style resources, category matching, map coordinate systems and scale tools, plus improvements to large-data browsing and attribute tables.">4.1 相比 V4，最大的变化是扩展至 Windows、macOS、Linux，并新增样式资源、分类匹配、地图坐标系与比例尺工具，改进大数据浏览和属性表体验。</p>
-<p data-copy-en="These notes reflect the current 4.1 development state. MDB attribute write-back and the new update prompt are further development items. Actual feature, platform and architecture availability depends on the corresponding published installer.">本页按 4.1 当前开发状态整理。MDB 属性写回、新版更新弹窗等属于后续开发内容；功能、平台与架构的实际可用性以对应发布安装包为准。</p>
+<p data-copy-en="Renamed from GDB Previewer in 4.1, with a rebuilt desktop architecture and improvements to maps, styles, attributes and updates. Published installers are Windows x64.">4.1 起由 GDB Previewer 更名为 GeoPreviewer，重构桌面架构，并集中改善空间预览、符号样式、属性表与更新体验。公开安装包为 Windows x64。</p>
 </section>
 <section class="release-section" id="v4-1-added" data-toc-label="一、新增功能" data-toc-en="1. New features">
 <h3 data-copy-en="1. New features">一、新增功能</h3>
@@ -119,15 +134,15 @@
 <ul>
 <li data-copy-en="Windows x64 can read CDF-compressed File Geodatabases, including catalog browsing, attributes, geometry preview and feature picking. This addresses compressed databases that fail to open or expose their catalog without displaying map geometry.">新增 Windows x64 下 CDF 压缩 File Geodatabase 读取，覆盖目录浏览、属性读取、几何预览和要素拾取，解决部分压缩库无法打开或目录可读但地图不显示的问题。</li>
 </ul>
-<h4 data-copy-en="13. MDB attribute write-back (further development)">13. MDB 普通属性写回（后续开发）</h4>
+<h4 data-copy-en="13. MDB attribute write-back">13. MDB 普通属性写回</h4>
 <ul>
-<li data-copy-en="Development builds support editing applicable ordinary fields, including text, Memo and numeric values, in existing MDB records without Access, ACE, ODBC or Java. Saving checks source-file and original-value conflicts, modifies a copy, verifies it by rereading, then replaces the original. Geometry, OID and system fields are excluded. Availability depends on the corresponding installer.">开发版本支持编辑与保存 MDB 已有记录的文本、Memo、数值等适用普通字段，无需 Access、ACE、ODBC 或 Java。保存时检查源文件和原值冲突，在副本上修改并复读核验后替换原文件；几何、OID 和系统字段不在编辑范围内。实际可用性以对应安装包为准。</li>
+<li data-copy-en="Supports editing applicable ordinary fields, including text, Memo and numeric values, in existing MDB records without Access, ACE, ODBC or Java. Saving checks source-file and original-value conflicts, modifies a copy, verifies it by rereading, then replaces the original. Geometry, OID and system fields are excluded. Availability depends on the corresponding installer.">支持编辑与保存 MDB 已有记录的文本、Memo、数值等适用普通字段，无需 Access、ACE、ODBC 或 Java。保存时检查源文件和原值冲突，在副本上修改并复读核验后替换原文件；几何、OID 和系统字段不在编辑范围内。实际可用性以对应安装包为准。</li>
 </ul>
 <h4 data-copy-en="14. Layout additions">14. 布局相关新增</h4>
 <ul>
 <li data-copy-en="Import applicable ArcGIS text, north-arrow and scale-bar styles and retain them through layout save and reload. A Disable layouts option hides the layout entry while keeping existing layout records.">支持导入适用的 ArcGIS 文字、指北针和比例尺样式，并纳入布局保存与重读流程。新增禁用布局选项，可隐藏布局入口，已有布局记录保留。</li>
 </ul>
-<h4 data-copy-en="15. Software updates (new flow in further development)">15. 软件更新（新版流程后续开发）</h4>
+<h4 data-copy-en="15. Software updates">15. 软件更新</h4>
 <ul>
 <li data-copy-en="Adds background checks after startup, periodic checks while running, and manual checks, with downloading, release notes and exit-to-install actions. The new prompt offers Update now, Skip this version, Disable automatic updates and Later. Skipping uses the specific version identity, allowing newer builds to prompt again. Unsaved attribute and layout edits are handled before installation; file size and SHA-256 are checked in the download/install process. The new flow depends on the corresponding installer.">新增启动后后台检查、运行期间定期检查和手动检查，支持下载、查看更新说明及退出安装。新版提示提供立即更新、跳过此版本、关闭自动更新和稍后处理；按具体版本身份跳过，新构建仍可提示。安装前处理未保存的属性和布局修改，下载及安装前校验文件大小和 SHA-256；新版流程以对应安装包为准。</li>
 </ul>
@@ -216,7 +231,7 @@
             </time>
           </header>
           <div class="release-document-body">
-            <section class="release-overview" id="v4-overview" data-toc-label="本版概览" data-toc-en="Overview">
+            <section class="release-overview" id="v4-overview" data-toc-label="本版概览" data-toc-en="Overview"><p data-copy-en="Adds symbology, style libraries, layouts, a welcome screen and centralized settings for browsing, styling and output.">新增符号系统、样式库、布局制图、空状态首页与统一设置中心，串联数据浏览、表达与成果输出。</p>
               <p data-copy-en="V4 is a major upgrade that expands GDB Previewer from a data viewer into an integrated Windows GIS workspace. It introduces a new settings center, a new symbology system, and a new layout workspace, while strengthening large-layer preview, attribute editing, data gathering, and verified export.">V4 是一次重大版本升级，将 GDB Previewer 从数据查看工具扩展为完整的 Windows GIS 工作空间。本版首次带来全新设置中心、全新符号系统和全新布局制图，并全面增强大型图层预览、属性编辑、数据汇集与校验导出。</p>
               <div class="release-tags"><span data-copy-en="New settings">全新设置</span><span data-copy-en="New symbology">全新符号系统</span><span data-copy-en="New layouts">全新布局制图</span><span data-copy-en="Large datasets">大型数据</span><span data-copy-en="Safe export">安全导出</span></div>
             </section>
@@ -308,14 +323,14 @@
 
         <article class="release-document" id="release-v3" data-release-panel="v3" hidden>
           <header class="release-document-header">
-            <div><small>CURRENT RELEASE</small><h2>V3</h2></div>
+            <div><small>HISTORICAL RELEASE</small><h2>V3</h2></div>
             <time datetime="2026-06-29">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v3M17 3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Z"></path></svg>
               <span data-copy-en="Released June 29, 2026">2026年6月29日发布</span>
             </time>
           </header>
           <div class="release-document-body">
-            <section class="release-overview" id="v3-overview" data-toc-label="本版概览" data-toc-en="Overview">
+            <section class="release-overview" id="v3-overview" data-toc-label="本版概览" data-toc-en="Overview"><p data-copy-en="Adds synchronized maps and tables, basemaps, lightweight attribute editing and recovery, and MDB-to-GDB conversion. MDB remains read-only in V3.">新增地图与属性表联动、底图叠加和轻量属性编辑；可恢复未完成编辑，支持 MDB 转 GDB。MDB 在本版本保持只读。</p>
               <p data-copy-en="V3 expanded GDB Previewer into a Windows tool for previewing and lightly editing GDB, SHP, and MDB spatial data.">V3 将 GDB Previewer 扩展为同时支持 GDB、SHP 与 MDB 的 Windows 空间数据预览与轻量编辑工具。</p>
               <div class="release-tags"><span>GDB</span><span>SHP</span><span>MDB</span><span data-copy-en="Lightweight editing">轻量编辑</span></div>
             </section>
@@ -343,7 +358,7 @@
             </time>
           </header>
           <div class="release-document-body">
-            <section class="release-overview" id="v2-overview" data-toc-label="本版概览" data-toc-en="Overview">
+            <section class="release-overview" id="v2-overview" data-toc-label="本版概览" data-toc-en="Overview"><p data-copy-en="Adds attribute tables, view switching, attribute selection, sorting, field statistics and CSV export, plus nested-path and annotation reading.">新增属性表，支持视图切换、按属性选择、排序、字段统计与 CSV 导出；增强嵌套路径识别及注记类读取。</p>
               <p data-copy-en="V2 established installation, update, repair, and uninstall workflows for all Windows users while retaining system integration for GDB folders.">V2 建立了面向所有 Windows 用户的安装、更新、修复与卸载流程，并保持 GDB 文件夹的系统集成。</p>
               <div class="release-tags"><span data-copy-en="All-users install">全用户安装</span><span data-copy-en="Maintenance mode">维护模式</span><span data-copy-en="File associations">文件关联</span></div>
             </section>
@@ -367,7 +382,7 @@
             </time>
           </header>
           <div class="release-document-body">
-            <section class="release-overview" id="v1-overview" data-toc-label="本版概览" data-toc-en="Overview">
+            <section class="release-overview" id="v1-overview" data-toc-label="本版概览" data-toc-en="Overview"><p data-copy-en="Quickly inspects database structure, layer types, counts and fields.">快速浏览数据库结构、图层类型、数量与字段信息，减少只为检查数据而启动完整 GIS 的步骤。</p>
               <p data-copy-en="V1 was the first lightweight distribution of GDB Previewer, focused on quickly opening and viewing file geodatabases.">V1 是 GDB Previewer 的首个轻量分发版本，聚焦 File Geodatabase 的快速打开与查看。</p>
               <div class="release-tags"><span data-copy-en="GDB preview">GDB 预览</span><span data-copy-en="Per-user install">用户级安装</span><span data-copy-en="Open from context menu">右键打开</span></div>
             </section>
@@ -384,11 +399,11 @@
       </div>
 
       <aside class="release-toc" aria-label="当前版本目录" data-aria-en="Current version contents">
-        <h2 data-release-toc-title>在 4.1 中</h2>
+        <h2 data-release-toc-title>在 4.2.1 中</h2>
         <nav data-release-toc-links></nav>
       </aside>
     </div>
   </main>
-  <script type="module" src="../../../assets/js/pages/changelog.js?v=20260909-1"></script>
+  <script type="module" src="../../../assets/js/pages/changelog.js?v=20261024-1"></script>
 </body>
 </html>

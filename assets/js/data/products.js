@@ -14,8 +14,8 @@ export const products = Object.freeze([
     id: "gdb-previewer",
     name: "GeoPreviewer",
     description: Object.freeze({
-      zh: "查看 GDB · SHP · MDB",
-      en: "Inspect GDB · SHP · MDB"
+      zh: "查看 GIS 与 CAD 数据",
+      en: "Inspect GIS and CAD data"
     }),
     icon: "database",
     pageUrl: "products/gdb-previewer/",

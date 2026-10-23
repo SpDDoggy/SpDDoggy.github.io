@@ -51,7 +51,7 @@
         <section id="install">
           <span class="doc-index">01</span>
           <h2 data-copy-en="Installation">安装</h2>
-          <p data-copy-en="GeoPreviewer 4.1 supports Windows, macOS, and Linux. On Windows x64, choose the framework-dependent edition when .NET 10 Runtime x64 is installed, or the self-contained edition when it is not. Both installers use the same application version and system integration.">GeoPreviewer 4.1 支持 Windows、macOS、Linux。在 Windows x64 上，已安装 .NET 10 Runtime x64 时可选择框架依赖版，否则选择自包含版；两个安装程序使用相同的应用版本与系统集成。</p>
+          <p data-copy-en="GeoPreviewer 4.2.1 provides Windows x64 installers. On Windows x64, choose the framework-dependent edition when .NET 10 Runtime x64 is installed, or the self-contained edition when it is not. Both installers use the same application version and system integration.">GeoPreviewer 4.2.1 提供 Windows x64 安装包。在 Windows x64 上，已安装 .NET 10 Runtime x64 时可选择框架依赖版，否则选择自包含版；两个安装程序使用相同的应用版本与系统集成。</p>
           <h3 data-copy-en="Windows installation">Windows 安装</h3>
           <div class="doc-callout"><strong data-copy-en="Tip">建议</strong><span data-copy-en="Run the installer as an administrator for the first installation, and close GeoPreviewer before upgrading.">首次安装使用管理员权限运行；升级前先关闭正在运行的 GeoPreviewer。</span></div>
           <ol>
@@ -68,8 +68,8 @@
           <div class="format-table">
             <div><b>FileGDB</b><code>.gdb</code><span data-copy-en="Layers, attributes, spatial preview, and editing">图层、属性、空间预览与编辑</span></div>
             <div><b>Shapefile</b><code>.shp</code><span data-copy-en="Inspect geometry and attributes together">几何与属性联合查看</span></div>
-            <div><b>Personal GDB</b><code>.mdb</code><span data-copy-en="No Access, ACE, or ODBC required; currently read-only">无需 Access、ACE 或 ODBC，当前只读</span></div>
-          </div>
+            <div><b>Personal GDB</b><code>.mdb</code><span data-copy-en="Inspect and edit supported ordinary fields without Access, ACE or ODBC">无需 Access、ACE 或 ODBC，可编辑适用普通字段</span></div>
+<div><b>GeoJSON / KML / KMZ</b><code>.geojson / .json / .kml / .kmz</code><span data-copy-en="Read-only browsing, attributes, selection and export">只读浏览、属性查看、选择与导出</span></div><div><b>CAD</b><code>.dxf / .dwg</code><span data-copy-en="Browse points, lines, polygons and annotations; DWG reading is experimental">点、线、面与注记分类浏览；DWG 读取为试验性功能</span></div>          </div>
         </section>
 
         <section id="preview">
@@ -88,8 +88,8 @@
           <h2 data-copy-en="Edit and export">编辑与导出</h2>
           <p data-copy-en="Editable data remains pending until you save. Field input is validated by type, and the application prompts you to handle unsaved changes before closing or switching data.">可编辑数据会在保存前保留待提交状态。字段输入按类型校验；退出或切换数据时，会提示处理尚未保存的更改。</p>
           <div class="doc-split">
-            <div><strong data-copy-en="Edit">编辑</strong><span data-copy-en="Change attribute values, undo pending edits, and save explicitly. MDB data remains read-only.">修改属性值、撤销待提交更改并显式保存。MDB 数据保持只读。</span></div>
-            <div><strong data-copy-en="Export">导出</strong><span data-copy-en="Export CSV, SHP, or a new GDB; save the complete dataset as a GDB from the root node.">导出 CSV、SHP 或新的 GDB；根节点可将完整数据另存为 GDB。</span></div>
+            <div><strong data-copy-en="Edit">编辑</strong><span data-copy-en="Change attribute values, undo pending edits, and save explicitly. MDB supports editing ordinary business fields; geometry and system fields are excluded.">修改属性值、撤销待提交更改并显式保存。MDB 支持适用业务字段编辑，几何与系统字段不在编辑范围内。</span></div>
+            <div><strong data-copy-en="Export">导出</strong><span data-copy-en="Export CSV, SHP or GDB; export feature classes and same-layer selections to DXF or DWG.">导出 CSV、SHP 或新的 GDB；要素类与同图层所选要素可导出 DXF、DWG。</span></div>
           </div>
           <a class="doc-next-link" href="../changelog/"><b data-copy-en="Next: view release notes">下一步：查看更新日志</b> <span>→</span></a>
         </section>
