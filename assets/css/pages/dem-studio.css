@@ -6,6 +6,47 @@ html.dem-page-root {
   scroll-behavior: smooth;
 }
 
+.dem-workspace-preview.dem-terrain-preview img {
+  aspect-ratio: 1 / 1;
+  max-height: min(66vh, 660px);
+  object-fit: cover;
+}
+
+.dem-terrain-preview > a { display: block; background: #000; }
+
+.dem-feature-tags {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #64778f;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.dem-capability-list .dem-feature-tags { color: #aabbd1; }
+
+.dem-download-summary {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 48px 0 32px;
+}
+
+.dem-download-summary > img { width: 72px; height: 72px; border-radius: 16px; }
+.dem-download-summary > div { display: grid; gap: 12px; flex: 1; min-width: 0; }
+.dem-download-summary strong { color: #16253b; font-size: 26px; }
+.dem-download-summary span { color: #64778f; font-size: 13px; line-height: 1.7; }
+html[data-theme="dark"] .dem-feature-tags,
+html[data-theme="dark"] .dem-download-summary span { color: #a6b5c8; }
+html[data-theme="dark"] .dem-download-summary strong { color: #edf3fb; }
+
+@media (max-width: 760px) {
+  .dem-download-summary { flex-wrap: wrap; gap: 18px; }
+  .dem-download-summary .dem-primary-action { width: 100%; }
+}
+
 .dem-product-page {
   height: auto;
   min-height: 100%;
@@ -172,7 +213,8 @@ html.dem-page-root {
   margin-top: 32px;
 }
 
-.dem-actions a {
+.dem-actions a,
+.dem-download-summary .dem-primary-action {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -333,7 +375,7 @@ html.dem-page-root {
   list-style: none;
 }
 
-.dem-workflow-list li {
+.dem-workflow-list > li {
   display: grid;
   grid-template-columns: auto 1fr;
   min-height: 270px;
@@ -341,7 +383,7 @@ html.dem-page-root {
   gap: 22px;
 }
 
-.dem-workflow-list li + li {
+.dem-workflow-list > li + li {
   padding-left: clamp(22px, 2.6vw, 36px);
   border-left: 1px solid #d2deec;
 }
@@ -723,12 +765,12 @@ html[data-theme="dark"] .dem-platform-grid .is-verified b {
     gap: 22px;
   }
 
-  .dem-workflow-list li {
+  .dem-workflow-list > li {
     min-height: 0;
     padding: 26px 0 34px;
   }
 
-  .dem-workflow-list li + li {
+  .dem-workflow-list > li + li {
     padding-left: 0;
     border-top: 1px solid #d2deec;
     border-left: 0;

@@ -4,6 +4,23 @@
   overflow-y: auto;
 }
 
+.dem-download-requirements,
+.dem-download-links {
+  position: relative;
+  z-index: 1;
+  grid-column: 1 / -1;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.dem-download-requirements { margin: 24px 0 0; color: #657891; }
+.dem-download-requirements > div { display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.dem-download-requirements dt { font-weight: 700; }
+.dem-download-requirements dd { margin: 0; }
+.dem-download-links { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 18px; }
+.dem-download-links a { color: var(--blue); text-underline-offset: 4px; }
+.dem-download-links a:hover { text-decoration: underline; }
+html[data-theme="dark"] .dem-download-requirements { color: #a6b5c8; }
+
 .download-back {
   padding: 9px 14px;
   color: #35465e;

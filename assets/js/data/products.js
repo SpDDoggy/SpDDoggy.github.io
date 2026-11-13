@@ -23,10 +23,10 @@ export const products = Object.freeze([
   },
   {
     id: "dem-studio",
-    name: "DEM Studio",
+    name: "DEMStudio",
     description: Object.freeze({
-      zh: "数字高程模型工具",
-      en: "Digital elevation model tools"
+      zh: "地形渲染与地理参考出图",
+      en: "Terrain rendering and georeferenced output"
     }),
     icon: "terrain",
     pageUrl: "products/dem-studio/",

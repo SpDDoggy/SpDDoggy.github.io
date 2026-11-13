@@ -11,7 +11,7 @@
   <script src="../assets/js/components/theme-boot.js?v=20260729-5"></script>
   <link rel="icon" href="../assets/images/brand/favicon.svg?v=20260728-5" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/css/site.css?v=20260729-6">
-  <link rel="stylesheet" href="../assets/css/pages/downloads.css?v=20260806-1">
+  <link rel="stylesheet" href="../assets/css/pages/downloads.css?v=20261113-1">
 </head>
 <body class="download-page">
   <header class="site-header">
@@ -49,7 +49,7 @@
                 aria-selected="false" aria-controls="panel-dem-studio" tabindex="-1"
                 data-product-tab="dem-studio">
           <span>03</span>
-          <b>DEM Studio</b>
+          <b>DEMStudio</b>
         </button>
       </div>
 
@@ -348,22 +348,20 @@
           </div>
         </section>
 
-        <section class="product-panel" id="panel-dem-studio" role="tabpanel"
-                 aria-labelledby="tab-dem-studio" data-product-panel="dem-studio" hidden>
-          <aside class="version-rail version-rail-list-only">
-            <div class="version-list" aria-label="DEM Studio 版本" data-aria-en="DEM Studio versions">
-              <div class="version-empty" data-copy-en="No releases">暂无版本</div>
+        <section class="product-panel" id="panel-dem-studio" role="tabpanel" aria-labelledby="tab-dem-studio" data-product-panel="dem-studio" hidden>
+          <aside class="version-rail version-rail-list-only"><div class="version-list" aria-label="DEMStudio 版本" data-aria-en="DEMStudio versions">
+            <button class="version-option is-active" type="button" aria-pressed="true" data-version-target="dem-v0-2-0"><time datetime="2026-11-13">2026.11.13</time><span class="version-separator" aria-hidden="true">-</span><b>0.2.0</b></button>
+          </div></aside>
+          <div class="release-stage"><article class="release-view is-active" data-version-panel="dem-v0-2-0">
+            <div class="release-watermark" aria-hidden="true">0.2.0</div><p data-copy-en="Terrain rendering">地形渲染</p><h2>DEMStudio</h2>
+            <div class="release-meta"><strong>0.2.0</strong><span>Windows x64</span><span class="release-formats">PNG / TIFF · 8-bit / 16-bit</span><time datetime="2026-11-13" data-copy-en="Released 2026-11-13">2026.11.13 发布</time></div>
+            <div class="release-downloads">
+              <a class="release-download" href="./dem-studio/0.2.0/DEMStudio-0.2.0-windows-x64-setup.exe" download aria-label="下载 DEMStudio 0.2.0 安装版" data-aria-en="Download DEMStudio 0.2.0 installer"><span class="release-download-copy"><b data-copy-en="Installer">安装版</b><small>EXE · 3.98 MiB</small></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 18h14"></path></svg></a>
+              <a class="release-download" href="./dem-studio/0.2.0/DEMStudio-0.2.0-windows-x64-portable.zip" download aria-label="下载 DEMStudio 0.2.0 便携版" data-aria-en="Download DEMStudio 0.2.0 portable edition"><span class="release-download-copy"><b data-copy-en="Portable">便携版</b><small>ZIP · 2.76 MiB</small></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 18h14"></path></svg></a>
             </div>
-          </aside>
-
-          <div class="release-stage">
-            <article class="release-view unreleased-release is-active">
-              <div class="release-watermark" aria-hidden="true">DEM</div>
-              <p data-copy-en="Desktop terrain workspace">桌面地形工作区</p>
-              <h2>DEM Studio</h2>
-              <strong class="preparing-status" data-copy-en="In preparation">准备中</strong>
-            </article>
-          </div>
+            <dl class="dem-download-requirements"><div><dt data-copy-en="Runtime">运行环境</dt><dd>WebView2 · OpenGL 3.3 Compatibility Profile</dd></div></dl>
+            <nav class="dem-download-links" aria-label="DEMStudio 资源" data-aria-en="DEMStudio resources"><a href="./dem-studio/0.2.0/SHA256SUMS.txt" download data-copy-en="SHA-256 checksums">SHA-256 校验值</a><a href="./dem-studio/0.2.0/Release-notes.md" data-copy-en="Release notes">版本说明</a><a href="../products/dem-studio/" data-copy-en="Product overview">产品概览</a></nav>
+          </article></div>
         </section>
       </section>
     </div>

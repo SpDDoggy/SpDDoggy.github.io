@@ -1,0 +1,2 @@
+3c0e79c8ee024953f5e7cbf9492547a90f0b3b911f4ba76246828947fcf5ac9b  DEMStudio-0.2.0-windows-x64-setup.exe
+47182670e22c3f73d8ed4cc0d5aa415dcdb3d241226d88ccca8c69d97f73daec  DEMStudio-0.2.0-windows-x64-portable.zip
